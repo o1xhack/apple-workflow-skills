@@ -1,0 +1,1696 @@
+WEBVTT
+
+00:00:04.200 --> 00:00:05.800
+Hi, I'm Anna,
+
+00:00:05.850 --> 00:00:07.640
+and I'm an engineer on
+the UI Frameworks team.
+
+00:00:05.850 --> 00:00:07.640
+and I'm an engineer on
+the UI Frameworks team.
+
+00:00:08.410 --> 00:00:10.200
+And I'm Maria,
+a Human Interface Designer
+
+00:00:10.250 --> 00:00:11.980
+working on Apple's design system.
+
+00:00:12.920 --> 00:00:14.360
+Wait, why am I here?
+
+00:00:15.160 --> 00:00:17.760
+Every designer is an engineer,
+and every engineer is a designer.
+
+00:00:18.380 --> 00:00:20.420
+You need to understand
+both to build a great app.
+
+00:00:22.000 --> 00:00:24.100
+Today, Anna and I are
+going to teach you
+
+00:00:22.000 --> 00:00:24.100
+Today, Anna and I are
+going to teach you
+
+00:00:24.150 --> 00:00:26.340
+how to raise the bar for
+your bars on iPhone Duo.
+
+00:00:27.700 --> 00:00:30.100
+iPhone Duo is Apple's
+first multi-display iPhone,
+
+00:00:27.700 --> 00:00:30.100
+iPhone Duo is Apple's
+first multi-display iPhone,
+
+00:00:30.150 --> 00:00:32.520
+giving people the freedom to use it
+
+00:00:32.630 --> 00:00:34.340
+in the way that feels
+right for the moment.
+
+00:00:35.440 --> 00:00:37.800
+And you'll notice right
+away, it's different,
+
+00:00:35.440 --> 00:00:37.800
+And you'll notice right
+away, it's different,
+
+00:00:37.850 --> 00:00:40.160
+introducing a new,
+distinct silhouette.
+
+00:00:41.260 --> 00:00:42.100
+And that shape matters.
+
+00:00:41.260 --> 00:00:42.100
+And that shape matters.
+
+00:00:42.820 --> 00:00:44.600
+The wider aspect ratio gives your apps
+
+00:00:44.650 --> 00:00:46.500
+more horizontal space to work with.
+
+00:00:47.260 --> 00:00:50.000
+To make the most out of that width and
+preserve vertical space for content,
+
+00:00:47.260 --> 00:00:50.000
+To make the most out of that width and
+preserve vertical space for content,
+
+00:00:50.050 --> 00:00:52.620
+controls that normally
+sit at the top and bottom,
+
+00:00:52.670 --> 00:00:54.800
+move to the side,
+
+00:00:52.670 --> 00:00:54.800
+move to the side,
+
+00:00:54.850 --> 00:00:56.980
+where they're also easier to reach.
+
+00:00:58.000 --> 00:00:59.580
+This new design maximizes space
+
+00:00:59.630 --> 00:01:01.780
+for vertical content
+on the outer display.
+
+00:00:59.630 --> 00:01:01.780
+for vertical content
+on the outer display.
+
+00:01:02.710 --> 00:01:05.100
+And their position remains consistent
+
+00:01:05.150 --> 00:01:07.740
+when you open iPhone Duo to the
+inner display and landscape.
+
+00:01:05.150 --> 00:01:07.740
+when you open iPhone Duo to the
+inner display and landscape.
+
+00:01:08.200 --> 00:01:10.600
+But as you open the
+device in portrait,
+
+00:01:10.650 --> 00:01:12.880
+the larger display returns
+to a familiar iPhone layout
+
+00:01:10.650 --> 00:01:12.880
+the larger display returns
+to a familiar iPhone layout
+
+00:01:13.140 --> 00:01:14.420
+with horizontal bars.
+
+00:01:15.560 --> 00:01:17.500
+And remember, these are
+the same components,
+
+00:01:17.550 --> 00:01:19.540
+just adapted to a different layout.
+
+00:01:17.550 --> 00:01:19.540
+just adapted to a different layout.
+
+00:01:20.480 --> 00:01:22.420
+Now that you understand
+the principles behind it,
+
+00:01:22.780 --> 00:01:24.280
+here are a few things to keep in mind
+
+00:01:22.780 --> 00:01:24.280
+here are a few things to keep in mind
+
+00:01:24.420 --> 00:01:27.000
+when designing and implementing
+great bar experiences on iPhone Duo.
+
+00:01:28.540 --> 00:01:31.280
+First, we'll help you
+orient to a new axis
+
+00:01:28.540 --> 00:01:31.280
+First, we'll help you
+orient to a new axis
+
+00:01:31.720 --> 00:01:33.820
+and take your bars
+vertical on iPhone Duo.
+
+00:01:34.220 --> 00:01:36.440
+Next, we'll discuss item ordering
+
+00:01:34.220 --> 00:01:36.440
+Next, we'll discuss item ordering
+
+00:01:36.760 --> 00:01:38.380
+and how it interacts with
+different containers.
+
+00:01:39.100 --> 00:01:41.980
+After that, we'll share how
+you can tailor toolbar content
+
+00:01:42.320 --> 00:01:43.140
+for a vertical axis.
+
+00:01:44.080 --> 00:01:46.940
+Finally, we'll highlight how
+to manage the overflow menu.
+
+00:01:48.160 --> 00:01:49.700
+But Anna, before we get into that,
+
+00:01:49.940 --> 00:01:52.200
+can I show you the app that
+I've been working on? Totally.
+
+00:01:52.780 --> 00:01:55.280
+So I've already done the
+work to make it resizable.
+
+00:01:52.780 --> 00:01:55.280
+So I've already done the
+work to make it resizable.
+
+00:01:55.880 --> 00:01:57.880
+However, my bars are still horizontal.
+
+00:01:58.290 --> 00:01:59.140
+Am I missing something?
+
+00:01:59.830 --> 00:02:00.680
+I got you, Maria.
+
+00:01:59.830 --> 00:02:00.680
+I got you, Maria.
+
+00:02:01.300 --> 00:02:03.400
+To opt your app into
+the new bar behavior,
+
+00:02:03.820 --> 00:02:05.180
+there are a few things
+you'll need to do.
+
+00:02:05.880 --> 00:02:06.680
+First,
+
+00:02:05.880 --> 00:02:06.680
+First,
+
+00:02:06.730 --> 00:02:09.179
+rebuild your app
+against the latest SDKs.
+
+00:02:09.660 --> 00:02:12.300
+Now Maria's app is
+ready for iPhone Duo.
+
+00:02:09.660 --> 00:02:12.300
+Now Maria's app is
+ready for iPhone Duo.
+
+00:02:12.600 --> 00:02:13.650
+For more details
+
+00:02:13.700 --> 00:02:15.500
+on what other behaviors are
+enabled when you rebuild,
+
+00:02:15.750 --> 00:02:17.979
+check out "Prepare Your App
+
+00:02:18.029 --> 00:02:19.340
+for iPhone Duo."
+
+00:02:18.029 --> 00:02:19.340
+for iPhone Duo."
+
+00:02:19.820 --> 00:02:22.000
+Next, make sure you're using
+
+00:02:22.050 --> 00:02:23.780
+the bars provided by
+navigation containers
+
+00:02:23.920 --> 00:02:25.800
+like TabView
+
+00:02:23.920 --> 00:02:25.800
+like TabView
+
+00:02:25.850 --> 00:02:27.580
+or NavigationStack.
+
+00:02:28.200 --> 00:02:29.200
+In SwiftUI,
+
+00:02:29.250 --> 00:02:31.660
+pair the toolbar
+modifier with containers
+
+00:02:29.250 --> 00:02:31.660
+pair the toolbar
+modifier with containers
+
+00:02:31.880 --> 00:02:33.502
+like NavigationStack
+
+00:02:33.552 --> 00:02:35.420
+or NavigationSplitView.
+
+00:02:36.360 --> 00:02:38.540
+In UIKit, prefer using
+
+00:02:38.720 --> 00:02:40.220
+UINavigationController and
+
+00:02:40.270 --> 00:02:43.060
+UITabBarController,
+which manage their own bars.
+
+00:02:40.270 --> 00:02:43.060
+UITabBarController,
+which manage their own bars.
+
+00:02:43.640 --> 00:02:46.280
+For example, set toolbar
+items on a view controller
+
+00:02:46.330 --> 00:02:48.250
+and place it into a
+navigation controller
+
+00:02:46.330 --> 00:02:48.250
+and place it into a
+navigation controller
+
+00:02:48.300 --> 00:02:49.988
+rather than creating
+
+00:02:50.038 --> 00:02:51.640
+a custom UIToolbar.
+
+00:02:52.360 --> 00:02:53.860
+When used to build custom bars,
+
+00:02:54.300 --> 00:02:56.780
+content from sub-components
+like UIToolbar,
+
+00:02:57.520 --> 00:02:58.722
+UINavigationBar,
+
+00:02:58.772 --> 00:03:01.200
+or UITabBar won't be considered.
+
+00:02:58.772 --> 00:03:01.200
+or UITabBar won't be considered.
+
+00:03:01.780 --> 00:03:04.980
+Now that you know how to allow bars
+to move vertically in your app,
+
+00:03:05.400 --> 00:03:08.000
+I'm going to dive deeper into
+how their content is placed.
+
+00:03:05.400 --> 00:03:08.000
+I'm going to dive deeper into
+how their content is placed.
+
+00:03:08.620 --> 00:03:11.140
+iPhone Duo allows navigation, toolbar,
+
+00:03:11.680 --> 00:03:14.640
+and tab bar controls to
+coexist within a shared region.
+
+00:03:11.680 --> 00:03:14.640
+and tab bar controls to
+coexist within a shared region.
+
+00:03:15.440 --> 00:03:18.180
+A helpful way to think
+about it is to imagine
+
+00:03:18.200 --> 00:03:20.280
+rotating 90 degrees
+into a vertical stack.
+
+00:03:21.200 --> 00:03:23.060
+Depending on your layout,
+it may contain
+
+00:03:23.270 --> 00:03:24.920
+different combinations of these items.
+
+00:03:23.270 --> 00:03:24.920
+different combinations of these items.
+
+00:03:25.880 --> 00:03:27.880
+Here in Notes,
+the layout uses a toolbar,
+
+00:03:28.660 --> 00:03:31.140
+while in Clock,
+the layout includes a tab bar.
+
+00:03:28.660 --> 00:03:31.140
+while in Clock,
+the layout includes a tab bar.
+
+00:03:31.630 --> 00:03:33.500
+And in Fitness, the layout uses
+
+00:03:33.550 --> 00:03:35.340
+both a toolbar and a tab bar.
+
+00:03:36.220 --> 00:03:38.360
+In more complex layouts, toolbar items
+
+00:03:38.600 --> 00:03:40.880
+can only move vertically
+when their container
+
+00:03:40.950 --> 00:03:42.960
+is positioned along the display edge.
+
+00:03:40.950 --> 00:03:42.960
+is positioned along the display edge.
+
+00:03:43.530 --> 00:03:46.500
+In split views, only the
+detail column participates.
+
+00:03:47.660 --> 00:03:50.000
+Items from other columns
+remain horizontal.
+
+00:03:47.660 --> 00:03:50.000
+Items from other columns
+remain horizontal.
+
+00:03:50.650 --> 00:03:53.080
+And since detail columns
+already have a vertical bar,
+
+00:03:53.560 --> 00:03:55.440
+inspectors don't receive their own
+
+00:03:53.560 --> 00:03:55.440
+inspectors don't receive their own
+
+00:03:55.740 --> 00:03:57.020
+when expanded to avoid confusion.
+
+00:03:58.400 --> 00:04:01.420
+On the outer display, if your
+sheets already have a toolbar,
+
+00:03:58.400 --> 00:04:01.420
+On the outer display, if your
+sheets already have a toolbar,
+
+00:04:01.920 --> 00:04:02.820
+it's displayed vertically.
+
+00:04:03.960 --> 00:04:06.340
+On the inner display,
+they're centered by default,
+
+00:04:03.960 --> 00:04:06.340
+On the inner display,
+they're centered by default,
+
+00:04:06.800 --> 00:04:08.120
+and items remain horizontal.
+
+00:04:09.300 --> 00:04:11.020
+When you use the
+preferredPlacement API
+
+00:04:11.050 --> 00:04:13.860
+to change their position,
+sheets placed on the left
+
+00:04:11.050 --> 00:04:13.860
+to change their position,
+sheets placed on the left
+
+00:04:14.280 --> 00:04:16.000
+remain without a vertical bar,
+
+00:04:16.050 --> 00:04:18.000
+while sheets placed on
+the right receive one.
+
+00:04:18.980 --> 00:04:21.000
+And because the bar is
+aligned with the hardware,
+
+00:04:21.500 --> 00:04:23.140
+it stays on the same
+side of the device
+
+00:04:23.370 --> 00:04:24.460
+in right-to-left languages.
+
+00:04:23.370 --> 00:04:24.460
+in right-to-left languages.
+
+00:04:25.300 --> 00:04:28.180
+The content adapts around it while
+the bar itself remains fixed.
+
+00:04:29.370 --> 00:04:31.320
+In summary, while it might be tempting
+
+00:04:29.370 --> 00:04:31.320
+In summary, while it might be tempting
+
+00:04:31.430 --> 00:04:33.460
+to change the axis
+for all your controls,
+
+00:04:33.880 --> 00:04:35.860
+keep them associated
+with their container.
+
+00:04:36.700 --> 00:04:38.760
+When displayed vertically,
+items retain
+
+00:04:38.890 --> 00:04:40.440
+a clear top-to-bottom hierarchy.
+
+00:04:41.260 --> 00:04:43.420
+Start by auditing your
+existing toolbar configuration,
+
+00:04:41.260 --> 00:04:43.420
+Start by auditing your
+existing toolbar configuration,
+
+00:04:44.200 --> 00:04:46.680
+making sure that controls
+follow the recommended order.
+
+00:04:47.540 --> 00:04:49.900
+Reserve the top for primary
+navigation controls,
+
+00:04:47.540 --> 00:04:49.900
+Reserve the top for primary
+navigation controls,
+
+00:04:50.380 --> 00:04:53.580
+like back or close, followed by
+prominent actions, such as done.
+
+00:04:55.720 --> 00:04:57.300
+If you're using a
+navigation controller,
+
+00:04:57.590 --> 00:04:59.460
+the back button is
+added automatically.
+
+00:05:00.220 --> 00:05:02.000
+For custom back or close buttons,
+
+00:05:00.220 --> 00:05:02.000
+For custom back or close buttons,
+
+00:05:02.680 --> 00:05:04.920
+use cancellationAction
+placement in SwiftUI.
+
+00:05:05.940 --> 00:05:06.845
+And in UIKit,
+
+00:05:05.940 --> 00:05:06.845
+And in UIKit,
+
+00:05:06.895 --> 00:05:09.160
+use a leading item and make sure
+
+00:05:09.520 --> 00:05:12.380
+leftItemSupplementsBackButton
+is set to false,
+
+00:05:09.520 --> 00:05:12.380
+leftItemSupplementsBackButton
+is set to false,
+
+00:05:12.880 --> 00:05:13.730
+which is the default.
+
+00:05:14.720 --> 00:05:17.900
+leftItemSupplementsBackButton?
+
+00:05:18.700 --> 00:05:19.660
+Who named that API?
+
+00:05:20.520 --> 00:05:21.800
+Wasn't me.
+
+00:05:22.940 --> 00:05:23.900
+For prominent actions,
+
+00:05:24.500 --> 00:05:26.960
+place them using topBarPinnedTrailing
+placement in SwiftUI
+
+00:05:27.020 --> 00:05:29.521
+or pinnedTrailingGroup
+
+00:05:29.571 --> 00:05:30.580
+in UIKit.
+
+00:05:29.571 --> 00:05:30.580
+in UIKit.
+
+00:05:31.220 --> 00:05:33.780
+Remaining items preserve
+their original grouping
+
+00:05:34.220 --> 00:05:36.800
+with a vertical spacer
+visually separating top
+
+00:05:34.220 --> 00:05:36.800
+with a vertical spacer
+visually separating top
+
+00:05:36.880 --> 00:05:38.379
+and bottom placements even
+
+00:05:38.429 --> 00:05:40.220
+when unified into a single bar.
+
+00:05:41.220 --> 00:05:44.260
+And remember, not every pose
+lays out bars vertically.
+
+00:05:41.220 --> 00:05:44.260
+And remember, not every pose
+lays out bars vertically.
+
+00:05:45.120 --> 00:05:47.360
+Keep control placement
+consistent so people
+
+00:05:47.640 --> 00:05:49.799
+don't have to relearn
+where actions live
+
+00:05:47.640 --> 00:05:49.799
+don't have to relearn
+where actions live
+
+00:05:49.849 --> 00:05:51.080
+as they use iPhone Duo.
+
+00:05:51.560 --> 00:05:53.400
+Now that you know
+where items are placed,
+
+00:05:54.020 --> 00:05:55.800
+let's make sure your
+toolbar content is ready.
+
+00:05:54.020 --> 00:05:55.800
+let's make sure your
+toolbar content is ready.
+
+00:05:56.440 --> 00:05:59.540
+You may be familiar with bars that
+lay out your items horizontally.
+
+00:06:00.380 --> 00:06:02.960
+Now, iPhone Duo turns
+that on its side.
+
+00:06:03.820 --> 00:06:06.660
+Unlike horizontal bars,
+where items have a fixed height
+
+00:06:03.820 --> 00:06:06.660
+Unlike horizontal bars,
+where items have a fixed height
+
+00:06:07.120 --> 00:06:09.355
+and allow flexible item width,
+
+00:06:09.405 --> 00:06:10.360
+vertical ones
+
+00:06:10.380 --> 00:06:12.900
+allow flexible item height
+and have a fixed width.
+
+00:06:10.380 --> 00:06:12.900
+allow flexible item height
+and have a fixed width.
+
+00:06:13.700 --> 00:06:15.780
+This makes vertical bars better suited
+
+00:06:16.080 --> 00:06:17.620
+for symbol-only item representations.
+
+00:06:18.400 --> 00:06:19.235
+Typically,
+
+00:06:19.285 --> 00:06:21.840
+your app specifies two pieces
+of data on your toolbar content,
+
+00:06:22.060 --> 00:06:25.220
+an icon and a title.
+
+00:06:22.060 --> 00:06:25.220
+an icon and a title.
+
+00:06:26.160 --> 00:06:28.820
+Depending on the context and
+what's specified on the item,
+
+00:06:29.760 --> 00:06:32.080
+the system then chooses
+what representation to show.
+
+00:06:29.760 --> 00:06:32.080
+the system then chooses
+what representation to show.
+
+00:06:32.940 --> 00:06:35.720
+When items are visible in the
+existing top and bottom bars,
+
+00:06:36.280 --> 00:06:38.680
+they prefer showing the icon,
+like the share button here.
+
+00:06:36.280 --> 00:06:38.680
+they prefer showing the icon,
+like the share button here.
+
+00:06:39.380 --> 00:06:40.432
+If there's no icon,
+
+00:06:40.482 --> 00:06:42.780
+like the edit button,
+they show the text.
+
+00:06:40.482 --> 00:06:42.780
+like the edit button,
+they show the text.
+
+00:06:43.540 --> 00:06:45.340
+When items move into
+the overflow menu,
+
+00:06:46.020 --> 00:06:48.240
+they show both the title and the icon.
+
+00:06:49.540 --> 00:06:51.320
+None of this is changing
+with vertical bars.
+
+00:06:52.440 --> 00:06:54.300
+You still specify the same content
+
+00:06:55.100 --> 00:06:57.140
+and place the same items
+into a horizontal bar.
+
+00:06:57.900 --> 00:07:00.240
+The difference is the system now also
+
+00:07:00.580 --> 00:07:02.920
+considers whether your
+content is better suited
+
+00:07:03.180 --> 00:07:05.580
+to be on a vertical
+or horizontal axis.
+
+00:07:06.680 --> 00:07:09.100
+Items with an icon,
+like the back and share buttons,
+
+00:07:09.150 --> 00:07:12.100
+change their axis to be vertical.
+
+00:07:13.130 --> 00:07:15.400
+And text-only items,
+like the edit button,
+
+00:07:15.450 --> 00:07:17.780
+continue to stay on
+the horizontal axis.
+
+00:07:18.540 --> 00:07:20.900
+If you're already setting
+the title and image
+
+00:07:20.950 --> 00:07:23.300
+by using a SwiftUI label
+
+00:07:23.660 --> 00:07:25.800
+or the properties on UIBarButtonItem,
+
+00:07:23.660 --> 00:07:25.800
+or the properties on UIBarButtonItem,
+
+00:07:25.850 --> 00:07:27.900
+you're well on your way to
+getting ready for vertical bars.
+
+00:07:28.400 --> 00:07:29.400
+In general,
+
+00:07:29.450 --> 00:07:31.400
+you want to provide all the
+information about your items up front
+
+00:07:29.450 --> 00:07:31.400
+you want to provide all the
+information about your items up front
+
+00:07:31.450 --> 00:07:34.240
+and let the system pick the right
+representation for the context.
+
+00:07:37.020 --> 00:07:39.380
+This means that even if
+your content is an image,
+
+00:07:39.800 --> 00:07:41.540
+it's still important
+to provide a title.
+
+00:07:42.300 --> 00:07:43.680
+Just like for horizontal bars,
+
+00:07:42.300 --> 00:07:43.680
+Just like for horizontal bars,
+
+00:07:44.380 --> 00:07:46.540
+the system uses it whenever an item
+
+00:07:46.940 --> 00:07:49.960
+moves into an overflow
+menu or an expanded form.
+
+00:07:46.940 --> 00:07:49.960
+moves into an overflow
+menu or an expanded form.
+
+00:07:50.680 --> 00:07:52.600
+By default, SwiftUI and UIKit
+
+00:07:52.750 --> 00:07:55.000
+infer where to place the
+item based on its content,
+
+00:07:52.750 --> 00:07:55.000
+infer where to place the
+item based on its content,
+
+00:07:55.580 --> 00:07:58.048
+like if it's an item that's text only
+
+00:07:58.098 --> 00:07:59.420
+or a symbol in text.
+
+00:07:59.970 --> 00:08:01.820
+If you need to adjust
+this default behavior,
+
+00:07:59.970 --> 00:08:01.820
+If you need to adjust
+this default behavior,
+
+00:08:02.480 --> 00:08:04.240
+there's a new AxisBehavior API.
+
+00:08:05.480 --> 00:08:07.420
+You use it in a few
+different situations.
+
+00:08:05.480 --> 00:08:07.420
+You use it in a few
+different situations.
+
+00:08:08.480 --> 00:08:10.820
+Related items should
+stay on the same axis.
+
+00:08:11.660 --> 00:08:14.460
+One common instance is
+an item that transitions
+
+00:08:11.660 --> 00:08:14.460
+One common instance is
+an item that transitions
+
+00:08:14.830 --> 00:08:16.300
+between a symbol and a text,
+
+00:08:17.100 --> 00:08:18.260
+like this edit button in Clock.
+
+00:08:19.160 --> 00:08:21.420
+That item shouldn't be
+placed in a vertical bar,
+
+00:08:22.100 --> 00:08:23.800
+even though the symbol
+could theoretically
+
+00:08:23.930 --> 00:08:24.880
+be displayed vertically.
+
+00:08:23.930 --> 00:08:24.880
+be displayed vertically.
+
+00:08:25.960 --> 00:08:28.640
+If you're using the system
+edit button, you're all set.
+
+00:08:28.960 --> 00:08:30.840
+It stays in the horizontal
+bar automatically.
+
+00:08:28.960 --> 00:08:30.840
+It stays in the horizontal
+bar automatically.
+
+00:08:32.000 --> 00:08:33.355
+If you're creating a custom item
+
+00:08:33.405 --> 00:08:35.320
+that transitions between
+a symbol and a text,
+
+00:08:35.960 --> 00:08:38.000
+use the horizontal-only axis behavior
+
+00:08:35.960 --> 00:08:38.000
+use the horizontal-only axis behavior
+
+00:08:38.050 --> 00:08:40.039
+like this custom select button does.
+
+00:08:40.880 --> 00:08:41.770
+On the other hand,
+
+00:08:41.820 --> 00:08:44.540
+if your view is a custom view
+in UIKit or a complex view,
+
+00:08:41.820 --> 00:08:44.540
+if your view is a custom view
+in UIKit or a complex view,
+
+00:08:44.590 --> 00:08:47.740
+the system keeps it horizontal.
+
+00:08:48.500 --> 00:08:51.140
+If your custom view does support
+a vertical representation,
+
+00:08:48.500 --> 00:08:51.140
+If your custom view does support
+a vertical representation,
+
+00:08:51.900 --> 00:08:53.820
+like the compass view
+in the top right,
+
+00:08:54.620 --> 00:08:56.700
+set the vertical-preferred
+axis behavior
+
+00:08:56.750 --> 00:08:58.900
+to allow it to go into a vertical bar.
+
+00:08:59.780 --> 00:09:01.565
+Minimize title-only items
+
+00:08:59.780 --> 00:09:01.565
+Minimize title-only items
+
+00:09:01.615 --> 00:09:03.400
+or custom views that show
+
+00:09:03.540 --> 00:09:04.390
+both text
+
+00:09:04.440 --> 00:09:07.040
+and an image so more
+content can go vertical.
+
+00:09:04.440 --> 00:09:07.040
+and an image so more
+content can go vertical.
+
+00:09:07.900 --> 00:09:10.380
+In most situations,
+these are good candidates
+
+00:09:10.690 --> 00:09:11.900
+to use their symbol representation.
+
+00:09:12.620 --> 00:09:15.740
+For example, rather than
+keeping the count inline,
+
+00:09:16.280 --> 00:09:18.100
+I can use a badge on the inbox
+
+00:09:18.150 --> 00:09:20.020
+to turn an item that displays
+
+00:09:18.150 --> 00:09:20.020
+to turn an item that displays
+
+00:09:20.090 --> 00:09:23.080
+both text and a symbol
+into a symbol-only item
+
+00:09:23.220 --> 00:09:24.360
+that feels at home in a vertical bar.
+
+00:09:25.150 --> 00:09:26.999
+If you aren't already
+using the badge API
+
+00:09:27.050 --> 00:09:29.800
+added in iOS 26, adopt it to get
+
+00:09:29.850 --> 00:09:32.177
+a system-standard badge appearance
+
+00:09:29.850 --> 00:09:32.177
+a system-standard badge appearance
+
+00:09:32.227 --> 00:09:33.240
+on all devices.
+
+00:09:34.050 --> 00:09:36.800
+A helpful way to evaluate
+whether a custom view needs text
+
+00:09:34.050 --> 00:09:36.800
+A helpful way to evaluate
+whether a custom view needs text
+
+00:09:36.850 --> 00:09:39.520
+is to ask: is it simply
+reinforcing the symbol,
+
+00:09:39.840 --> 00:09:40.656
+or does it
+
+00:09:40.706 --> 00:09:43.120
+carry standalone information?
+
+00:09:40.706 --> 00:09:43.120
+carry standalone information?
+
+00:09:43.930 --> 00:09:46.500
+If the text is just supplementary,
+
+00:09:46.550 --> 00:09:49.380
+the symbol alone will clearly
+communicate the action.
+
+00:09:46.550 --> 00:09:49.380
+the symbol alone will clearly
+communicate the action.
+
+00:09:50.370 --> 00:09:52.800
+However, if the text does
+contain meaningful information,
+
+00:09:52.850 --> 00:09:55.239
+like a cart button
+displaying a dollar amount,
+
+00:09:52.850 --> 00:09:55.239
+like a cart button
+displaying a dollar amount,
+
+00:09:55.260 --> 00:09:57.598
+it's better to keep the control
+
+00:09:57.648 --> 00:09:59.300
+in the horizontal bar.
+
+00:10:00.079 --> 00:10:02.800
+Lastly, accessory bars should
+remain attached to keyboard
+
+00:10:00.079 --> 00:10:02.800
+Lastly, accessory bars should
+remain attached to keyboard
+
+00:10:02.850 --> 00:10:05.620
+rather than moving
+to the vertical axis.
+
+00:10:06.660 --> 00:10:08.408
+Custom views require a bit more work
+
+00:10:08.458 --> 00:10:10.600
+to get them ready to
+be laid out vertically.
+
+00:10:11.480 --> 00:10:14.000
+When you opt items in,
+make sure they either
+
+00:10:11.480 --> 00:10:14.000
+When you opt items in,
+make sure they either
+
+00:10:14.050 --> 00:10:17.080
+fit the bar's fixed width or
+have a vertically adapted layout.
+
+00:10:17.840 --> 00:10:19.455
+Consider if any metric
+should be adjusted
+
+00:10:17.840 --> 00:10:19.455
+Consider if any metric
+should be adjusted
+
+00:10:19.505 --> 00:10:20.760
+for the vertical representation.
+
+00:10:21.800 --> 00:10:24.400
+For example, this custom
+action panel hides its titles
+
+00:10:24.450 --> 00:10:26.940
+and becomes slightly
+shorter when vertical
+
+00:10:24.450 --> 00:10:26.940
+and becomes slightly
+shorter when vertical
+
+00:10:27.080 --> 00:10:29.440
+to allow more room for other content.
+
+00:10:30.300 --> 00:10:32.400
+For custom views in particular,
+
+00:10:30.300 --> 00:10:32.400
+For custom views in particular,
+
+00:10:32.450 --> 00:10:34.500
+you might want to make changes
+when a vertical bar is present.
+
+00:10:35.500 --> 00:10:37.900
+To know that, read the
+toolbarVerticalEdge
+
+00:10:35.500 --> 00:10:37.900
+To know that, read the
+toolbarVerticalEdge
+
+00:10:37.950 --> 00:10:40.400
+environment property or trait.
+
+00:10:40.970 --> 00:10:43.000
+You can read it within content view
+
+00:10:40.970 --> 00:10:43.000
+You can read it within content view
+
+00:10:43.050 --> 00:10:45.140
+or inside your item's custom view.
+
+00:10:45.510 --> 00:10:48.300
+The value is populated when
+items can be on vertical axis,
+
+00:10:48.350 --> 00:10:51.500
+and nil or unspecified
+when they can't.
+
+00:10:48.350 --> 00:10:51.500
+and nil or unspecified
+when they can't.
+
+00:10:52.640 --> 00:10:54.900
+Just like horizontal
+bars, a vertical bar
+
+00:10:52.640 --> 00:10:54.900
+Just like horizontal
+bars, a vertical bar
+
+00:10:55.360 --> 00:10:56.780
+doesn't have a scroll-edge
+effect by default.
+
+00:10:57.680 --> 00:10:59.300
+However, it does have a background
+
+00:10:59.620 --> 00:11:02.720
+when the reduced transparency
+accessibility setting is enabled.
+
+00:10:59.620 --> 00:11:02.720
+when the reduced transparency
+accessibility setting is enabled.
+
+00:11:03.360 --> 00:11:04.481
+Make sure your custom
+
+00:11:04.531 --> 00:11:06.580
+view content stays legible regardless.
+
+00:11:07.540 --> 00:11:10.720
+By default, flexible
+spacers are zero size
+
+00:11:10.720 --> 00:11:11.540
+in the vertical axis.
+
+00:11:12.380 --> 00:11:15.360
+But fixed spacers continue to
+respect their minimum size.
+
+00:11:12.380 --> 00:11:15.360
+But fixed spacers continue to
+respect their minimum size.
+
+00:11:16.400 --> 00:11:18.360
+Your app shouldn't be
+creating additional spacing,
+
+00:11:19.060 --> 00:11:21.960
+regardless of if a bar is
+horizontal or vertical.
+
+00:11:23.180 --> 00:11:24.070
+Maria,
+
+00:11:24.120 --> 00:11:26.840
+didn't you talk about this
+in your video for WWDC25?
+
+00:11:24.120 --> 00:11:26.840
+didn't you talk about this
+in your video for WWDC25?
+
+00:11:27.460 --> 00:11:28.460
+Yes, I did.
+
+00:11:29.160 --> 00:11:30.200
+Thanks for watching.
+
+00:11:31.040 --> 00:11:33.780
+If your app hasn't already
+updated its bars to the new design
+
+00:11:34.360 --> 00:11:36.631
+or grouped individual
+items along leading
+
+00:11:36.681 --> 00:11:37.720
+and trailing edges,
+
+00:11:36.681 --> 00:11:37.720
+and trailing edges,
+
+00:11:38.260 --> 00:11:39.110
+now's the perfect time.
+
+00:11:40.060 --> 00:11:42.140
+Lastly, let's talk
+about managing overflow.
+
+00:11:42.980 --> 00:11:44.903
+On the outer display in landscape,
+
+00:11:44.953 --> 00:11:46.360
+items overflow more often
+
+00:11:46.890 --> 00:11:48.460
+simply because there's
+less vertical space.
+
+00:11:48.960 --> 00:11:50.900
+The bar may also need to overflow
+
+00:11:50.950 --> 00:11:52.340
+as other competing UI appears,
+
+00:11:53.040 --> 00:11:55.099
+like the keyboard or
+when using Picture
+
+00:11:53.040 --> 00:11:55.099
+like the keyboard or
+when using Picture
+
+00:11:55.149 --> 00:11:56.620
+in Picture in open portrait.
+
+00:11:57.060 --> 00:11:59.660
+The first decision is which
+should stay visible longer,
+
+00:12:00.120 --> 00:12:02.200
+your toolbar items or your tab bar.
+
+00:12:00.120 --> 00:12:02.200
+your toolbar items or your tab bar.
+
+00:12:03.360 --> 00:12:05.410
+In navigation-focused experiences,
+
+00:12:05.460 --> 00:12:06.900
+like this Podcasts view,
+
+00:12:05.460 --> 00:12:06.900
+like this Podcasts view,
+
+00:12:07.300 --> 00:12:09.300
+the toolbar compresses first,
+
+00:12:09.350 --> 00:12:11.220
+so primary destinations
+remain accessible.
+
+00:12:12.200 --> 00:12:13.480
+This is the default behavior.
+
+00:12:12.200 --> 00:12:13.480
+This is the default behavior.
+
+00:12:14.380 --> 00:12:15.911
+In task-oriented experiences,
+
+00:12:15.961 --> 00:12:17.760
+like this view from the Games app,
+
+00:12:18.260 --> 00:12:20.100
+the tab bar compresses first
+
+00:12:18.260 --> 00:12:20.100
+the tab bar compresses first
+
+00:12:20.150 --> 00:12:21.880
+to preserve frequently
+accessed actions.
+
+00:12:22.820 --> 00:12:25.300
+Use the toolbarCompressionBehavior API
+
+00:12:22.820 --> 00:12:25.300
+Use the toolbarCompressionBehavior API
+
+00:12:25.350 --> 00:12:27.760
+to configure your app's
+preference for each view.
+
+00:12:28.560 --> 00:12:30.980
+From there, toolbars need a
+little more consideration.
+
+00:12:28.560 --> 00:12:30.980
+From there, toolbars need a
+little more consideration.
+
+00:12:31.860 --> 00:12:33.900
+With more items to manage,
+
+00:12:33.950 --> 00:12:35.960
+you'll also need to
+prioritize what stays visible.
+
+00:12:36.880 --> 00:12:39.800
+If your app already has its own
+overflow, consolidate its actions
+
+00:12:39.850 --> 00:12:42.680
+into a single system-managed menu.
+
+00:12:43.460 --> 00:12:46.420
+You can do that using
+ToolbarOverflowMenu in SwiftUI
+
+00:12:46.760 --> 00:12:49.380
+or additionalOverflowItems in UIKit.
+
+00:12:46.760 --> 00:12:49.380
+or additionalOverflowItems in UIKit.
+
+00:12:50.440 --> 00:12:52.820
+And not every existing menu
+should become an overflow.
+
+00:12:53.760 --> 00:12:56.560
+The ellipsis is the standard
+overflow symbol on iPhone.
+
+00:12:53.760 --> 00:12:56.560
+The ellipsis is the standard
+overflow symbol on iPhone.
+
+00:12:57.440 --> 00:12:58.640
+Reserve it for that purpose
+
+00:12:59.200 --> 00:13:01.320
+rather than introducing
+symbols from other platforms,
+
+00:12:59.200 --> 00:13:01.320
+rather than introducing
+symbols from other platforms,
+
+00:13:01.860 --> 00:13:03.800
+and give other menus
+a distinct symbol.
+
+00:13:04.360 --> 00:13:06.400
+To keep the right content
+visible for longer,
+
+00:13:07.080 --> 00:13:09.300
+make sure to express your
+preferences to the system.
+
+00:13:10.060 --> 00:13:11.939
+If you've prioritized the tab bar
+
+00:13:11.960 --> 00:13:14.160
+or your toolbar exceeds
+the available space,
+
+00:13:11.960 --> 00:13:14.160
+or your toolbar exceeds
+the available space,
+
+00:13:14.940 --> 00:13:17.040
+items will begin moving
+into the overflow menu.
+
+00:13:17.720 --> 00:13:20.420
+Toolbar visibility priority
+gives you fine-grained control
+
+00:13:17.720 --> 00:13:20.420
+Toolbar visibility priority
+gives you fine-grained control
+
+00:13:20.750 --> 00:13:22.080
+over which ones remain visible.
+
+00:13:23.380 --> 00:13:26.240
+By default, items overflow
+from bottom to top,
+
+00:13:23.380 --> 00:13:26.240
+By default, items overflow
+from bottom to top,
+
+00:13:26.920 --> 00:13:29.291
+but you can also assign
+each item a high,
+
+00:13:29.341 --> 00:13:30.660
+low, or custom priority
+
+00:13:33.630 --> 00:13:35.560
+to control the order
+in which they collapse.
+
+00:13:36.800 --> 00:13:39.420
+Within your items, start
+giving priority by groups.
+
+00:13:36.800 --> 00:13:39.420
+Within your items, start
+giving priority by groups.
+
+00:13:40.400 --> 00:13:43.500
+Then prioritize items within
+each one if you need to.
+
+00:13:40.400 --> 00:13:43.500
+Then prioritize items within
+each one if you need to.
+
+00:13:44.220 --> 00:13:46.217
+Use visibilityPriority APIs
+
+00:13:46.267 --> 00:13:47.740
+in SwiftUI and UIKit
+
+00:13:47.810 --> 00:13:49.040
+to configure this priority.
+
+00:13:47.810 --> 00:13:49.040
+to configure this priority.
+
+00:13:49.850 --> 00:13:52.900
+And check out what's new in
+SwiftUI from WWDC26 to learn more.
+
+00:13:54.780 --> 00:13:56.160
+When assigning visibility priorities,
+
+00:13:54.780 --> 00:13:56.160
+When assigning visibility priorities,
+
+00:13:56.680 --> 00:13:59.140
+think about what items people
+need to access most often.
+
+00:13:59.900 --> 00:14:02.040
+Frequently used actions
+like Compose in Mail
+
+00:13:59.900 --> 00:14:02.040
+Frequently used actions
+like Compose in Mail
+
+00:14:02.540 --> 00:14:05.720
+or New Note in Notes
+should be amongst the last
+
+00:14:05.730 --> 00:14:06.680
+to move into overflow.
+
+00:14:07.600 --> 00:14:09.720
+Likewise, controls that
+convey important status,
+
+00:14:10.080 --> 00:14:11.498
+such as items with badges,
+
+00:14:11.548 --> 00:14:13.300
+should remain visible for longer
+
+00:14:11.548 --> 00:14:13.300
+should remain visible for longer
+
+00:14:13.550 --> 00:14:14.640
+to preserve glanceability.
+
+00:14:15.170 --> 00:14:18.340
+Maria, I get why bars are
+laid out vertically now,
+
+00:14:18.610 --> 00:14:20.000
+but should they be
+vertical everywhere?
+
+00:14:18.610 --> 00:14:20.000
+but should they be
+vertical everywhere?
+
+00:14:20.510 --> 00:14:22.320
+Most apps are good candidates.
+
+00:14:23.140 --> 00:14:25.440
+However, there are a
+few cases where your app
+
+00:14:23.140 --> 00:14:25.440
+However, there are a
+few cases where your app
+
+00:14:25.630 --> 00:14:27.180
+may want to disable this behavior.
+
+00:14:28.160 --> 00:14:31.060
+If your app is a single-page
+app with a bottom-heavy layout
+
+00:14:28.160 --> 00:14:31.060
+If your app is a single-page
+app with a bottom-heavy layout
+
+00:14:31.280 --> 00:14:34.180
+like Calculator, consider
+if a horizontal layout
+
+00:14:34.310 --> 00:14:36.000
+might allow the content
+to fully expand.
+
+00:14:37.139 --> 00:14:40.040
+Similarly, if a sheet is control-heavy
+
+00:14:40.060 --> 00:14:42.220
+with only one item,
+like the close button here,
+
+00:14:43.080 --> 00:14:45.560
+consider disabling a vertical
+bar so it doesn't reduce
+
+00:14:45.820 --> 00:14:46.800
+available space.
+
+00:14:47.160 --> 00:14:48.720
+Use the toolbarVerticalBehavior
+
+00:14:49.040 --> 00:14:51.319
+and preferredVerticalBarBehavior APIs
+
+00:14:51.369 --> 00:14:52.340
+to disable this.
+
+00:14:53.140 --> 00:14:55.040
+It started with a
+pretty simple question.
+
+00:14:53.140 --> 00:14:55.040
+It started with a
+pretty simple question.
+
+00:14:55.900 --> 00:14:57.820
+What if bars didn't have to
+be at the top and the bottom?
+
+00:14:59.000 --> 00:15:00.000
+Spoiler, they moved.
+
+00:15:00.050 --> 00:15:01.400
+To the side.
+
+00:15:00.050 --> 00:15:01.400
+To the side.
+
+00:15:01.450 --> 00:15:02.650
+Not that far.
+
+00:15:02.700 --> 00:15:04.500
+It keeps the content feeling spacious
+
+00:15:04.880 --> 00:15:06.340
+while keeping controls accessible.
+
+00:15:07.160 --> 00:15:10.280
+The same familiar experience
+made for an entirely new iPhone.
+
+00:15:10.960 --> 00:15:13.320
+To get your app ready, the first step
+
+00:15:10.960 --> 00:15:13.320
+To get your app ready, the first step
+
+00:15:13.410 --> 00:15:15.580
+is building your app
+with the latest SDKs.
+
+00:15:16.440 --> 00:15:17.980
+Audit the bars in your app and ensure
+
+00:15:18.110 --> 00:15:19.260
+that they're ready for the new design.
+
+00:15:18.110 --> 00:15:19.260
+that they're ready for the new design.
+
+00:15:20.000 --> 00:15:22.100
+Update any custom items so they're
+
+00:15:22.190 --> 00:15:23.280
+ready to be placed vertically.
+
+00:15:23.940 --> 00:15:25.980
+And make sure to assign
+overflow priorities
+
+00:15:23.940 --> 00:15:25.980
+And make sure to assign
+overflow priorities
+
+00:15:26.360 --> 00:15:27.260
+so the system can adapt.
+
+00:15:28.000 --> 00:15:28.900
+Anything else?
+
+00:15:29.060 --> 00:15:30.180
+It's in the overflow menu.
+
+00:15:30.660 --> 00:15:31.480
+See you soon!
+
+00:15:30.660 --> 00:15:31.480
+See you soon!
