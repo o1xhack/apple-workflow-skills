@@ -29,10 +29,14 @@ Install Apple Workflow Skills from the latest stable Release at https://github.c
 
 ## What it covers
 
+[![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-007aff?style=for-the-badge)](docs/coverage.md)
+[![Swift concurrency](https://img.shields.io/badge/Swift_6-Concurrency_guidance-f05138?style=for-the-badge)](docs/coverage.md)
 [![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.md)
 [![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.md)
 
 The current release focuses on **SwiftUI interfaces and Swift concurrency**, with guidance applied to your project's Apple platforms and OS versions.
+
+**Language scope:** modern SwiftUI code and Swift 6 concurrency concepts, with guidance that respects existing Swift 5 language-mode projects. This is selected development guidance, not complete Swift syntax coverage or certification for a specific compiler minor version.
 
 | Capability | What it helps you do | When to use it |
 | --- | --- | --- |

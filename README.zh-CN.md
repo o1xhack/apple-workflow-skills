@@ -29,10 +29,14 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 
 ## 当前覆盖什么
 
+[![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
+[![Swift concurrency](https://img.shields.io/badge/Swift_6-Concurrency_guidance-f05138?style=for-the-badge)](docs/coverage.zh-CN.md)
 [![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
 [![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.zh-CN.md)
 
 当前版本重点覆盖 **SwiftUI 界面开发与 Swift 并发**，按项目实际支持的 Apple 平台和系统版本应用。
+
+**语言范围：** 现代 SwiftUI 代码与 Swift 6 并发概念，同时按项目配置兼顾 Swift 5 语言模式。当前是专项开发指导，尚未定义“完整支持到 Swift 6.x 某个小版本”的语法或编译器验证范围。
 
 | 能力 | 帮你解决什么 | 什么时候用 |
 | --- | --- | --- |
