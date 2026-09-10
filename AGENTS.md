@@ -3,7 +3,7 @@
 This repository provides one installable Apple development skill. Runtime guidance lives in `skills/apple-workflow-skills/`; this file governs repository maintenance only.
 
 - Read `docs/maintenance.md` and consult `upstream/manifest.json` before changing integrated material.
-- Keep every repository file in English except `README.zh-CN.md`.
+- Keep runtime guidance and tooling in English. Chinese user documentation is limited to `README.zh-CN.md` and `docs/coverage.zh-CN.md`; keep each paired with its English version.
 - Keep runtime modules portable and conditionally loaded. Do not include upstream links, installation instructions, personal paths, or author promotion in runtime modules.
 - Keep a combined MIT license in the installable skill. Attribution and source URLs belong at repository root in `THIRD_PARTY_NOTICES.md` and `upstream/`.
 - Maintain one authoritative location per topic. Verify technical facts against the target SDK and Apple documentation; preserve project-specific product and architecture decisions.

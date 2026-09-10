@@ -4,6 +4,9 @@
 
 **One installable skill for practical Apple development workflows.**
 
+[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.md)
+[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.md)
+
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)

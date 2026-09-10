@@ -93,16 +93,16 @@ def validate():
         if path.is_symlink():
             errors.append("The installable skill must not depend on symlinks: " + str(path))
 
-    allowed_chinese = ROOT / "README.zh-CN.md"
+    allowed_chinese = {ROOT / "README.zh-CN.md", ROOT / "docs/coverage.zh-CN.md"}
     for path in ROOT.rglob("*"):
-        if ".git" in path.parts or not path.is_file() or path == allowed_chinese:
+        if ".git" in path.parts or not path.is_file() or path in allowed_chinese:
             continue
         try:
             text = path.read_text()
         except UnicodeDecodeError:
             continue
         if CHINESE.search(text):
-            errors.append("Only README.zh-CN.md may contain Chinese text: " + str(path.relative_to(ROOT)))
+            errors.append("Chinese text must be in an approved translated document: " + str(path.relative_to(ROOT)))
 
     return errors
 

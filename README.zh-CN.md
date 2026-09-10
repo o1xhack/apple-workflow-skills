@@ -4,6 +4,9 @@
 
 **一键安装、按需加载的 Apple 开发工作流 Skill。**
 
+[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
+[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.zh-CN.md)
+
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
@@ -44,29 +47,7 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 
 暂未包含 SwiftData、Swift Testing、Widgets、App Intents、签名发布、App Store 发布、UIKit 和 AppKit 专项流程。
 
-<details>
-<summary>查看 Apple 分类与覆盖清单</summary>
-
-以下对应已发布的 v0.1.0。“专项指导”表示有对应模块，“部分覆盖”表示只涵盖该主题的一部分；不代表全部 API 或设备已验证。
-
-| Apple 分类 | 覆盖程度 | 对应模块 |
-| --- | --- | --- |
-| SwiftUI · App structure | 部分：导航、弹窗、工具栏、搜索 | [导航](skills/apple-workflow-skills/workflows/apple-ui/swiftui/patterns/navigation.md)、[控件](skills/apple-workflow-skills/workflows/apple-ui/swiftui/patterns/controls.md) |
-| SwiftUI · Data and storage | 部分：State、Binding、Observation、Environment | [状态所有权](skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/state.md) |
-| SwiftUI · Views | 部分：表单、控件、样式与重构 | [控件](skills/apple-workflow-skills/workflows/apple-ui/swiftui/patterns/controls.md)、[重构](skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/refactoring.md) |
-| SwiftUI · View layout | 部分：自适应布局、网格、安全区域 | [自适应布局](skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/adaptive-layout.md) |
-| SwiftUI · Event handling | 部分：task、onChange、取消与输入 | [异步状态](skills/apple-workflow-skills/workflows/apple-ui/swiftui/patterns/async-state.md) |
-| SwiftUI · Accessibility | 专项指导：字号、语义、VoiceOver、对比度 | [无障碍](skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/accessibility.md) |
-| SwiftUI · Tool support | 部分：Preview、交互验证、性能取证 | [验证](skills/apple-workflow-skills/workflows/apple-ui/validation/index.md)、[性能](skills/apple-workflow-skills/workflows/apple-ui/performance/index.md) |
-| UIKit / AppKit / 框架桥接 | 尚未覆盖专项 API | — |
-| HIG 设计原则 | 部分：层级、排版、原生控件、文案 | [设计原则](skills/apple-workflow-skills/workflows/apple-ui/design/principles.md) |
-| Liquid Glass | 专项指导：材质、分组、转场与验证 | [Liquid Glass](skills/apple-workflow-skills/workflows/apple-ui/liquid-glass/index.md) |
-| Swift Concurrency | 专项指导：隔离、任务、取消、流 | [并发](skills/apple-workflow-skills/shared/swift-concurrency/index.md) |
-| iPhone Duo / 折叠适配 | 部分 · Beta：通用原则，专用 API 与设备验证待完成 | [折叠适配](skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/foldable-layout.md) |
-
-[完整 API 示例、范围边界及 Beta 验收条件（英文）](docs/coverage.md)。分类参考 Apple 的框架文档；覆盖程度由本项目依据现有模块评估。iOS 上的 SwiftUI 指导不等于 UIKit API 覆盖。
-
-</details>
+[查看完整覆盖范围 →](docs/coverage.zh-CN.md)
 
 ## 为什么用这套 Skills
 
