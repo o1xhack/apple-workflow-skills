@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "baseline_date": "2026-09-10",
+  "cadence_anchor": "2026-09-10",
+  "sources": [
+    {
+      "id": "swiftui-pro",
+      "repository": "twostraws/SwiftUI-Agent-Skill",
+      "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
+      "license": "MIT",
+      "adopted_commit": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "latest_release_at_import": "1.1.0",
+      "baseline_release_ids": [
+        311058350,
+        295739596
+      ],
+      "tracking": "stable_releases_only",
+      "mappings": [
+        {
+          "upstream_paths": [
+            "swiftui-pro/",
+            "LICENSE"
+          ],
+          "local_paths": [
+            "workflows/apple-ui/swiftui/",
+            "workflows/apple-ui/performance/"
+          ]
+        }
+      ],
+      "integration": "选择性翻译、合并与自主改写；不代表原文件逐行完整采用。未纳入规则由维护者重新评估。"
+    },
+    {
+      "id": "concurrency-pro",
+      "repository": "twostraws/Swift-Concurrency-Agent-Skill",
+      "url": "https://github.com/twostraws/Swift-Concurrency-Agent-Skill",
+      "license": "MIT",
+      "adopted_commit": "bee3f69ba17142da148d3c5406f148ed62592b69",
+      "latest_release_at_import": "1.0.0",
+      "baseline_release_ids": [
+        295741288
+      ],
+      "tracking": "stable_releases_only",
+      "mappings": [
+        {
+          "upstream_paths": [
+            "swift-concurrency-pro/",
+            "LICENSE"
+          ],
+          "local_paths": [
+            "shared/swift-concurrency/",
+            "workflows/apple-ui/swiftui/patterns/async-state.md"
+          ]
+        }
+      ],
+      "integration": "选择性翻译、合并与自主改写；不代表原文件逐行完整采用。未纳入规则由维护者重新评估。"
+    },
+    {
+      "id": "dimillian",
+      "repository": "Dimillian/Skills",
+      "url": "https://github.com/Dimillian/Skills",
+      "license": "MIT",
+      "adopted_commit": "05ba982bfeb0d77d3c97d4542b0ee15034d05f84",
+      "latest_release_at_import": null,
+      "baseline_release_ids": [],
+      "tracking": "stable_releases_only",
+      "mappings": [
+        {
+          "upstream_paths": [
+            "swiftui-ui-patterns/",
+            "swiftui-view-refactor/",
+            "swiftui-performance-audit/",
+            "swiftui-liquid-glass/",
+            "LICENSE"
+          ],
+          "local_paths": [
+            "workflows/apple-ui/swiftui/",
+            "workflows/apple-ui/performance/",
+            "workflows/apple-ui/liquid-glass/"
+          ]
+        }
+      ],
+      "integration": "选择性翻译、合并与自主改写；不代表原文件逐行完整采用。未纳入规则由维护者重新评估。"
+    },
+    {
+      "id": "design",
+      "repository": "arjitj2/swiftui-design-principles",
+      "url": "https://github.com/arjitj2/swiftui-design-principles",
+      "license": "MIT",
+      "adopted_commit": "791d22d73f844167a3872530e3941185b730d8be",
+      "latest_release_at_import": null,
+      "baseline_release_ids": [],
+      "tracking": "stable_releases_only",
+      "mappings": [
+        {
+          "upstream_paths": [
+            "SKILL.md",
+            "LICENSE"
+          ],
+          "local_paths": [
+            "workflows/apple-ui/design/"
+          ]
+        }
+      ],
+      "integration": "选择性翻译、合并与自主改写；不代表原文件逐行完整采用。未纳入规则由维护者重新评估。"
+    },
+    {
+      "id": "fwc",
+      "repository": "FloWritesCode/fwc-swiftui-skills",
+      "url": "https://github.com/FloWritesCode/fwc-swiftui-skills",
+      "license": "MIT",
+      "adopted_commit": "c2454e6948175e25e61c107c6dc7ebf03e291dfe",
+      "latest_release_at_import": null,
+      "baseline_release_ids": [],
+      "tracking": "stable_releases_only",
+      "mappings": [
+        {
+          "upstream_paths": [
+            "skills/swiftui-liquid-glass/",
+            "skills/swiftui-iphone-duo/",
+            "LICENSE"
+          ],
+          "local_paths": [
+            "workflows/apple-ui/liquid-glass/",
+            "workflows/apple-ui/swiftui/references/adaptive-layout.md",
+            "workflows/apple-ui/swiftui/references/foldable-layout.md"
+          ]
+        }
+      ],
+      "integration": "选择性翻译、合并与自主改写；不代表原文件逐行完整采用。未纳入规则由维护者重新评估。"
+    }
+  ]
+}
