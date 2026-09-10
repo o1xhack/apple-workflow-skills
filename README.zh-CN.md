@@ -13,7 +13,7 @@
 
 [English](README.md) · **简体中文**
 
-[使用 Skills CLI 安装](#安装) · [下载最新版本](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) · [全部版本](https://github.com/o1xhack/apple-workflow-skills/releases)
+[让 AI Agent 安装](#安装) · [下载最新 Release](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) · [全部版本](https://github.com/o1xhack/apple-workflow-skills/releases)
 
 </div>
 
@@ -21,15 +21,17 @@ Apple Workflow Skills 是一个单入口 Skill，会根据任务选择具体的 
 
 ## 安装
 
-仓库只有一个顶层 Skill：
+把这一行 prompt 复制给你的 AI Agent：
 
-```sh
-npx skills add o1xhack/apple-workflow-skills --skill apple-workflow-skills
+```text
+请从 https://github.com/o1xhack/apple-workflow-skills/releases/latest 安装或更新 Apple Workflow Skills：确认最新已发布的正式 Release，通过该版本的固定 URL 下载 apple-workflow-skills.zip，将完整的 apple-workflow-skills 文件夹解压并安装到你当前配置的 skills 目录，替换已有安装前保留本地自定义修改，并告诉我安装的版本；不要从 main、仓库源码归档、草稿或预发布版本安装，Release 资产不可用时停止。
 ```
 
-也可以从 [GitHub Releases](https://github.com/o1xhack/apple-workflow-skills/releases) 下载版本化 ZIP，把其中的 `apple-workflow-skills` 文件夹复制到 Agent 的 skills 目录。
+Agent 会完成下载和安装。要固定安装某个版本，把 prompt 中的 `/releases/latest` 换成 `/releases/tag/v0.1.0`（或你需要的版本）即可。
 
-重新运行 Skills CLI 命令可以从仓库更新；如果需要可复现的固定版本，请使用 Release 资产。
+安装与更新都使用已发布的 Release 资产。`main` 上的修改只有在发布新 Release 后才会进入用户的安装版本。已经安装的版本会保持不变，直到你要求 Agent 更新。
+
+如果希望手动安装，可以[下载最新 Release ZIP](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip)，将完整文件夹放入 Agent 的 skills 目录。即使 `main` 已有新修改，这个下载链接仍然提供已发布的 ZIP。
 
 ## 架构
 

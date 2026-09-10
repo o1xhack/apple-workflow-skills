@@ -8,6 +8,7 @@ This repository provides one installable Apple development skill. Runtime guidan
 - Keep a combined MIT license in the installable skill. Attribution and source URLs belong at repository root in `THIRD_PARTY_NOTICES.md` and `upstream/`.
 - Maintain one authoritative location per topic. Verify technical facts against the target SDK and Apple documentation; preserve project-specific product and architecture decisions.
 - Track stable GitHub Releases only. Do not fall back to commit polling for repositories without releases.
+- Default user installation to an AI-agent prompt that downloads a published stable Release ZIP. Keep published tags and assets unchanged; never route normal installation to the default branch.
 - Upstream changes create review work; they never automatically overwrite guidance, change deployment targets, or publish this repository.
 - Record meaningful independent changes, compatibility boundaries, and reasons in `docs/decisions.md` and `CHANGELOG.md`.
 - Validate with `python3 scripts/validate.py`, `python3 -m unittest discover -s tests -v`, and `python3 scripts/package.py --output /tmp/apple-workflow-skills.zip`.

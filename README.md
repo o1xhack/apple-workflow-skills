@@ -13,7 +13,7 @@
 
 **English** · [Chinese](README.zh-CN.md)
 
-[Install with Skills CLI](#install) · [Download latest release](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) · [All versions](https://github.com/o1xhack/apple-workflow-skills/releases)
+[Install with your AI agent](#install) · [Download latest release](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) · [All versions](https://github.com/o1xhack/apple-workflow-skills/releases)
 
 </div>
 
@@ -21,15 +21,17 @@ Apple Workflow Skills is a single entry-point skill that routes Apple developmen
 
 ## Install
 
-Install the repository's only top-level skill:
+Copy this prompt into your AI agent:
 
-```sh
-npx skills add o1xhack/apple-workflow-skills --skill apple-workflow-skills
+```text
+Install or update Apple Workflow Skills from https://github.com/o1xhack/apple-workflow-skills/releases/latest: resolve the latest published stable Release, download its apple-workflow-skills.zip asset using the version-specific URL, extract and install the complete apple-workflow-skills folder into this agent's configured skills directory, preserve any local customizations before replacing an existing installation, and report the installed version; do not install from main, repository source archives, drafts, or prereleases, and stop if the Release asset is unavailable.
 ```
 
-Or download the versioned ZIP from [GitHub Releases](https://github.com/o1xhack/apple-workflow-skills/releases) and copy the contained `apple-workflow-skills` folder into your agent's skills directory.
+The agent handles the download and installation. To install a specific version, replace `/releases/latest` in the prompt with `/releases/tag/v0.1.0` (or the version you want).
 
-Re-run the Skills CLI command to update from the repository. Use a Release asset when you need a reproducible, versioned snapshot.
+Installations and updates use published Release assets. Changes pushed to `main` become available to users only when a new Release is published. An existing installation stays on its installed version until you ask the agent to update it.
+
+For manual installation, [download the latest Release ZIP](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) and copy the complete folder into your agent's skills directory. This link serves the published ZIP, even when `main` contains newer edits.
 
 ## Architecture
 

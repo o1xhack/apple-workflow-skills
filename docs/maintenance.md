@@ -56,6 +56,8 @@ Provide minimal examples only after verifying them against the target toolchain.
 
 ## Validation and release
 
+User installation and update instructions must resolve a published stable Release and use its version-specific ZIP asset URL. Never use the default branch or a repository source archive as the normal installation source. Keep published tags and assets unchanged; distribute runtime corrections through a new version. Documentation-only improvements on the default branch do not require replacing an existing Release.
+
 Run structural validation, unit tests, the upstream checker in dry-run mode, and packaging. Evaluate relevant scenarios from `tests/routing-cases.md`; static checks are not real-app QA.
 
 Before publishing, inspect the package for personal paths, credentials, missing attribution, and raw upstream residue. Verify the public Release asset by reading back its actual name and URL, downloading it, and comparing its SHA-256 with the local package.
