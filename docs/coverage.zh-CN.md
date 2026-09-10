@@ -27,6 +27,8 @@
 
 ## 暂未包含
 
+API 版本按系统可用性表示：已有指导涉及 [iOS/iPadOS 16+ 导航](https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types)、[17+ Observation 集成](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app)、[26+ Liquid Glass](https://developer.apple.com/documentation/swiftui/glasseffectcontainer)。这些版本节点不表示完整覆盖对应 SDK。
+
 UIKit/AppKit 与框架桥接专项、SwiftData、Swift Testing、Widgets、App Intents、签名及 App Store 发布。已有领域覆盖具体任务，并非对应框架的全部 API。
 
 **Duo Beta** 表示我们这套指导还在完善，完成官方 SDK 核对及代表性 App／设备验证后再转为正式支持。已有 iPhone/iPad 指导与它同时提供。

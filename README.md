@@ -4,9 +4,6 @@
 
 **One installable skill for practical Apple development workflows.**
 
-[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.md)
-[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.md)
-
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
@@ -32,6 +29,9 @@ Install Apple Workflow Skills from the latest stable Release at https://github.c
 
 ## What it covers
 
+[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.md)
+[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.md)
+
 The current release focuses on **SwiftUI interfaces and Swift concurrency**, with guidance applied to your project's Apple platforms and OS versions.
 
 | Capability | What it helps you do | When to use it |
@@ -46,6 +46,8 @@ The current release focuses on **SwiftUI interfaces and Swift concurrency**, wit
 **iPhone Duo adaptation — Beta, partial coverage.** General layout and state-continuity guidance is included; dedicated Duo APIs and device behavior still need validation.
 
 Dedicated SwiftData, Swift Testing, widgets, App Intents, signing, App Store release, UIKit, and AppKit workflows are not included yet.
+
+**API generations covered:** selected SwiftUI guidance includes iOS/iPadOS 16+ navigation, 17+ Observation integration, and 26+ Liquid Glass. These are feature availability milestones, not a claim to cover every API through iOS 26.
 
 [Explore coverage by Apple framework and API topic →](docs/coverage.md)
 

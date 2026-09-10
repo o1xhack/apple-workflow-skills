@@ -27,6 +27,8 @@ These are guidance targets. A tested model-by-model or OS-version compatibility 
 
 ## Not included yet
 
+API versions follow OS availability: selected guidance covers [navigation in iOS/iPadOS 16+](https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types), [Observation integration in 17+](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app), and [Liquid Glass in 26+](https://developer.apple.com/documentation/swiftui/glasseffectcontainer). These milestones do not mean complete SDK coverage.
+
 Dedicated UIKit/AppKit or framework-bridging workflows, SwiftData, Swift Testing, widgets, App Intents, and signing/App Store release. The listed areas cover selected tasks, not every API in each framework.
 
 **Duo Beta** describes the maturity of our guidance. It will graduate after official SDK checks and representative app/device validation. Existing iPhone/iPad guidance remains available alongside it.

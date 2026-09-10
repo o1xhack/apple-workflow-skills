@@ -4,9 +4,6 @@
 
 **一键安装、按需加载的 Apple 开发工作流 Skill。**
 
-[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
-[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.zh-CN.md)
-
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
@@ -32,6 +29,9 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 
 ## 当前覆盖什么
 
+[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
+[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.zh-CN.md)
+
 当前版本重点覆盖 **SwiftUI 界面开发与 Swift 并发**，按项目实际支持的 Apple 平台和系统版本应用。
 
 | 能力 | 帮你解决什么 | 什么时候用 |
@@ -46,6 +46,8 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 **iPhone Duo 适配 — Beta，部分覆盖。** 已包含通用布局和状态连续性指导；Duo 专用 API 与设备行为仍待验证。Beta 指我们这套指导的成熟度。
 
 暂未包含 SwiftData、Swift Testing、Widgets、App Intents、签名发布、App Store 发布、UIKit 和 AppKit 专项流程。
+
+**已涉及的 API 版本：** SwiftUI 指导包括 iOS/iPadOS 16+ 导航、17+ Observation 状态管理、26+ Liquid Glass。这些数字是具体功能的最低系统版本，不代表已完整覆盖 iOS 26 的全部 API。
 
 [查看完整覆盖范围 →](docs/coverage.zh-CN.md)
 
