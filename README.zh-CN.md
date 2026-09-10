@@ -17,78 +17,65 @@
 
 </div>
 
-Apple Workflow Skills 是一个单入口 Skill，会根据任务选择具体的 Apple 开发模块，不会一次加载整个资料库。首版重点覆盖原生 UI：设计、SwiftUI 实现、自适应布局、Liquid Glass、性能与真实界面验证；通用 Swift Concurrency 则保持为独立的共享分支。
+Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、实现、审查与验证方法。安装一次，直接描述你想完成的事情。
 
 ## 安装
 
-把这一行 prompt 复制给你的 AI Agent：
+把这行 prompt 发给你的 AI Agent：
 
 ```text
-请从 https://github.com/o1xhack/apple-workflow-skills/releases/latest 安装或更新 Apple Workflow Skills：确认最新已发布的正式 Release，通过该版本的固定 URL 下载 apple-workflow-skills.zip，将完整的 apple-workflow-skills 文件夹解压并安装到你当前配置的 skills 目录，替换已有安装前保留本地自定义修改，并告诉我安装的版本；不要从 main、仓库源码归档、草稿或预发布版本安装，Release 资产不可用时停止。
+请从 https://github.com/o1xhack/apple-workflow-skills/releases/latest 的最新正式 Release 安装 Apple Workflow Skills，只使用该版本的 apple-workflow-skills.zip 资产，将完整文件夹安装到你配置的 skills 目录，保留本地自定义修改，并告诉我安装版本；资产不可用时停止。
 ```
 
-Agent 会完成下载和安装。要固定安装某个版本，把 prompt 中的 `/releases/latest` 换成 `/releases/tag/v0.1.0`（或你需要的版本）即可。
+## 当前覆盖什么
 
-安装与更新都使用已发布的 Release 资产。`main` 上的修改只有在发布新 Release 后才会进入用户的安装版本。已经安装的版本会保持不变，直到你要求 Agent 更新。
+当前版本重点覆盖 **SwiftUI 界面开发与 Swift 并发**，按项目实际支持的 Apple 平台和系统版本应用。
 
-如果希望手动安装，可以[下载最新 Release ZIP](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip)，将完整文件夹放入 Agent 的 skills 目录。即使 `main` 已有新修改，这个下载链接仍然提供已发布的 ZIP。
+| 能力 | 帮你解决什么 | 什么时候用 |
+| --- | --- | --- |
+| Apple UI Workflow | 把设计、实现和界面验证串成一套流程 | 新建页面，或改进已有操作流程 |
+| Design Principles | 理清信息、操作、间距和文字的主次 | 页面显得拥挤，或看不出重点 |
+| SwiftUI | 实现与重构原生组件、导航、表单和状态 | 增加功能，或整理复杂 View |
+| Adaptive Layout 与 Liquid Glass | 适配窗口尺寸，并使用原生玻璃材质 | 做多尺寸适配，或更新界面外观 |
+| UI Performance 与验证 | 排查界面卡顿，选择 Preview、模拟器或真机检查 | 滚动不流畅，或需要确认改动效果 |
+| Swift Concurrency | 梳理后台任务、共享数据和取消行为 | 导入、搜索或异步操作出现异常 |
 
-## 架构
+暂未包含 SwiftData、Swift Testing、Widgets、App Intents、签名发布、App Store 发布、UIKit 和 AppKit 专项流程。折叠设备相关内容目前仅覆盖通用布局原则。
 
-```text
-apple-workflow-skills
-├── Apple UI Workflow
-│   ├── Design Principles
-│   ├── SwiftUI
-│   │   ├── API 与状态所有权
-│   │   ├── 导航与控件
-│   │   ├── 自适应与折叠布局
-│   │   └── 保持行为的重构
-│   ├── Liquid Glass
-│   ├── UI Performance
-│   └── Preview、Simulator 与真机验证
-└── Shared Swift Concurrency
-    ├── Isolation 与 Sendable
-    ├── Tasks 与取消
-    └── Streams 与回调桥接
-```
+## 为什么用这套 Skills
 
-整个仓库只有一个可安装的 `SKILL.md`。内部 Markdown 是按需读取的模块，不是需要分别安装的子 Skills。
+**一个入口。** 直接描述任务，Agent 按需选择规则，省去在多个重叠 Skills 之间挑选的步骤。
 
-Concurrency 故意放在 Apple UI Workflow 之外。UI 异步状态会在需要时引用它，但网络、文件导入、数据库和后台服务也可以独立使用并发模块，而不加载 UI 内容。
+**从设计到验证。** 不只讨论页面怎么写，还把界面如何组织、如何实现、实际检查了什么连起来。
 
-## 使用示例
-
-```text
-Use $apple-workflow-skills to review this settings screen's hierarchy and narrow-window behavior.
-Use $apple-workflow-skills to refactor this SwiftUI view while preserving its MVVM architecture.
-Use $apple-workflow-skills to diagnose actor reentrancy in this background import service.
-```
-
-Skill 会保留当前项目的架构、deployment targets 与产品决策，只读取任务需要的模块，并明确区分代码审查、编译、实际渲染、Simulator 交互和真机证据。
-
-## 仓库结构
-
-- `skills/apple-workflow-skills/`：完整的可安装成品。
-- `upstream/`：仅供维护者使用的来源、采用 commit、Release 基线与审查状态。
-- `docs/`：整合与维护决策。
-- `scripts/`、`tests/`：结构校验、打包与上游 Release 监控。
-
-`upstream/` 和仓库维护工具不会进入 Release ZIP。安装目录只保留运行规则和一份合并后的 MIT 许可声明。
-
-## 当前范围
-
-首版覆盖以 SwiftUI 为中心的 UI 工作和共享 Swift Concurrency。暂不声称内置 SwiftData、Swift Testing、签名发布、Widgets、App Intents、UIKit 或 AppKit 专项工作流。
-
-折叠与多显示区域只采用保守的通用布局原则；未经验证的 API 与设备假设不会写成可直接生产使用的事实。
+**适应已有项目。** 以 SwiftUI 为原生界面实现重点，沿用项目的架构与系统兼容范围；使用这套 Skill 无需先迁移框架。
 
 ## 上游维护
 
-本项目选择性整合并自主改写多个 MIT 来源，不是任何上游仓库的镜像。来源、精确采用 commit 和模块映射集中在 [upstream/manifest.json](upstream/manifest.json)，许可说明集中在 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+我们选择性整合多个 MIT 来源，并独立维护内容。每两天检查上游正式 Release，判断哪些变化值得采用；Apple SDK 的更新也可以直接推动改进。
 
-GitHub Actions 每两天检查一次上游正式 Release。发现新版本时只创建人工审查 Issue，不会自动覆盖本地内容或发布新版本。Apple SDK 的变化也可以直接推动独立更新，不必等待上游 Release。
+审查后的改进通过新的 Release 交付。安装和更新使用已发布的 ZIP，默认分支上的编辑不会改变已安装版本。
 
-## 开发验证
+[来源记录](upstream/manifest.json) · [整合决策（英文）](docs/decisions.md) · [维护流程（英文）](docs/maintenance.md)
+
+## 使用与技术说明
+
+安装后，可以这样告诉 Agent：
+
+```text
+使用 $apple-workflow-skills 改进这个设置页的视觉层级和窄窗口布局。
+使用 $apple-workflow-skills 重构这个 View，保持现有行为。
+使用 $apple-workflow-skills 排查后台导入的取消问题。
+```
+
+一个可安装 Skill 按需进入 **Apple UI Workflow** 或 **Shared Swift Concurrency**。UI 分支覆盖设计、SwiftUI、布局、玻璃效果、性能与验证；通用并发可以独立使用。
+
+安装成品位于 `skills/apple-workflow-skills/`。维护资料位于 `upstream/`、`docs/`、`scripts/` 和 `tests/`，不会进入 ZIP。
+
+更新时，让 Agent 再次安装最新正式 Release。需要固定版本时，使用具体的 Release 页面，例如 `/releases/tag/v0.1.0`。手动安装则下载 Release ZIP，将完整文件夹复制到 Agent 的 skills 目录。
+
+<details>
+<summary>开发与验证</summary>
 
 ```sh
 python3 scripts/validate.py
@@ -97,8 +84,10 @@ python3 scripts/check_upstream_releases.py
 python3 scripts/package.py --output /tmp/apple-workflow-skills.zip
 ```
 
-静态校验覆盖单入口、内部引用闭合、运行内容为英文、许可归属与打包边界；它不代表真实 App 的 UI 或并发行为已经验证。
+这些检查覆盖包结构、引用、运行内容为英文、许可归属与 Release 监控。真实 App 行为需另行按[路由验收场景（英文）](tests/routing-cases.md)评估。
+
+</details>
 
 ## 许可
 
-Apple Workflow Skills 使用 [MIT License](LICENSE)。基于第三方 MIT 内容的部分列于 [Third-Party Notices](THIRD_PARTY_NOTICES.md)。
+采用 [MIT](LICENSE)，并保留[第三方归属声明](THIRD_PARTY_NOTICES.md)。

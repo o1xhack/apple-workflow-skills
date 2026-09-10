@@ -17,78 +17,65 @@
 
 </div>
 
-Apple Workflow Skills is a single entry-point skill that routes Apple development work to focused guidance without loading the entire library. The first release concentrates on native UI work—design, SwiftUI implementation, adaptive layout, Liquid Glass, performance, and real UI validation—while general Swift concurrency remains a separate shared branch.
+Apple Workflow Skills gives your AI agent a shared way to design, build, review, and verify native Apple interfaces. Install once; describe the result you want.
 
 ## Install
 
-Copy this prompt into your AI agent:
+Paste this into your AI agent:
 
 ```text
-Install or update Apple Workflow Skills from https://github.com/o1xhack/apple-workflow-skills/releases/latest: resolve the latest published stable Release, download its apple-workflow-skills.zip asset using the version-specific URL, extract and install the complete apple-workflow-skills folder into this agent's configured skills directory, preserve any local customizations before replacing an existing installation, and report the installed version; do not install from main, repository source archives, drafts, or prereleases, and stop if the Release asset is unavailable.
+Install Apple Workflow Skills from the latest stable Release at https://github.com/o1xhack/apple-workflow-skills/releases/latest using its apple-workflow-skills.zip asset only; install the complete folder into your configured skills directory, preserve local customizations, and report the version. If the asset is unavailable, stop.
 ```
 
-The agent handles the download and installation. To install a specific version, replace `/releases/latest` in the prompt with `/releases/tag/v0.1.0` (or the version you want).
+## What it covers
 
-Installations and updates use published Release assets. Changes pushed to `main` become available to users only when a new Release is published. An existing installation stays on its installed version until you ask the agent to update it.
+The current release focuses on **SwiftUI interfaces and Swift concurrency**, with guidance applied to your project's Apple platforms and OS versions.
 
-For manual installation, [download the latest Release ZIP](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) and copy the complete folder into your agent's skills directory. This link serves the published ZIP, even when `main` contains newer edits.
+| Capability | What it helps you do | When to use it |
+| --- | --- | --- |
+| Apple UI Workflow | Connect design, implementation, and visual checks into one process | Build a screen or improve an existing flow |
+| Design Principles | Make information, actions, spacing, and typography easier to understand | A screen feels cluttered or its priorities are unclear |
+| SwiftUI | Build and refactor native components, navigation, forms, and state | Add a feature or simplify an existing view |
+| Adaptive Layout & Liquid Glass | Fit changing window sizes and apply native glass materials | Adapt an interface or update its visual treatment |
+| UI Performance & Validation | Investigate slow UI and choose Preview, Simulator, or device checks | Scrolling stutters or a change needs verification |
+| Swift Concurrency | Reason about background work, shared data, and cancellation | Imports, searches, or async operations behave inconsistently |
 
-## Architecture
+Dedicated SwiftData, Swift Testing, widgets, App Intents, signing, App Store release, UIKit, and AppKit workflows are not included yet. Foldable guidance currently covers general layout principles only.
 
-```text
-apple-workflow-skills
-├── Apple UI Workflow
-│   ├── Design Principles
-│   ├── SwiftUI
-│   │   ├── API and state ownership
-│   │   ├── Navigation and controls
-│   │   ├── Adaptive and foldable layouts
-│   │   └── Behavior-preserving refactoring
-│   ├── Liquid Glass
-│   ├── UI Performance
-│   └── Preview, Simulator, and device validation
-└── Shared Swift Concurrency
-    ├── Isolation and Sendable
-    ├── Tasks and cancellation
-    └── Streams and callback bridging
-```
+## Why use it?
 
-There is exactly one installable `SKILL.md`. The nested Markdown files are conditionally loaded modules, not separately installed skills.
+**One entry point.** Describe your task; the agent selects the relevant guidance without making you choose between overlapping skills.
 
-Concurrency is intentionally outside Apple UI Workflow. UI-specific async state links to it when needed, but networking, file imports, databases, and background services can use the same concurrency guidance without loading UI material.
+**Design through verification.** The workflow connects how an interface should look, how it is built, and what was actually checked.
 
-## Usage
-
-```text
-Use $apple-workflow-skills to review this settings screen's hierarchy and narrow-window behavior.
-Use $apple-workflow-skills to refactor this SwiftUI view while preserving its MVVM architecture.
-Use $apple-workflow-skills to diagnose actor reentrancy in this background import service.
-```
-
-The skill preserves the current project's architecture, deployment targets, and product decisions. It chooses only the modules needed for the task and distinguishes code review, compilation, rendered UI inspection, Simulator interaction, and physical-device evidence.
-
-## Repository layout
-
-- `skills/apple-workflow-skills/` — the complete installable artifact.
-- `upstream/` — maintainer-only provenance, adopted commits, Release baselines, and review state.
-- `docs/` — integration and maintenance decisions.
-- `scripts/` and `tests/` — deterministic validation, packaging, and upstream Release monitoring.
-
-The `upstream/` directory and repository tooling are intentionally excluded from Release ZIPs. The installable folder keeps only runtime guidance and a combined MIT license notice.
-
-## Scope
-
-The initial release covers SwiftUI-centric UI work and shared Swift concurrency. It does not claim dedicated workflows for SwiftData, Swift Testing, signing, App Store release, widgets, App Intents, UIKit, or AppKit.
-
-Foldable and multi-display guidance is conservative: general adaptive-layout principles are included, while unverified APIs and device assumptions are not presented as production-ready facts.
+**Fits your project.** SwiftUI is the implementation focus for native interface work. The guidance follows your existing architecture and supported OS versions, so adopting the skill does not require a framework migration.
 
 ## Upstream maintenance
 
-This project selectively integrates and independently rewrites ideas from MIT-licensed sources. It is not a mirror. Attribution, exact adopted commits, and module mappings live in [upstream/manifest.json](upstream/manifest.json); license notices live in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Guidance is selectively combined from MIT-licensed sources and maintained independently. Every two days, upstream stable Releases are checked for changes worth reviewing. Apple SDK changes can also drive updates directly.
 
-A scheduled workflow checks upstream stable GitHub Releases every two days. New releases create review issues; they never overwrite local guidance or publish a new version automatically. Apple SDK changes may also drive independent updates without waiting for an upstream release.
+Reviewed improvements reach users through a new Release. Installation and updates use published ZIP assets; edits on the default branch do not change an installed version.
 
-## Development
+[Sources](upstream/manifest.json) · [Integration decisions](docs/decisions.md) · [Maintenance process](docs/maintenance.md)
+
+## Usage and technical details
+
+After installation, ask your agent:
+
+```text
+Use $apple-workflow-skills to improve this settings screen's hierarchy and narrow-window layout.
+Use $apple-workflow-skills to refactor this view while preserving its behavior.
+Use $apple-workflow-skills to diagnose cancellation in this background import.
+```
+
+One installable skill routes to **Apple UI Workflow** or **Shared Swift Concurrency**. UI guidance covers design, SwiftUI, layout, glass, performance, and validation; general concurrency can be used independently.
+
+The installable package lives in `skills/apple-workflow-skills/`. Maintainer files live in `upstream/`, `docs/`, `scripts/`, and `tests/` and are excluded from the ZIP.
+
+To update, ask your agent to install the latest stable Release again. To pin a version, use a specific Release page such as `/releases/tag/v0.1.0`. For manual installation, download the Release ZIP and copy its complete folder into your agent's skills directory.
+
+<details>
+<summary>Development and validation</summary>
 
 ```sh
 python3 scripts/validate.py
@@ -97,8 +84,10 @@ python3 scripts/check_upstream_releases.py
 python3 scripts/package.py --output /tmp/apple-workflow-skills.zip
 ```
 
-Static validation checks the single-entry structure, internal link closure, English runtime content, attribution, and packaging. It does not claim real-app UI or concurrency behavior has been validated.
+These checks cover package structure, references, English runtime content, attribution, and Release monitoring. Real-app behavior is evaluated separately using [routing scenarios](tests/routing-cases.md).
+
+</details>
 
 ## License
 
-Apple Workflow Skills is released under the [MIT License](LICENSE). Portions are based on MIT-licensed work listed in [Third-Party Notices](THIRD_PARTY_NOTICES.md).
+[MIT](LICENSE), including the attributions in [Third-Party Notices](THIRD_PARTY_NOTICES.md).
