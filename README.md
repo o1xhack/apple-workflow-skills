@@ -4,6 +4,7 @@
 
 **One installable skill for practical Apple development workflows.**
 
+[![Swift](https://img.shields.io/badge/Swift-6_concurrency-f05138?style=for-the-badge&logo=swift&logoColor=white)](docs/coverage.md)
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
@@ -29,31 +30,13 @@ Install Apple Workflow Skills from the latest stable Release at https://github.c
 
 ## What it covers
 
-[![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-007aff?style=for-the-badge)](docs/coverage.md)
-[![Swift concurrency](https://img.shields.io/badge/Swift_6-Concurrency_guidance-f05138?style=for-the-badge)](docs/coverage.md)
-[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.md)
-[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.md)
+- **SwiftUI** — native UI design, navigation, Observation, and view refactoring.
+- **Liquid Glass · iOS 26+** — native glass surfaces, grouping, and transitions.
+- **Swift 6 concurrency** — actors, Sendable, async tasks, and cancellation.
+- **iPhone Duo · Beta** — adaptive and foldable-layout guidance; device-specific validation pending.
+- **UI quality** — accessibility, performance review, and Preview / Simulator validation.
 
-The current release focuses on **SwiftUI interfaces and Swift concurrency**, with guidance applied to your project's Apple platforms and OS versions.
-
-**Language scope:** modern SwiftUI code and Swift 6 concurrency concepts, with guidance that respects existing Swift 5 language-mode projects. This is selected development guidance, not complete Swift syntax coverage or certification for a specific compiler minor version.
-
-| Capability | What it helps you do | When to use it |
-| --- | --- | --- |
-| Apple UI Workflow | Connect design, implementation, and visual checks into one process | Build a screen or improve an existing flow |
-| Design Principles | Make information, actions, spacing, and typography easier to understand | A screen feels cluttered or its priorities are unclear |
-| SwiftUI | Build and refactor native components, navigation, forms, and state | Add a feature or simplify an existing view |
-| Adaptive Layout & Liquid Glass | Fit changing window sizes and apply native glass materials | Adapt an interface or update its visual treatment |
-| UI Performance & Validation | Investigate slow UI and choose Preview, Simulator, or device checks | Scrolling stutters or a change needs verification |
-| Swift Concurrency | Reason about background work, shared data, and cancellation | Imports, searches, or async operations behave inconsistently |
-
-**iPhone Duo adaptation — Beta, partial coverage.** General layout and state-continuity guidance is included; dedicated Duo APIs and device behavior still need validation.
-
-Dedicated SwiftData, Swift Testing, widgets, App Intents, signing, App Store release, UIKit, and AppKit workflows are not included yet.
-
-**API generations covered:** selected SwiftUI guidance includes iOS/iPadOS 16+ navigation, 17+ Observation integration, and 26+ Liquid Glass. These are feature availability milestones, not a claim to cover every API through iOS 26.
-
-[Explore coverage by Apple framework and API topic →](docs/coverage.md)
+[Full coverage →](docs/coverage.md)
 
 ## Why use it?
 

@@ -4,6 +4,7 @@
 
 **一键安装、按需加载的 Apple 开发工作流 Skill。**
 
+[![Swift](https://img.shields.io/badge/Swift-6_concurrency-f05138?style=for-the-badge&logo=swift&logoColor=white)](docs/coverage.zh-CN.md)
 [![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
 [![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
@@ -29,31 +30,13 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 
 ## 当前覆盖什么
 
-[![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
-[![Swift concurrency](https://img.shields.io/badge/Swift_6-Concurrency_guidance-f05138?style=for-the-badge)](docs/coverage.zh-CN.md)
-[![iPhone and iPad](https://img.shields.io/badge/iPhone_%26_iPad-SwiftUI_guidance-007aff?style=for-the-badge)](docs/coverage.zh-CN.md)
-[![iPhone Duo](https://img.shields.io/badge/iPhone_Duo-Beta_guidance-f59e0b?style=for-the-badge)](docs/coverage.zh-CN.md)
+- **SwiftUI** — 原生界面设计、导航、Observation 状态管理与视图重构。
+- **Liquid Glass · iOS 26+** — 原生玻璃材质、分组与转场。
+- **Swift 6 并发** — actor、Sendable、异步任务与取消。
+- **iPhone Duo · Beta** — 自适应与折叠布局指导，设备专项验证待完成。
+- **UI 质量** — 无障碍、性能审查与 Preview／模拟器验证。
 
-当前版本重点覆盖 **SwiftUI 界面开发与 Swift 并发**，按项目实际支持的 Apple 平台和系统版本应用。
-
-**语言范围：** 现代 SwiftUI 代码与 Swift 6 并发概念，同时按项目配置兼顾 Swift 5 语言模式。当前是专项开发指导，尚未定义“完整支持到 Swift 6.x 某个小版本”的语法或编译器验证范围。
-
-| 能力 | 帮你解决什么 | 什么时候用 |
-| --- | --- | --- |
-| Apple UI Workflow | 把设计、实现和界面验证串成一套流程 | 新建页面，或改进已有操作流程 |
-| Design Principles | 理清信息、操作、间距和文字的主次 | 页面显得拥挤，或看不出重点 |
-| SwiftUI | 实现与重构原生组件、导航、表单和状态 | 增加功能，或整理复杂 View |
-| Adaptive Layout 与 Liquid Glass | 适配窗口尺寸，并使用原生玻璃材质 | 做多尺寸适配，或更新界面外观 |
-| UI Performance 与验证 | 排查界面卡顿，选择 Preview、模拟器或真机检查 | 滚动不流畅，或需要确认改动效果 |
-| Swift Concurrency | 梳理后台任务、共享数据和取消行为 | 导入、搜索或异步操作出现异常 |
-
-**iPhone Duo 适配 — Beta，部分覆盖。** 已包含通用布局和状态连续性指导；Duo 专用 API 与设备行为仍待验证。Beta 指我们这套指导的成熟度。
-
-暂未包含 SwiftData、Swift Testing、Widgets、App Intents、签名发布、App Store 发布、UIKit 和 AppKit 专项流程。
-
-**已涉及的 API 版本：** SwiftUI 指导包括 iOS/iPadOS 16+ 导航、17+ Observation 状态管理、26+ Liquid Glass。这些数字是具体功能的最低系统版本，不代表已完整覆盖 iOS 26 的全部 API。
-
-[查看完整覆盖范围 →](docs/coverage.zh-CN.md)
+[完整覆盖范围 →](docs/coverage.zh-CN.md)
 
 ## 为什么用这套 Skills
 
