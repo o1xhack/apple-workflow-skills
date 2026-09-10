@@ -1,6 +1,6 @@
 # Coverage
 
-[English overview](../README.md#what-it-covers) · [Chinese overview](../README.zh-CN.md#当前覆盖什么)
+[English overview](../README.md#what-it-covers) · [Chinese overview](../README.zh-CN.md)
 
 Scope: published **v0.1.0** guidance. Reviewed on 2026-09-10.
 
