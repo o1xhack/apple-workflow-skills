@@ -8,7 +8,7 @@ Confirm the screen's purpose, data semantics, and primary interaction. Load only
 | New components, state, navigation, existing UI implementation | [SwiftUI](swiftui/index.md) |
 | Split a large view or revise dependencies and ownership | [Refactoring](swiftui/references/refactoring.md) |
 | Multiple sizes, window changes, wide layouts | [Adaptive Layout](swiftui/references/adaptive-layout.md) |
-| Explicit fold, occlusion, or second-display work | [Foldable and Multi-Display Layout](swiftui/references/foldable-layout.md) |
+| iPhone Duo design, fold, occlusion, or second-display work | [iPhone Duo and Foldable Layout](swiftui/references/foldable-layout.md) |
 | VoiceOver, text scaling, reachable actions | [Accessibility](swiftui/references/accessibility.md) |
 | Glass buttons, materials, system bars, transitions | [Liquid Glass](liquid-glass/index.md) |
 | Scrolling jank, excessive updates, image pressure | [UI Performance](performance/index.md) |

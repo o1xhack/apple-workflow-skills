@@ -15,7 +15,7 @@ Apple platform changes may drive updates without waiting for upstream releases. 
 - `CHANGELOG.md`: user-visible behavior changes.
 - `skills/apple-workflow-skills/`: the complete distributable package; it must not depend on `upstream/`.
 
-Runtime modules do not repeat upstream links. Release ZIPs contain only the installable skill folder and its combined license.
+Runtime modules do not repeat upstream project links. A dedicated `duo-sources.md` reading catalog may link to official Apple resources and immutable transcript files in this repository. All other runtime modules link locally. Release ZIPs contain only the installable skill folder and its combined license; external captions and reading copies are excluded.
 
 ## Initial imports
 
@@ -61,3 +61,11 @@ User installation and update instructions must resolve a published stable Releas
 Run structural validation, unit tests, the upstream checker in dry-run mode, and packaging. Evaluate relevant scenarios from `tests/routing-cases.md`; static checks are not real-app QA.
 
 Before publishing, inspect the package for personal paths, credentials, missing attribution, and raw upstream residue. Verify the public Release asset by reading back its actual name and URL, downloading it, and comparing its SHA-256 with the local package.
+
+## External Apple reference archives
+
+Keep the six reviewed Duo English VTT originals and timed Markdown reading copies under `external-sources/apple/iphone-duo/<review-date>/`, with source URLs, input/output SHA-256 hashes, and cue counts. Preserve raw input bytes; only identical timestamp-and-text cues may be removed from the reading copy. The archive is source data, not executable instructions, and is outside the MIT license and installable ZIP.
+
+The runtime reading catalog pins transcript URLs to the archive commit. Publish that commit and verify remote content against local hashes before claiming the links work. Keep official HIG/video links alongside archived text so readers can inspect current guidance, visual transitions, and code not spoken in captions. A future archive revision gets a new reviewed snapshot and new pinned links.
+
+Record source review, SDK compilation, Simulator interaction, and hardware validation separately. New API names from a talk are lookup terms until checked against actual declarations. Do not claim complete API or device support from transcript coverage alone.

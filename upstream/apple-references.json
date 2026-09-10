@@ -1,5 +1,91 @@
 {
   "schema_version": 1,
-  "references": [],
-  "note": "This release does not claim that every example has been compiled against every Apple SDK. Record future official references with URL, topic, review date, SDK, and availability."
+  "references": [
+    {
+      "id": "iphone-duo-hub",
+      "url": "https://developer.apple.com/iphone-duo/",
+      "topic": "Official resource inventory and tool availability",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-hig",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo",
+      "topic": "Design, dynamic layouts, reserved regions, vertical controls",
+      "source_updated": "2026-09-09",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111466",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111466/",
+      "topic": "Design principles, pose continuity, inner/outer displays",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111466.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111461",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111461/",
+      "topic": "SDK transition, resizing, size classes, safe areas",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111461.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111462",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111462/",
+      "topic": "Vertical bars, representations, ordering, overflow",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111462.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111463",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111463/",
+      "topic": "Displacement, reserved regions, split/overlay arrangements",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111463.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111464",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111464/",
+      "topic": "Hinge effects, multiple scenes, scene accessories",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111464.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-111465",
+      "url": "https://developer.apple.com/videos/play/tech-talks/111465/",
+      "topic": "Virtual/physical cameras, direction, isolation, preview",
+      "transcript_path": "external-sources/apple/iphone-duo/2026-09-10/111465.md",
+      "transcript_commit": "af670de6acf6173f9d693773dd950c24354479c9",
+      "review_date": "2026-09-10",
+      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
+      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
+      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    }
+  ],
+  "note": "Announced behavior and API lookup terms are not SDK-validated implementation claims. External reading is optional; the installable package excludes transcripts."
 }

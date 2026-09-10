@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Expand Duo guidance from general principles to HIG- and video-reviewed layout, bars, scenes, and camera decisions, loaded only when relevant.
+- Add an optional reading catalog with official links and six full English timed transcripts outside the installable package. Preserve source hashes and pin archive URLs to a commit.
+- Keep new Duo API usage explicitly pending SDK validation; this revision does not claim Simulator or hardware verification.
+
+- Split the English and Chinese installation prompts into install-only and install-with-global-workflow options, preserving existing instructions and avoiding duplicate rules.
+
 ## 0.1.0 — 2026-09-10
 
 - Introduced one installable Apple development skill with conditional routing.
