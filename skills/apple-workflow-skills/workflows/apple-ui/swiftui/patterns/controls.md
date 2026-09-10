@@ -1,13 +1,13 @@
-# 控件与内容模式
+# Controls and Content
 
-- 设置优先 Form / Section；标题与值优先 LabeledContent。Toggle 保留可读标签，自定义视觉不能丢掉语义。
-- 数值输入绑定数值与格式；键盘类型只是输入提示，不替代解析、校验或错误显示。
-- 搜索区分空查询、加载、无结果和失败；大列表使用稳定 ID，避免每次 body 对全量数据排序过滤。
-- Lazy 容器适用于确有规模的内容，不以“lazy”替代测量。分页和图片解码成本在数据边界控制。
-- 工具栏优先系统 toolbar；主动作易发现，次要动作可收纳。键盘出现后检查焦点、提交和关闭路径。
-- 本地组件换行用 ViewThatFits；同一状态子树换布局用 AnyLayout，详见 [自适应布局](../references/adaptive-layout.md)。
-- Menu、Button、Label 使用文字语义配合符号；可见时只显示图标也需要可访问名称。
-- 动画、滚动揭示等交互以一个进度事实来源驱动；避免同时维护手势、滚动和偏移三套相互冲突的状态。
-- macOS 设置、菜单栏、窗口和键盘行为按平台习惯验证，不照搬 iOS sheet 或触摸假设。
+- Prefer `Form` and `Section` for settings, and `LabeledContent` for labels paired with values. Keep readable labels for toggles and semantic labels for custom visuals.
+- Bind numeric input to numeric values and formats. A keyboard type is an input hint, not parsing, validation, or error presentation.
+- Distinguish empty query, loading, no results, and failure. Use stable IDs for large lists, and avoid sorting or filtering the full collection on every `body` evaluation.
+- Use lazy containers when content scale warrants them, not as a substitute for measurement. Control pagination and image-decoding cost at the data boundary.
+- Prefer system toolbars. Keep primary actions discoverable and organize secondary actions. When the keyboard appears, test focus, submission, and dismissal.
+- Use `ViewThatFits` for local alternate arrangements. Use `AnyLayout` when the same stateful subtree should change layout; see [Adaptive Layout](../references/adaptive-layout.md).
+- Give `Menu`, `Button`, and `Label` semantic text alongside symbols. Icon-only visual presentation still needs an accessible name.
+- Drive animation and scroll-reveal behavior from one progress source rather than conflicting gesture, scroll, and offset state.
+- Verify macOS settings, menus, windows, and keyboard behavior according to platform conventions instead of copying iOS sheet and touch assumptions.
 
-组件实例按当前项目风格寻找，不保留指向上游作者私人项目的示例路径。
+Find component examples in the current project rather than retaining paths into an upstream author's private app.

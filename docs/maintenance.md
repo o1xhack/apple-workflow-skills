@@ -1,59 +1,61 @@
-# 维护流程
+# Maintenance
 
-## 所有权与依据
+## Ownership and evidence
 
-本仓库自主维护整合后的规则。上游是可选择吸收的来源，不是自动覆盖的模板。
-Apple 新功能可以直接推动更新，无需等上游发版。实现时核对官方资料和目标 SDK 的可用性。
-项目选择决定架构、平台、最低系统版本；示例中的默认值不自动变成所有项目的要求。
+This repository independently maintains its integrated guidance. Upstream projects are optional inputs, not templates that overwrite local work.
 
-## 文件约定
+Apple platform changes may drive updates without waiting for upstream releases. Verify new APIs against official documentation and the target SDK. Existing project architecture, platform support, and product decisions remain authoritative.
 
-- sources/manifest.json：机器可读的仓库、采用 commit、初始 Release IDs、来源路径到运行模块的映射。
-- sources/reviews.json：明确审查过的 Release ID、采用/部分采用/暂缓/拒绝、理由、已采用 commit。
-- skills/apple-workflow-skills/sources：随安装包携带的许可和来源索引。
-- docs/decisions.md：跨来源冲突与自主修改的理由。
-- CHANGELOG.md：用户可见的行为变化。
-- 模块正文不散布上游仓库链接。新增官方资料链接也集中放 sources 中，正文按主题描述。
+## Repository boundaries
 
-## 初次导入
+- `upstream/manifest.json`: source repositories, adopted commits, baseline Release IDs, and source-to-module mappings.
+- `upstream/reviews.json`: reviewed Release IDs and adopt, partial, defer, or reject decisions.
+- `upstream/apple-references.json`: official Apple evidence used for independent updates.
+- `docs/decisions.md`: conflict resolution and independent integration choices.
+- `CHANGELOG.md`: user-visible behavior changes.
+- `skills/apple-workflow-skills/`: the complete distributable package; it must not depend on `upstream/`.
 
-完整下载上游到仓库之外，记录准确 commit 和许可证。只把需要的知识整合进运行模块。
-不提交原始 checkout、嵌套 .git、上游 CI、宣传、网站、图片、重复插件元数据或无关 skills。
-当前首次采用的是明确记录的 commit 快照，不伪装成全部来自最新 Release 的内容。
-对导入时已经存在的正式 Release 建立基线；已有版本不作为新通知。
+Runtime modules do not repeat upstream links. Release ZIPs contain only the installable skill folder and its combined license.
 
-## 定时检查
+## Initial imports
 
-GitHub cron 每天执行日期门：以 2026-09-10 UTC 为锚，每两个日历日检查一次。这样不会因每月天数导致 */2 在月末产生一天间隔。GitHub 可能延迟或跳过计划任务，不保证精确的 48 小时。
-手动触发跳过日期门。读取五个来源的正式 Release（排除 draft 和 prerelease），不检查新 commit 或 tags。
-没有 Release 的仓库仍检查 Release 元数据，以便发现未来第一次发版；不轮询它的源码变化。
-无新 Release 时不查目标 Issues、不创建通知。API 失败使任务失败，保留下次重试的机会。
+Fetch complete upstream repositories outside this repository, record the exact commit and license, then integrate only the guidance that improves this project. Do not commit raw checkouts, nested `.git` directories, upstream CI, promotional assets, websites, duplicate plugin metadata, or unrelated skills.
 
-## 新 Release 的审查
+The adopted commit records the reviewed snapshot. It does not imply that every file was copied or that the snapshot came from the latest Release. Existing stable Releases become baselines and do not create retroactive notifications.
 
-检查器获取 Release 相对已采用 commit 的文件差异，按映射列出可能影响的模块，并创建一个 Issue。
-Release 说明不直接复制到 Issue；保留 sources 入口和 Release ID，避免执行、转发或放大上游不可信文本。
-相同来源 + Release ID 有固定标记；打开和关闭的 Issue 都参与去重。关闭 Issue 代表已受理，不自动等于采用。
-diff 缺失、截断、回溯或分支分歧时标记不确定，不能声称无影响。
-无映射文件变动也生成带结论的审查记录，以便维护者复核映射是否完整。
+## Scheduled upstream checks
 
-维护者处理：
-1. 从 sources 找到对应 Release，阅读说明与完整相关文件差异。
-2. 判断采用、部分采用、暂缓或拒绝。对照我们的自主修改，不因上游较新就覆盖。
-3. 需要修改时先列受影响规则、适用 SDK、行为变化与验证场景，再实现。
-4. 验证后填写 sources/reviews.json；只有真正改变采用基线时才更新 manifest 中 adopted_commit。
-5. 同步模块映射、来源索引和 CHANGELOG。Issue 链接到实际修改；暂缓事项留待追踪。
-6. 发布本仓库的 Release 是独立操作，不能由上游检查器自动触发。
+The daily GitHub schedule applies a two-calendar-day gate anchored at 2026-09-10 UTC. GitHub may delay or skip scheduled jobs; the cadence is not an exact 48-hour guarantee.
 
-## Apple 官方更新驱动
+Manual runs bypass the date gate. The checker reads stable Releases only, excluding drafts and prereleases. Repositories without releases remain eligible for their first future Release, but their commits and tags are not polled.
 
-先记录文档主题、官方链接、查阅日期、SDK 与最小可用版本到 sources/apple.json。
-定位影响模块，修改或删除已过时规则，保留支持旧版本所需路径。
-对新 API 提供能够在目标工具链验证的最小示例；未验证部分明确标记，不把推测纳入默认执行路径。
-记录自主决策并完成相关路由、静态与运行验证。以后上游碰到同一主题时仍以证据判断。
+No-change runs do not fetch repository issues or create notifications. API failures fail the job so a later run can retry.
 
-## 验证与发布
+## Reviewing a new Release
 
-运行结构校验、自动检查器单元测试和打包检查。
-按 tests/routing-cases.md 对真实任务做行为评估；静态通过不能称为真实 App QA。
-公开前检查个人路径、凭据、第三方许可和原仓库残留。安装包只包含一个完整 skill，含许可，不包含维护脚本。
+The checker compares the Release tag to the adopted commit, maps changed file paths to possibly affected modules, and creates one review issue.
+
+Release notes are not copied into the issue. The issue records stable identifiers and points maintainers to `upstream/manifest.json`, limiting propagation of untrusted text. Open and closed issues participate in deduplication.
+
+A truncated, missing, divergent, or otherwise uncertain comparison cannot support a no-impact conclusion. A release with no mapped changes still creates a review record so maintainers can confirm that mappings remain complete.
+
+Review procedure:
+
+1. Open the source entry and read the Release notes plus the full relevant diff.
+2. Compare it with local independent changes and choose adopt, partial, defer, or reject.
+3. Before editing, identify affected rules, SDK availability, behavior changes, and validation scenarios.
+4. Record the decision in `upstream/reviews.json`. Change `adopted_commit` only when the local baseline actually advances.
+5. Update mappings, decisions, and the changelog as needed. Link the review issue to the resulting change.
+6. Publish this repository's Release separately. The upstream checker cannot trigger publication.
+
+## Apple-driven updates
+
+Record the official URL, topic, review date, SDK, and minimum availability in `upstream/apple-references.json`. Update or remove stale guidance while preserving compatibility paths needed by supported deployment targets.
+
+Provide minimal examples only after verifying them against the target toolchain. Mark remaining uncertainty instead of adding speculation to the default workflow.
+
+## Validation and release
+
+Run structural validation, unit tests, the upstream checker in dry-run mode, and packaging. Evaluate relevant scenarios from `tests/routing-cases.md`; static checks are not real-app QA.
+
+Before publishing, inspect the package for personal paths, credentials, missing attribution, and raw upstream residue. Verify the public Release asset by reading back its actual name and URL, downloading it, and comparing its SHA-256 with the local package.

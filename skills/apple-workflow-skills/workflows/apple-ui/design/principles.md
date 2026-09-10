@@ -1,15 +1,15 @@
-# 设计原则
+# Design Principles
 
-只在视觉层级、页面组织或文案需要判断时读取。组件实现见 [SwiftUI](../swiftui/index.md)。
+Read this module when visual hierarchy, page organization, or copy requires judgment. For component implementation, read [SwiftUI](../swiftui/index.md).
 
-- 优先表达用户此刻要理解的信息和可执行动作。避免标题、说明、页脚重复解释同一件事。
-- 沿用项目的间距、字号与颜色语义。没有设计系统时，从系统默认值和少量一致的间距 token 开始；4/8 网格是可选方法，不是像素白名单。
-- 用语义文字样式与适当字重区分层级，保留 Dynamic Type。示例字号和圆角不是 Apple 全平台规定。
-- 用语义前景和背景区分主次；暗色、提高对比度及不同背景下检查可读性。品牌色可以来自 asset，而非强迫所有页面使用系统蓝。
-- 设置和分组内容优先考虑 Form、Section、List、LabeledContent。自定义卡片需要明确的信息或交互价值。
-- 单选用一个选中值，不用多个独立 Bool 模拟互斥。多模式编辑器逐步显示当前所需控制，避免一次堆满设置。
-- 按钮文字描述动作；错误说明发生什么以及可恢复动作；空状态区分首次使用、无结果与加载失败。
-- 数值、单位与时间粒度一致，不能把过期快照显示成实时读数；示例数据注明其语义。
-- 图形尺寸与线宽形成合理比例，但不强制所有产品使用同一套英雄数字或进度环样式。
+- Emphasize what the user needs to understand and do now. Avoid repeating the same explanation in titles, descriptions, and footers.
+- Preserve the project's spacing, typography, and semantic colors. Without a design system, begin with system defaults and a small consistent token set; a 4- or 8-point grid is an option, not a universal whitelist.
+- Use semantic text styles and intentional weight to express hierarchy while preserving Dynamic Type. Example font sizes and corner radii are not cross-platform Apple rules.
+- Use semantic foreground and background roles for emphasis. Check readability in dark mode, increased contrast, and varied backgrounds. Brand colors may come from assets instead of forcing system blue everywhere.
+- Prefer `Form`, `Section`, `List`, and `LabeledContent` for settings and grouped information. A custom card needs a clear information or interaction benefit.
+- Represent a single selection with one value, not multiple independent booleans. Reveal controls progressively for multi-mode editors.
+- Button labels describe actions. Errors explain what happened and how to recover. Distinguish first-use empty states, no results, and failed loading.
+- Keep numeric units and time granularity consistent. Do not present stale snapshots as live data.
+- Size graphics and strokes proportionally without imposing one universal hero-number or progress-ring style.
 
-完成后按 [无障碍](../swiftui/references/accessibility.md) 检查必要状态，并用 [实际验证](../validation/index.md) 查看截断、密度、隐藏模块后的收拢。
+Finish with [Accessibility](../swiftui/references/accessibility.md) and use [UI Validation](../validation/index.md) to inspect truncation, density, and layout collapse.

@@ -1,12 +1,11 @@
-# 折叠与多显示区域专项
+# Foldable and Multi-Display Layout
 
-只有请求明确涉及折叠、遮挡区域、铰链物理交互或第二显示区域时读取。
-先完成 [通用自适应](adaptive-layout.md)，再判断硬件特殊行为是否创造实际价值。
+Read this module only for explicit folds, occluded regions, hinge interaction, or a second display. Apply [Adaptive Layout](adaptive-layout.md) first, then decide whether hardware-specific behavior creates real value.
 
-首版只采用通用设计方法。尚未独立验证的设备名称、折痕坐标、专用 API 或未来工具链版本，不作为实现依据；必须先查项目 SDK 与 Apple 官方声明。
+This release includes general design and validation principles only. Do not use unverified device names, crease coordinates, dedicated APIs, or future toolchain versions as implementation evidence; inspect the project's SDK and official platform declarations first.
 
-- 将可用区域变化交给布局；仅物理交互需要时读取硬件姿态。
-- 若平台提供遮挡/保留区域，局部移动关键文字、二维码、按钮、脸部等敏感内容，不无条件重建全页。
-- 次显示区域要有明确的辅助任务与数据权限；采用实际 SDK 提供的 scene/显示管理机制，不能凭名称猜 API。
-- 布局切换不应成为编辑状态重置、重复加载或丢失播放进度的事件。
-- 无实际支持的模拟器/设备时，可以改善尺寸适配并明确缺口，不能声称折叠行为已验证。
+- Let layout respond to available regions. Read physical posture only when the interaction genuinely needs it.
+- If the platform exposes occlusion or reserved regions, move sensitive content such as key text, QR codes, actions, or faces locally instead of rebuilding every screen by default.
+- A second display needs a clear supporting task and data-permission model. Use scene and display mechanisms that exist in the actual SDK rather than guessing API names.
+- Layout transitions must not reset editing, duplicate loads, or lose selection and playback progress.
+- Without a supported Simulator or device, improve size adaptation and report the hardware-validation gap. Do not claim fold behavior was verified.

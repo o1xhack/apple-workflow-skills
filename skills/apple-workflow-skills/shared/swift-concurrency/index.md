@@ -1,12 +1,13 @@
-# Swift 并发
+# Shared Swift Concurrency
 
-适用于网络、文件、数据库服务、后台任务和 UI，不要求加载 UI 工作流。
+Use this module for networking, files, databases, background services, and UI work. It does not require loading Apple UI Workflow.
 
-先核对每个 target/package 的 Swift 版本、语言模式、严格并发、默认 actor isolation 与相关 upcoming feature 设置。async 不等于后台线程，await 不保证发生切换。
+First inspect each target or package's Swift version, language mode, strict-concurrency settings, default actor isolation, and relevant upcoming features. `async` does not mean background-thread execution, and `await` does not guarantee a suspension.
 
-- [隔离与诊断](isolation.md)：actor 重入、Sendable、全局状态和编译器边界。
-- [任务与取消](tasks.md)：结构化并发、有界并行、生命周期。
-- [流与桥接](streams.md)：AsyncStream、continuation、回调资源清理。
+- [Isolation and Diagnostics](isolation.md): actor reentrancy, `Sendable`, global state, and compiler boundaries.
+- [Tasks and Cancellation](tasks.md): structured concurrency, bounded parallelism, and lifecycle.
+- [Streams and Callback Bridging](streams.md): `AsyncStream`, continuations, and resource cleanup.
 
-先找到跨隔离边界的数据与可变状态，再选择最小修复。不要为了消除诊断把整个业务层标为 MainActor，也不把 @unchecked Sendable 当快捷修复。
-审查指出具体状态不变量、触发条件和证据。测试采用受控事件与顺序，不靠随机 sleep 假装覆盖竞态。
+Find mutable state and cross-isolation data before choosing the smallest correction. Do not mark an entire business layer `@MainActor` merely to silence diagnostics, and do not use `@unchecked Sendable` as a shortcut.
+
+Name the state invariant, trigger, and evidence behind each finding. Test with controlled events and ordering rather than random sleeps.

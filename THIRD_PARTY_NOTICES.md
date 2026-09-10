@@ -1,3 +1,13 @@
-# 第三方许可
+# Third-Party Notices
 
-本仓库采用或改写的第三方内容保留原版权和 MIT 许可。完整声明及来源统一存放于 [安装包 sources](skills/apple-workflow-skills/sources/README.md)，并随安装包一起分发。项目原创部分的 MIT 许可不替代这些声明。
+Apple Workflow Skills selectively integrates and independently rewrites ideas from the following MIT-licensed projects:
+
+- SwiftUI Agent Skill — Copyright (c) 2026 Paul Hudson
+- Swift Concurrency Agent Skill — Copyright (c) 2026 Paul Hudson
+- Skills — Copyright (c) 2026 Thomas Ricouard
+- SwiftUI Design Principles — Copyright (c) 2026 arjitj2
+- FWC SwiftUI Skills — Copyright (c) 2026 FloWritesCode
+
+Exact repository URLs, adopted commits, Release baselines, and module mappings are recorded in `upstream/manifest.json`. These projects do not endorse Apple Workflow Skills.
+
+All integrated source projects use the MIT License. The combined copyright and permission notice is included in the repository and installable package `LICENSE` files.

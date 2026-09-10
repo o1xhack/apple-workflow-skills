@@ -1,9 +1,9 @@
-# 变更记录
+# Changelog
 
-## Unreleased
+## 0.1.0 — 2026-09-10
 
-- 建立单入口 Apple 开发 skill，按 UI 工作流与共享并发能力组织。
-- 整合设计、组件模式、重构、自适应布局、玻璃效果及性能诊断。
-- 加入 Preview / 模拟器 / 真机证据边界与条件加载路径。
-- 来源、采用 commit、初始 Release 基线与模块映射集中维护。
-- 正式 Release 定期检查、重复 Issue 抑制、结构校验和便携安装包。
+- Introduced one installable Apple development skill with conditional routing.
+- Added Apple UI Workflow modules for design, SwiftUI, adaptive layouts, Liquid Glass, performance, and rendered UI validation.
+- Added shared Swift concurrency guidance outside the UI hierarchy.
+- Consolidated MIT attribution while keeping maintainer-only provenance outside the installable package.
+- Added stable upstream Release monitoring, duplicate issue suppression, structural validation, and reproducible ZIP packaging.

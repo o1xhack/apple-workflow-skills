@@ -1,12 +1,12 @@
-# UI 异步状态
+# UI Async State
 
-UI 只定义加载状态与视图生命周期；隔离、任务组、流和通用取消语义见 [共享并发](../../../../shared/swift-concurrency/index.md)。
+The UI owns presentation state and view lifecycle. For isolation, task groups, streams, and general cancellation semantics, read [Shared Swift Concurrency](../../../../shared/swift-concurrency/index.md).
 
-- 视图出现加载使用 .task；输入变化重启使用 .task(id:)。任务必须观察取消，不能认为调用 cancel 会强制停止底层服务。
-- 用明确的 idle / loading / loaded / failed，按产品需要保留已有结果，避免刷新时无条件清空页面。
-- 搜索 debounce 正常处理取消；旧任务取消后不应回写清空新查询结果。
-- await 返回后在写 UI 前检查取消与请求是否仍对应当前输入；底层服务不响应取消时仍要拒绝过期结果。
-- 服务若会把取消包装为其它错误，在 catch 中结合 Task.isCancelled 判断；普通取消不弹网络错误。
-- 超出页面生命周期的导入、上传或后台工作交给有明确所有者的服务。页面只订阅进度，不拥有业务任务的全部生命周期。
-- 可重试、离线、缓存与去重策略归服务；不要在多个 View 分别复制。
-- 使用实际慢响应与快速切换输入验证“最后一次请求生效”，仅成功路径不足。
+- Use `.task` for appearance-driven loading and `.task(id:)` when an input change should restart work. Tasks must cooperate with cancellation; calling `cancel()` does not forcibly stop an underlying service.
+- Model meaningful `idle`, `loading`, `loaded`, and `failed` states. Preserve existing results during refresh when the product calls for it.
+- Treat debounce cancellation as normal. An old cancelled search must not clear a newer query's results.
+- After `await`, check cancellation and confirm the result still belongs to the current input before updating UI. Reject stale results even if the service ignores cancellation.
+- If a service wraps cancellation inside another error, combine error inspection with `Task.isCancelled`. Ordinary cancellation should not display a network failure.
+- Give imports, uploads, and background operations that outlive the screen to an explicitly owned service. The screen observes progress rather than owning the entire business task lifecycle.
+- Keep retry, offline, caching, and deduplication policies in services instead of duplicating them across views.
+- Validate last-request-wins behavior with controlled slow responses and rapid input changes, not only the success path.

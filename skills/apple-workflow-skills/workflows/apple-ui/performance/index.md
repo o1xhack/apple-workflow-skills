@@ -1,21 +1,22 @@
-# UI 性能诊断
+# UI Performance
 
-先明确症状、复现操作、数据规模、设备/模拟器和 Debug/Release。仅诊断请求不自动实施。
+Establish the symptom, reproduction action, data size, device or Simulator, and Debug or Release configuration. A diagnosis-only request does not authorize implementation.
 
-## 代码线索
+## Code-level hypotheses
 
-- 观察范围过大：一个服务变化是否使无关页面重算。
-- 列表 identity 不稳定：每次刷新生成新 ID、用位置代替领域身份。
-- body 中过滤、排序、格式化、图像处理或同步 I/O。
-- geometry/preference 反馈形成重复布局。
-- 图片原尺寸解码、缓存无界、重型任务占主 actor。
-- 动画范围过大或布局切换重建状态。
+- Observation scopes are too broad, so one service change recomputes unrelated screens.
+- List identity is unstable, generated on refresh, or based on position instead of domain identity.
+- `body` performs filtering, sorting, formatting, image processing, or synchronous I/O.
+- Geometry or preference feedback produces repeated layout.
+- Full-resolution image decoding, unbounded caches, or heavy work occupies the main actor.
+- Animation covers too much of the hierarchy or layout changes rebuild state.
 
-代码线索只能支持假设。需要时使用实际可用的 Instruments、trace 或内存工具取得证据；工具不可用则说明缺口，不要求用户重复提供已经可读取的信息。
+Code evidence supports hypotheses, not measured conclusions. Use available Instruments, traces, or memory tools when the question requires runtime proof. If those tools are unavailable, state the evidence gap.
 
-## 修复与复测
+## Fix and retest
 
-按影响选择收窄观察、稳定身份、输入驱动的派生值、有界缓存/图片降采样、减少布局反馈。
-缓存要有失效策略；equatable 只有比较代价与值语义合理时采用。
-在同一场景、相同配置下比较帧、CPU、内存或操作延迟；不存在基线就不报改善百分比。
-模拟器结果不能证明真机能耗或全天续航。实际检查方法见 [验证](../validation/index.md)。
+Choose the narrowest relevant change: reduce observation scope, stabilize identity, derive values from explicit inputs, bound caches, downsample images, or remove layout feedback.
+
+Every cache needs an invalidation policy. Use equatable shortcuts only when comparison cost and value semantics justify them.
+
+Compare frames, CPU, memory, or operation latency in the same scenario and configuration. Do not claim a percentage improvement without a baseline. Simulator evidence does not establish physical-device energy use or all-day battery behavior. See [UI Validation](../validation/index.md).

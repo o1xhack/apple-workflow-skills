@@ -1,16 +1,15 @@
-# 任务与取消
+# Tasks and Cancellation
 
-固定数目的独立操作可用 async let；动态任务用 task group。大量输入采用有界并发，完成一项补一项，不一次创建成千任务。
-结构化作用域等待子任务结束；结果按完成顺序返回，需要输入顺序时携带稳定索引。
-子任务错误的传播和取消取决于组 API 及消费结果的方式；普通 throwing group 不能假设一个 child 抛错就立刻取消所有 sibling。
-需要部分结果时显式收集成功/失败；不要无意吞掉失败。
+Use `async let` for a fixed number of independent operations and task groups for dynamic work. Bound concurrency for large inputs by adding new work as prior work completes rather than creating thousands of tasks at once.
 
-Task {} 与 Task.detached 都有独立生命周期；前者可继承 actor 上下文，后者不继承同样的上下文。detach 不是通用性能修复。
-非结构化任务必须明确拥有者、handle、错误收集、结束和取消方式。页面生命周期工作优先框架 task，长业务任务归服务。
+Structured scopes wait for their children. Group results arrive in completion order; carry a stable index when input ordering matters. Error propagation and sibling cancellation depend on the group API and how results are consumed. Do not assume one child throw instantly cancels every sibling. Collect partial success and failure explicitly when required.
 
-取消是合作式的：cancel 标记不强制杀死工作。CPU 循环在安全点检查取消；await 是否响应取消取决于调用的函数。
-不要把正常取消变成失败弹窗；调用取消后仍需防止旧结果写回。
-withTaskCancellationHandler 的回调可能与操作并发，资源 handle 的注册、取消和完成需要一致的同步协议。
-释放一个 task handle 不等于取消任务。共享任务的取消权与等待者生命周期分开设计。
+`Task {}` and `Task.detached` both create unstructured tasks. The former may inherit actor context; the latter does not inherit the same context. Detaching is not a general performance fix.
 
-验证：快速重启、取消后完成、子任务抛错、最大并发上限、部分成功和资源释放。
+Every unstructured task needs an owner, handle, error policy, completion path, and cancellation path. Prefer framework lifecycle tasks for view work and an owned service for longer business operations.
+
+Cancellation is cooperative: `cancel()` sets state but does not forcibly stop underlying work. Check cancellation at safe points in CPU loops and understand whether awaited functions respond to it. Normal cancellation should not become a user-facing failure, and cancelled old work must not overwrite current results.
+
+A cancellation handler may race with operation setup. Synchronize resource registration, cancellation, and completion. Releasing a task handle is not cancellation; design shared-task cancellation independently from any one waiter's lifetime.
+
+Test fast restarts, completion after cancellation, child errors, concurrency limits, partial success, and resource cleanup.

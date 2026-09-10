@@ -1,12 +1,12 @@
-# 流与回调桥接
+# Streams and Callback Bridging
 
-AsyncStream 是事件序列；CheckedContinuation 是单次异步完成，不能混淆终止要求。
+`AsyncStream` represents a sequence of events. A checked continuation represents one asynchronous completion. Their termination contracts are different.
 
-- 有限流完成后 finish；生产者终止和消费者取消都清理监听。AsyncStream 的 finish 可重复调用，不能套用单次 continuation 的崩溃语义。
-- CheckedContinuation 每条路径恰好 resume 一次；成功、失败、取消、同步回调和资源注册竞态必须统一仲裁。
-- 高吞吐流明确 buffering 策略与丢事件语义；有界 buffer 不是自动让生产者减速的 backpressure。
-- 根据实际 AsyncSequence 实现验证取消；不能假定所有 for await 循环都立即停止。循环后的业务仍要判断结束原因。
-- onTermination 和取消回调可能在不同执行上下文运行，清理动作不能无同步访问共享可变对象。
-- 桥接 legacy API 优先利用它的取消 handle。旧队列/锁确有低层职责时可以保留，不机械改成 actor。
+- Finish finite streams and release observers when either producer or consumer terminates. Repeated `AsyncStream.finish()` calls are allowed; do not apply checked-continuation crash semantics to them.
+- Resume a checked continuation exactly once across success, failure, cancellation, synchronous callback, and registration races.
+- Define buffering and event-loss semantics for high-throughput streams. A bounded buffer does not automatically apply backpressure to a producer.
+- Verify cancellation against the actual `AsyncSequence`. Do not assume every `for await` loop stops immediately, and distinguish why the loop ended before continuing business work.
+- `onTermination` and cancellation callbacks may run in different execution contexts. Protect shared mutable cleanup state.
+- Prefer a legacy API's cancellation handle when bridging it. Existing queues or locks can remain when they still own a valid low-level responsibility.
 
-测试同步回调、重复回调、先取消后注册、生产者先结束、消费变慢和取消时资源释放。
+Test synchronous and duplicate callbacks, cancellation before registration, producer-first completion, slow consumers, and cleanup after cancellation.

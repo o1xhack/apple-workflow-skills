@@ -1,24 +1,28 @@
 ---
 name: apple-workflow-skills
-description: 为 Apple 应用开发选择 UI 设计、SwiftUI 实现与重构、布局适配、Liquid Glass、性能诊断、实际界面验证或共享 Swift 并发模块。适用于这些开发任务；按项目平台和工具链读取必要内容。
+description: Route Apple application work to focused guidance for native UI design, SwiftUI implementation and refactoring, adaptive layouts, Liquid Glass, UI performance, rendered validation, or shared Swift concurrency. Use for these Apple development tasks while preserving the project's platform and toolchain.
 license: MIT
+metadata:
+  version: "0.1.0"
 ---
 
-# Apple 开发工作流
+# Apple Workflow Skills
 
-先读取当前项目的规则、平台、最低系统版本、Swift 版本和实际需求。区分解释、诊断、实现和验证，保持请求范围；不要因为技能覆盖多个领域就扩展任务。
+Read the current project's rules, target platforms, minimum OS versions, Swift language mode, and actual request before choosing a path. Distinguish explanation, diagnosis, implementation, and validation. Do not expand the task merely because this skill covers multiple domains.
 
-## 选择路径
+## Route the task
 
-- 界面设计、组件实现、导航、重构、适配、玻璃效果或 UI 性能：读 [Apple UI Workflow](workflows/apple-ui/index.md)。
-- actor、Sendable、任务取消、网络/文件/后台导入并发：直接读 [共享并发](shared/swift-concurrency/index.md)，不经过 UI。
-- 混合任务先选主要路径，再按具体问题补读另一模块。
-- SwiftData、Swift Testing、发布签名等尚无独立模块；沿用项目规范与已连接工具，查询实际所需的官方资料。
+- For visual design, components, navigation, refactoring, adaptive layout, Liquid Glass, or UI performance, read [Apple UI Workflow](workflows/apple-ui/index.md).
+- For actors, `Sendable`, task cancellation, networking, files, databases, or background imports, read [Shared Swift Concurrency](shared/swift-concurrency/index.md) directly.
+- For mixed tasks, choose the primary path first and load the other module only for the concrete cross-cutting concern.
+- Dedicated SwiftData, Swift Testing, signing, release, widgets, and App Intents modules are not included yet. Follow project rules and consult current official documentation when those topics arise.
 
-内部模块不是额外安装依赖，也不意味着自动委派子代理。沿相对路径读取选中的文件；不预加载全包、不要求每次运行所有测试。
+Internal modules are not separate installation dependencies and do not authorize automatic delegation. Follow relative links only as needed; do not preload the entire package or run every validation path for every change.
 
-## 共同约束
+## Shared boundaries
 
-项目架构、平台和用户要求优先于示例中的偏好。新 API 按实际 SDK 检查可用性；不能为了套用规则自动升级工具链或替换架构。
-工具与运行环境应现场发现；安装本包不代表已连接 Xcode、模拟器或物理设备。
-报告具体改动、实际验证与未验证部分；代码编译、图片生成、交互成功、真机行为是不同证据。
+Project architecture, supported platforms, and user requirements outrank examples. Check new APIs against the actual SDK and deployment target; do not upgrade the toolchain or replace architecture merely to apply a preference.
+
+Discover available tools at runtime. Installing this skill does not imply access to Xcode, a Simulator, or a physical device.
+
+Report the concrete change, evidence actually collected, and remaining gaps. Compilation, image generation, rendered inspection, successful interaction, and physical-device behavior are distinct evidence levels.

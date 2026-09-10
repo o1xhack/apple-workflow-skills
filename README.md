@@ -1,46 +1,92 @@
+<div align="center">
+
 # Apple Workflow Skills
 
-一套中文、单入口、按需加载的 Apple 开发工作流。先完善 UI 的设计、实现、重构、性能诊断与实际验证；并发作为跨工作流共享能力。
+**One installable skill for practical Apple development workflows.**
 
-## 安装
+[![Release](https://img.shields.io/github/v/release/o1xhack/apple-workflow-skills?style=for-the-badge&label=release&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/o1xhack/apple-workflow-skills/total?style=for-the-badge&label=downloads&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/releases)
+[![Stars](https://img.shields.io/github/stars/o1xhack/apple-workflow-skills?style=for-the-badge&label=stars&color=7c3aed)](https://github.com/o1xhack/apple-workflow-skills/stargazers)
+[![CI](https://img.shields.io/github/actions/workflow/status/o1xhack/apple-workflow-skills/validate.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/o1xhack/apple-workflow-skills/actions/workflows/validate.yml)
+[![License](https://img.shields.io/github/license/o1xhack/apple-workflow-skills?style=for-the-badge&label=license&color=7c3aed)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsors-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/o1xhack)
 
-支持 Agent Skills 的工具可以安装仓库中的唯一顶层 skill：
+**English** · [Chinese](README.zh-CN.md)
+
+[Install with Skills CLI](#install) · [Download latest release](https://github.com/o1xhack/apple-workflow-skills/releases/latest/download/apple-workflow-skills.zip) · [All versions](https://github.com/o1xhack/apple-workflow-skills/releases)
+
+</div>
+
+Apple Workflow Skills is a single entry-point skill that routes Apple development work to focused guidance without loading the entire library. The first release concentrates on native UI work—design, SwiftUI implementation, adaptive layout, Liquid Glass, performance, and real UI validation—while general Swift concurrency remains a separate shared branch.
+
+## Install
+
+Install the repository's only top-level skill:
 
 ```sh
 npx skills add o1xhack/apple-workflow-skills --skill apple-workflow-skills
 ```
 
-也可以把 skills/apple-workflow-skills 整个文件夹复制到工具的 skills 目录。必须连同内部 sources 一起复制，以保留许可证。跨设备使用时，以自己的同步目录为唯一维护来源，再由工具目录引用；不要维护多份独立副本。
+Or download the versioned ZIP from [GitHub Releases](https://github.com/o1xhack/apple-workflow-skills/releases) and copy the contained `apple-workflow-skills` folder into your agent's skills directory.
 
-使用示例：
+Re-run the Skills CLI command to update from the repository. Use a Release asset when you need a reproducible, versioned snapshot.
+
+## Architecture
 
 ```text
-使用 $apple-workflow-skills 检查这个设置页的视觉层级和窄窗口适配。
-使用 $apple-workflow-skills 重构这个 View，保留现有 MVVM 和行为。
-使用 $apple-workflow-skills 诊断后台导入的 actor 重入问题。
+apple-workflow-skills
+├── Apple UI Workflow
+│   ├── Design Principles
+│   ├── SwiftUI
+│   │   ├── API and state ownership
+│   │   ├── Navigation and controls
+│   │   ├── Adaptive and foldable layouts
+│   │   └── Behavior-preserving refactoring
+│   ├── Liquid Glass
+│   ├── UI Performance
+│   └── Preview, Simulator, and device validation
+└── Shared Swift Concurrency
+    ├── Isolation and Sendable
+    ├── Tasks and cancellation
+    └── Streams and callback bridging
 ```
 
-## 能力与层级
+There is exactly one installable `SKILL.md`. The nested Markdown files are conditionally loaded modules, not separately installed skills.
 
-- Apple 总入口：读取项目、平台、工具链、任务范围，选择需要的模块。
-- Apple UI Workflow：设计原则、SwiftUI 模式与重构、自适应布局、Liquid Glass、性能、Preview / 模拟器 / 真机验证。
-- Shared Concurrency：隔离、任务生命周期、取消、有界并行、流与回调桥接；不要求任务涉及 UI。
+Concurrency is intentionally outside Apple UI Workflow. UI-specific async state links to it when needed, but networking, file imports, databases, and background services can use the same concurrency guidance without loading UI material.
 
-内部 index.md 是按路径读取的模块，不需要单独安装，也不会自动启动子代理。总入口不会一次读取所有文件。
+## Usage
 
-## 当前边界
+```text
+Use $apple-workflow-skills to review this settings screen's hierarchy and narrow-window behavior.
+Use $apple-workflow-skills to refactor this SwiftUI view while preserving its MVVM architecture.
+Use $apple-workflow-skills to diagnose actor reentrancy in this background import service.
+```
 
-首版不含独立 SwiftData、Swift Testing、签名发布、Widgets 或 App Intents 工作流。遇到这些任务沿用项目工具与官方文档，不冒充已内置相应专项。SwiftUI 规则按实际平台与最低系统版本应用；本包不是 UIKit / AppKit 全面审查工具。
+The skill preserves the current project's architecture, deployment targets, and product decisions. It chooses only the modules needed for the task and distinguishes code review, compilation, rendered UI inspection, Simulator interaction, and physical-device evidence.
 
-折叠设备通用布局规则已经整合；未经官方 SDK 验证的专用 API 不提供可执行示例。Swift 示例是规则演示，尚不代表所有 Apple 平台与 SDK 均已编译验证。
+## Repository layout
 
-## 维护
+- `skills/apple-workflow-skills/` — the complete installable artifact.
+- `upstream/` — maintainer-only provenance, adopted commits, Release baselines, and review state.
+- `docs/` — integration and maintenance decisions.
+- `scripts/` and `tests/` — deterministic validation, packaging, and upstream Release monitoring.
 
-[维护流程](docs/maintenance.md) · [整合决策](docs/decisions.md) · [来源索引](sources/README.md) · [变更记录](CHANGELOG.md)
+The `upstream/` directory and repository tooling are intentionally excluded from Release ZIPs. The installable folder keeps only runtime guidance and a combined MIT license notice.
 
-GitHub Actions 每日进入轻量日期判断，仅每两天执行上游正式 Release 检查，支持手动运行。无新版本时不创建 Issue；有新版本时按映射生成可复核的更新事项，人工决定是否采用。自动检查不运行 AI、不自动生成或合并代码。
+## Scope
 
-## 本地验证
+The initial release covers SwiftUI-centric UI work and shared Swift concurrency. It does not claim dedicated workflows for SwiftData, Swift Testing, signing, App Store release, widgets, App Intents, UIKit, or AppKit.
+
+Foldable and multi-display guidance is conservative: general adaptive-layout principles are included, while unverified APIs and device assumptions are not presented as production-ready facts.
+
+## Upstream maintenance
+
+This project selectively integrates and independently rewrites ideas from MIT-licensed sources. It is not a mirror. Attribution, exact adopted commits, and module mappings live in [upstream/manifest.json](upstream/manifest.json); license notices live in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+A scheduled workflow checks upstream stable GitHub Releases every two days. New releases create review issues; they never overwrite local guidance or publish a new version automatically. Apple SDK changes may also drive independent updates without waiting for an upstream release.
+
+## Development
 
 ```sh
 python3 scripts/validate.py
@@ -49,8 +95,8 @@ python3 scripts/check_upstream_releases.py
 python3 scripts/package.py --output /tmp/apple-workflow-skills.zip
 ```
 
-Release 检查默认只输出报告；--publish 才使用 GITHUB_TOKEN 和 GITHUB_REPOSITORY 创建审查 Issue。网络或认证错误返回失败，不能当作无更新。
+Static validation checks the single-entry structure, internal link closure, English runtime content, attribution, and packaging. It does not claim real-app UI or concurrency behavior has been validated.
 
-## 许可
+## License
 
-本项目原创部分采用 MIT。整合的第三方内容保留各自版权和 MIT 许可，集中存于安装包 sources/licenses；来源链接只在 sources 维护。
+Apple Workflow Skills is released under the [MIT License](LICENSE). Portions are based on MIT-licensed work listed in [Third-Party Notices](THIRD_PARTY_NOTICES.md).

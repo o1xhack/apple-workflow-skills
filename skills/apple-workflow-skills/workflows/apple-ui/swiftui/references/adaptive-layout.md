@@ -1,14 +1,14 @@
-# 自适应布局
+# Adaptive Layout
 
-布局响应可用容器空间。设备型号和全屏尺寸通常不能代表窗口或分栏后的实际空间。
+Respond to available container space. A device model and full-screen dimensions usually do not describe the actual space inside a window or split view.
 
-- 集合/详情优先 NavigationSplitView；普通局部布局先考虑系统容器、adaptive grid、ViewThatFits、AnyLayout，必要时用 geometry。
-- 自定义断点应来自内容最小可用尺寸，不来自猜测的设备型号。明确的产品断点可以保留。
-- 宽屏增加有用结构：侧栏、详情、检查器或预览；文字与表单保留合理阅读宽度，不能只是无限拉伸。
-- ViewThatFits 可选择不同排布；独立候选可能有不同 identity。需要同一有状态子树变排布时用 AnyLayout，或把状态放在布局之上。
-- 网格以项目内容的最小宽度决定 adaptive 列数；特定设计确需固定列数时说明依据。
-- 尊重各边 safe area 与键盘；不要把一边 inset 镜像到另一边。系统栏优先由系统布局。
-- 保留导航、选中项、输入、播放和未保存内容的连续性。
-- 验证窄、中间、宽窗口、大字号与内容多少变化；不要只测两个设备端点。
+- Prefer `NavigationSplitView` for collection-detail structures. For local layouts, consider system containers, adaptive grids, `ViewThatFits`, and `AnyLayout` before reaching for geometry.
+- Derive custom breakpoints from the content's minimum usable size rather than guessed device models. Preserve an explicit product breakpoint when it has a real requirement.
+- Add useful structure on wide screens—sidebar, detail, inspector, or preview—while keeping text and forms at readable widths.
+- `ViewThatFits` can select between distinct arrangements whose children may have different identity. Use `AnyLayout`, or lift state above the layout, when the same stateful subtree must rearrange.
+- Let item content determine adaptive-grid minimum width. Use a fixed column count only when the design has a concrete reason.
+- Respect each safe-area edge and keyboard inset. Do not mirror one edge's inset onto another. Let system bars participate in system layout.
+- Preserve navigation, selection, input, playback, and unsaved content across layout changes.
+- Validate narrow, intermediate, and wide windows, large text, and varied content amounts instead of testing only two device endpoints.
 
-明确涉及折叠、铰链或第二显示屏时再读 [折叠专项](foldable-layout.md)。
+Read [Foldable and Multi-Display Layout](foldable-layout.md) only when the task explicitly involves folds, hinges, occlusion, or a second display.

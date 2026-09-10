@@ -1,21 +1,21 @@
-# 状态所有权
+# State Ownership
 
-先回答谁拥有值、谁修改值、谁需要观察，再选择包装器。
+Answer who owns, changes, and observes a value before choosing a property wrapper.
 
-| 情形 | 方法 |
+| Situation | Approach |
 | --- | --- |
-| 单个视图拥有值状态 | private @State |
-| 子视图修改父级值 | @Binding |
-| 支持 Observation 的目标，视图拥有模型 | @State 持有 @Observable 对象 |
-| 注入可观察对象 | 显式属性，确实需要绑定时用 @Bindable |
-| 真正共享的 App 服务 | Environment，避免把所有依赖都设成全局 |
-| 旧目标或既有 ObservableObject 架构 | 所有者 StateObject，注入方 ObservedObject，按需 EnvironmentObject |
+| Value state owned by one view | private `@State` |
+| Child mutates parent value | `@Binding` |
+| Observation-capable target and view-owned model | `@State` holding an `@Observable` object |
+| Injected observable object | explicit property; `@Bindable` only when bindings are needed |
+| Truly app-wide service | Environment, without making every dependency global |
+| Older target or existing `ObservableObject` architecture | owner uses `StateObject`; consumer uses `ObservedObject` or `EnvironmentObject` as appropriate |
 
-Observable 并不自动意味着线程安全，也不是所有模型都必须 MainActor；UI 状态按其隔离需求定义，业务并发读 [共享并发](../../../../shared/swift-concurrency/index.md)。
+Observation does not automatically provide thread safety, and not every model belongs on `MainActor`. Define isolation from actual UI needs; use [Shared Swift Concurrency](../../../../shared/swift-concurrency/index.md) for business concurrency.
 
-- 保持单一事实来源；不要用多个状态值重复保存相同派生结果。
-- body 不发网络请求、不写库、不做重型初始化；事件调用小方法，复杂业务放服务。
-- 优先自然投射的绑定。自定义 Binding 若用于必要转换可以保留，setter 必须可预测，避免隐式重型副作用。
-- 派生集合只有在生命周期和失效策略明确时缓存，不能为了少计算就制造过期 UI。
-- AppStorage 与 Observation 的交互需要确认真实变更能传播；不要以为添加 ObservationIgnored 就解决观察。
-- 数据库计数快照不会自动变成实时数据；更新触发由实际数据层负责。
+- Maintain one source of truth instead of storing the same derived result in several state values.
+- Do not start network requests, write databases, or perform heavy initialization in `body`. Events call small methods; complex work belongs in models or services.
+- Prefer naturally projected bindings. A custom `Binding` is fine for necessary conversion, but its setter must be predictable and avoid hidden heavy side effects.
+- Cache derived collections only with a clear lifecycle and invalidation policy.
+- Verify how `AppStorage` and Observation changes propagate; `@ObservationIgnored` does not solve observation by itself.
+- A database count snapshot does not become live data automatically. The data layer must define update triggers.

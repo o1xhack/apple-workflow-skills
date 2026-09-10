@@ -1,12 +1,12 @@
-# 保持行为的重构
+# Behavior-Preserving Refactoring
 
-先记录现有状态所有权、导航和副作用，再确定最小重构范围。不要因为文件行数大就重写整个架构。
+Record current state ownership, navigation, and side effects before selecting the smallest refactoring scope. File length alone is not a reason to rewrite architecture.
 
-1. 以独立职责、重复部分、状态和可预览边界提取 View；传必要值、绑定或动作，不把整个父级状态下传。
-2. 将非平凡按钮动作、task 与 onChange 内业务逻辑抽成方法/服务。body 保留界面与薄编排。
-3. 局部短小 some View helper 可以保留；有状态、复杂分支或独立责任时倾向独立 View。
-4. 保留已有 MVVM 或其他架构；不为局部值状态引入纯转发 view model，也不把已有业务模型强制拆掉。
-5. 视图结构变化影响 identity 时，检查编辑、选择、滚动和任务是否被重置；合法 if 分支不等于缺陷，不用 opacity 隐藏来逃避必要生命周期。
-6. 注入依赖并在正确所有者初始化；optional 模型只有真实加载/缺失语义时保留，不为去掉 optional 引入虚假占位值。
-7. 文件顺序和文件拆分沿用项目规范，不强制一文件一类型。
-8. 验证原行为、导航和持久化边界。性能好坏另取证据，不能从拆文件数量推断。
+1. Extract views around independent responsibilities, repeated regions, state, and preview boundaries. Pass only required values, bindings, or actions rather than the entire parent state.
+2. Move nontrivial button, `task`, and `onChange` business logic into methods or services. Keep `body` focused on UI description and thin orchestration.
+3. Small local `some View` helpers can remain. Prefer a distinct view for stateful, complex, or independently responsible regions.
+4. Preserve existing MVVM or other architecture. Do not add forwarding view models for local value state or remove established business models without a requirement.
+5. When structural changes affect identity, test editing, selection, scrolling, and task restarts. A legitimate `if` branch is not automatically a defect; do not hide content with opacity solely to avoid lifecycle.
+6. Inject dependencies and initialize them at the correct owner. Keep optional models only for real loading or absence semantics rather than replacing them with false placeholders.
+7. Follow project conventions for declaration order and file splitting. Do not impose one type per file.
+8. Verify original behavior, navigation, and persistence boundaries. File count is not performance evidence.
