@@ -40,7 +40,11 @@ The current release focuses on **SwiftUI interfaces and Swift concurrency**, wit
 | UI Performance & Validation | Investigate slow UI and choose Preview, Simulator, or device checks | Scrolling stutters or a change needs verification |
 | Swift Concurrency | Reason about background work, shared data, and cancellation | Imports, searches, or async operations behave inconsistently |
 
-Dedicated SwiftData, Swift Testing, widgets, App Intents, signing, App Store release, UIKit, and AppKit workflows are not included yet. Foldable guidance currently covers general layout principles only.
+**iPhone Duo adaptation — Beta, partial coverage.** General layout and state-continuity guidance is included; dedicated Duo APIs and device behavior still need validation.
+
+Dedicated SwiftData, Swift Testing, widgets, App Intents, signing, App Store release, UIKit, and AppKit workflows are not included yet.
+
+[Explore coverage by Apple framework and API topic →](docs/coverage.md)
 
 ## Why use it?
 
