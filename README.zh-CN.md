@@ -22,11 +22,30 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 
 ## 安装
 
-把这行 prompt 发给你的 AI Agent：
+选择一种方式，把对应的完整 prompt 发给你的 AI Agent。仅安装后，Agent 可以根据描述选择 Skill，但不保证每次选中；希望 Apple 开发任务默认优先使用它，选择第二种。
+
+### 选项一：仅安装
+
+```text
+请从 https://github.com/o1xhack/apple-workflow-skills/releases/latest 的最新正式 Release 安装 Apple Workflow Skills，只使用该版本的 apple-workflow-skills.zip 资产，将完整文件夹安装到你配置的 skills 目录，保留本地自定义修改，并告诉我安装版本；资产不可用时停止。 不要修改 AGENTS.md 或其他全局指令文件。
+```
+
+### 选项二：安装并设为全局默认工作流
 
 ```text
 请从 https://github.com/o1xhack/apple-workflow-skills/releases/latest 的最新正式 Release 安装 Apple Workflow Skills，只使用该版本的 apple-workflow-skills.zip 资产，将完整文件夹安装到你配置的 skills 目录，保留本地自定义修改，并告诉我安装版本；资产不可用时停止。
+
+安装成功后，在当前 Agent 实际使用的用户级全局 AGENTS.md 中添加以下规则。先读取现有内容，保留其他规则；已有等效规则时不要重复添加。确认全局路径后，文件不存在则创建；无法确定当前 Agent 的全局指令位置时，询问我，不要猜路径或改用仓库内的 AGENTS.md。最后报告安装版本、修改的指令文件路径和最终规则。
+
+For Apple UI design, SwiftUI implementation or refactoring, adaptive layouts,
+Liquid Glass, UI performance or rendered validation, and Swift concurrency work,
+use $apple-workflow-skills as the primary workflow.
+Load only the modules relevant to the task; route non-UI concurrency work directly
+to its shared Swift concurrency guidance. Preserve project-specific rules and
+deployment targets.
 ```
+
+第二种方式会为读取该全局指令的 Apple 项目设定优先工作流，同时保留项目自身的规则和部署目标。只想在某个项目生效时，可将 prompt 中的“用户级全局 AGENTS.md”改成该项目的 `AGENTS.md`。
 
 ## 当前覆盖什么
 
@@ -37,6 +56,8 @@ Apple Workflow Skills 为 AI Agent 提供一套原生 Apple 界面的设计、�
 - **UI 质量** — 无障碍、性能审查与 Preview／模拟器验证。
 
 [完整覆盖范围 →](docs/coverage.zh-CN.md)
+
+当前仓库的未发布修订版增加了 Duo 核心指导与[六份完整英文字幕资料](external-sources/apple/iphone-duo/2026-09-10/README.md)，按需读取且不打入安装 ZIP。已发布的 v0.1.0 尚不包含这些新增内容。
 
 ## 为什么用这套 Skills
 

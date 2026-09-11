@@ -11,4 +11,4 @@ Respond to available container space. A device model and full-screen dimensions 
 - Preserve navigation, selection, input, playback, and unsaved content across layout changes.
 - Validate narrow, intermediate, and wide windows, large text, and varied content amounts instead of testing only two device endpoints.
 
-Read [Foldable and Multi-Display Layout](foldable-layout.md) only when the task explicitly involves folds, hinges, occlusion, or a second display.
+Read [iPhone Duo and Foldable Layout](foldable-layout.md) only when the task involves Duo design, folds, hinges, occlusion, or a second display.

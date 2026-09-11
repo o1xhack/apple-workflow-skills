@@ -1,0 +1,1986 @@
+WEBVTT
+
+00:00:04.800 --> 00:00:05.930
+Hi, my name is Maria,
+
+00:00:05.980 --> 00:00:08.111
+and I'm a Human Interface
+Designer working
+
+00:00:05.980 --> 00:00:08.111
+and I'm a Human Interface
+Designer working
+
+00:00:08.161 --> 00:00:09.420
+on Apple's design system.
+
+00:00:09.950 --> 00:00:11.920
+And I'm Harry,
+a UI Frameworks Engineer.
+
+00:00:12.410 --> 00:00:14.852
+And today, we'll talk
+about creating layouts
+
+00:00:14.902 --> 00:00:17.960
+that adapt to the unique
+characteristics of iPhone Duo.
+
+00:00:19.020 --> 00:00:21.831
+Its expansive screen
+creates new opportunities
+
+00:00:21.881 --> 00:00:22.843
+for your content
+
+00:00:22.893 --> 00:00:25.800
+and new ways for your app
+to adapt to its shape.
+
+00:00:22.893 --> 00:00:25.800
+and new ways for your app
+to adapt to its shape.
+
+00:00:27.200 --> 00:00:29.376
+iPhone Duo includes multiple displays,
+
+00:00:29.426 --> 00:00:31.080
+each with its own size class.
+
+00:00:29.426 --> 00:00:31.080
+each with its own size class.
+
+00:00:32.400 --> 00:00:34.467
+If you're already
+designing for resizability,
+
+00:00:34.517 --> 00:00:35.700
+this should feel familiar.
+
+00:00:37.020 --> 00:00:39.033
+New hardware features also play a role
+
+00:00:39.083 --> 00:00:40.720
+in shaping the available space.
+
+00:00:42.140 --> 00:00:43.326
+These include the hinge
+
+00:00:43.376 --> 00:00:46.300
+and the two cameras across
+the outer and inner displays.
+
+00:00:47.820 --> 00:00:49.528
+We call these reserved regions,
+
+00:00:47.820 --> 00:00:49.528
+We call these reserved regions,
+
+00:00:49.578 --> 00:00:52.180
+and Harry will cover them
+in more detail later.
+
+00:00:53.500 --> 00:00:54.798
+And treat these just like any
+
+00:00:53.500 --> 00:00:54.798
+And treat these just like any
+
+00:00:54.848 --> 00:00:56.740
+other areas your layout
+already adapts to.
+
+00:00:57.040 --> 00:00:58.920
+such as the window controls on iPadOS.
+
+00:01:00.280 --> 00:01:02.600
+The outer display camera
+is always present,
+
+00:01:03.300 --> 00:01:04.350
+with system toolbars
+
+00:01:04.400 --> 00:01:07.600
+and tab bars laying out vertically
+within the new safe area.
+
+00:01:04.400 --> 00:01:07.600
+and tab bars laying out vertically
+within the new safe area.
+
+00:01:08.080 --> 00:01:11.040
+For more, check out "Raise
+the Bar with iPhone Duo."
+
+00:01:11.640 --> 00:01:13.120
+Conveniently, I'll be there too.
+
+00:01:11.640 --> 00:01:13.120
+Conveniently, I'll be there too.
+
+00:01:14.420 --> 00:01:15.511
+On the inner display,
+
+00:01:15.561 --> 00:01:18.140
+your interface may adapt
+to accommodate the fold,
+
+00:01:15.561 --> 00:01:18.140
+your interface may adapt
+to accommodate the fold,
+
+00:01:18.500 --> 00:01:20.820
+or the new FaceTime
+camera when it's active.
+
+00:01:21.480 --> 00:01:23.920
+If its viewfinder is
+central to your experience,
+
+00:01:24.580 --> 00:01:25.891
+keep important content
+
+00:01:25.941 --> 00:01:27.860
+and controls clear of that area.
+
+00:01:28.760 --> 00:01:30.800
+You'll approach the hinge
+differently in your layout.
+
+00:01:28.760 --> 00:01:30.800
+You'll approach the hinge
+differently in your layout.
+
+00:01:32.120 --> 00:01:34.300
+When the device is partially
+folded, like a book,
+
+00:01:34.580 --> 00:01:36.215
+it divides the inner display
+
+00:01:34.580 --> 00:01:36.215
+it divides the inner display
+
+00:01:36.265 --> 00:01:37.900
+into multiple usable regions
+
+00:01:38.440 --> 00:01:40.200
+as the display curves
+through the center.
+
+00:01:41.460 --> 00:01:43.620
+Hey, Maria, I found this book.
+
+00:01:41.460 --> 00:01:43.620
+Hey, Maria, I found this book.
+
+00:01:44.210 --> 00:01:46.380
+Take a look at this photo
+spread across the two pages.
+
+00:01:47.160 --> 00:01:48.200
+It doesn't look very good, right?
+
+00:01:47.160 --> 00:01:48.200
+It doesn't look very good, right?
+
+00:01:49.080 --> 00:01:51.020
+Right. As it approaches the spine,
+
+00:01:51.560 --> 00:01:53.840
+parts of the image
+become harder to see,
+
+00:01:53.860 --> 00:01:56.540
+so it no longer reads
+as one continuous image.
+
+00:01:53.860 --> 00:01:56.540
+so it no longer reads
+as one continuous image.
+
+00:01:57.200 --> 00:01:58.620
+And can the same thing
+happen to an app?
+
+00:01:59.180 --> 00:02:00.285
+Absolutely.
+
+00:01:59.180 --> 00:02:00.285
+Absolutely.
+
+00:02:00.335 --> 00:02:01.413
+Content and controls
+
+00:02:01.463 --> 00:02:03.700
+that span the fold
+behave very similarly.
+
+00:02:04.700 --> 00:02:06.740
+So to help your app
+adapt to these changes,
+
+00:02:04.700 --> 00:02:06.740
+So to help your app
+adapt to these changes,
+
+00:02:07.160 --> 00:02:09.785
+we've developed a set of
+design patterns and tools
+
+00:02:09.835 --> 00:02:12.460
+to help your app feel right
+at home on iPhone Duo.
+
+00:02:09.835 --> 00:02:12.460
+to help your app feel right
+at home on iPhone Duo.
+
+00:02:13.620 --> 00:02:16.149
+We'll start with talking you
+through displacement patterns
+
+00:02:16.199 --> 00:02:18.200
+and some of the design
+principles behind them.
+
+00:02:16.199 --> 00:02:18.200
+and some of the design
+principles behind them.
+
+00:02:18.799 --> 00:02:20.061
+Then we'll talk about a
+
+00:02:20.111 --> 00:02:22.100
+new UI pattern we call Arrangements.
+
+00:02:23.580 --> 00:02:24.800
+Let's get started.
+
+00:02:23.580 --> 00:02:24.800
+Let's get started.
+
+00:02:25.920 --> 00:02:28.212
+Great design for iPhone Duo hinges
+
+00:02:28.262 --> 00:02:29.940
+on knowing when to adapt.
+
+00:02:30.740 --> 00:02:33.906
+Many interfaces can flow
+naturally around reserved regions,
+
+00:02:33.956 --> 00:02:36.324
+while others benefit
+from a more intentional
+
+00:02:33.956 --> 00:02:36.324
+while others benefit
+from a more intentional
+
+00:02:36.374 --> 00:02:38.960
+approach through a pattern
+we call displacement,
+
+00:02:39.920 --> 00:02:41.311
+which adjusts the frame
+
+00:02:41.361 --> 00:02:43.184
+of the existing elements based
+
+00:02:41.361 --> 00:02:43.184
+of the existing elements based
+
+00:02:43.234 --> 00:02:44.609
+on the available space,
+
+00:02:44.659 --> 00:02:47.370
+keeping important content
+visible, reachable,
+
+00:02:47.420 --> 00:02:48.684
+and unobstructed even
+
+00:02:47.420 --> 00:02:48.684
+and unobstructed even
+
+00:02:48.734 --> 00:02:50.920
+when the device is partially folded.
+
+00:02:52.700 --> 00:02:55.077
+A common design starts
+with an element centered
+
+00:02:52.700 --> 00:02:55.077
+A common design starts
+with an element centered
+
+00:02:55.127 --> 00:02:56.840
+on screen when the device is open.
+
+00:02:58.020 --> 00:02:58.915
+After it folds,
+
+00:02:58.965 --> 00:03:01.700
+that element moves to the region
+that supports its purpose.
+
+00:02:58.965 --> 00:03:01.700
+that element moves to the region
+that supports its purpose.
+
+00:03:03.440 --> 00:03:06.005
+I'm starting small
+with a single element,
+
+00:03:06.055 --> 00:03:08.620
+but displacement can
+go much bigger, from
+
+00:03:06.055 --> 00:03:08.620
+but displacement can
+go much bigger, from
+
+00:03:08.620 --> 00:03:10.581
+a button to an entire container
+
+00:03:10.631 --> 00:03:12.400
+or larger parts of a layout.
+
+00:03:10.631 --> 00:03:12.400
+or larger parts of a layout.
+
+00:03:14.240 --> 00:03:16.420
+Choose the scope that
+best matches the content.
+
+00:03:17.460 --> 00:03:20.500
+If an element can adapt independently,
+move it on its own.
+
+00:03:17.460 --> 00:03:20.500
+If an element can adapt independently,
+move it on its own.
+
+00:03:21.200 --> 00:03:22.752
+And when elements work together,
+
+00:03:22.802 --> 00:03:25.240
+move them together to
+preserve their relationship.
+
+00:03:22.802 --> 00:03:25.240
+move them together to
+preserve their relationship.
+
+00:03:26.540 --> 00:03:28.820
+And remember to be mindful
+of excessive movement.
+
+00:03:29.800 --> 00:03:31.301
+Moving an element far away from
+
+00:03:29.800 --> 00:03:31.301
+Moving an element far away from
+
+00:03:31.351 --> 00:03:33.540
+its source weakens their
+visual relationship.
+
+00:03:35.080 --> 00:03:37.559
+For example, when selecting
+a photo in an album,
+
+00:03:35.080 --> 00:03:37.559
+For example, when selecting
+a photo in an album,
+
+00:03:37.609 --> 00:03:39.880
+instead of centering
+the context menu in the
+
+00:03:39.980 --> 00:03:41.010
+trailing region,
+
+00:03:41.060 --> 00:03:44.200
+both elements move together
+and align around the fold.
+
+00:03:41.060 --> 00:03:44.200
+both elements move together
+and align around the fold.
+
+00:03:46.000 --> 00:03:48.475
+Continuous scrolling
+content like articles,
+
+00:03:46.000 --> 00:03:48.475
+Continuous scrolling
+content like articles,
+
+00:03:48.525 --> 00:03:51.000
+feeds, documents,
+and lists don't displace.
+
+00:03:52.740 --> 00:03:55.386
+These experiences already
+adapt through scrolling,
+
+00:03:52.740 --> 00:03:55.386
+These experiences already
+adapt through scrolling,
+
+00:03:55.436 --> 00:03:56.800
+so moving them between the
+
+00:03:56.960 --> 00:03:58.820
+available regions can
+interrupt continuity.
+
+00:04:00.040 --> 00:04:01.585
+When displacing content,
+
+00:04:00.040 --> 00:04:01.585
+When displacing content,
+
+00:04:01.635 --> 00:04:03.000
+let its purpose guide
+
+00:04:03.050 --> 00:04:05.340
+where it moves and where it belongs
+
+00:04:05.640 --> 00:04:08.180
+may change depending on how
+the device is being used.
+
+00:04:05.640 --> 00:04:08.180
+may change depending on how
+the device is being used.
+
+00:04:09.740 --> 00:04:11.949
+When it's partially
+folded, like a book,
+
+00:04:11.999 --> 00:04:14.600
+elements like alerts move
+to the trailing side.
+
+00:04:11.999 --> 00:04:14.600
+elements like alerts move
+to the trailing side.
+
+00:04:15.720 --> 00:04:17.799
+This keeps them closer
+to where they'll appear
+
+00:04:18.040 --> 00:04:20.600
+as the device closes and
+the experience continues
+
+00:04:18.040 --> 00:04:20.600
+as the device closes and
+the experience continues
+
+00:04:20.859 --> 00:04:22.200
+on the outer display.
+
+00:04:23.060 --> 00:04:24.700
+When the device is
+propped up on a table,
+
+00:04:23.060 --> 00:04:24.700
+When the device is
+propped up on a table,
+
+00:04:25.120 --> 00:04:27.840
+the two regions support
+different kinds of experiences.
+
+00:04:29.120 --> 00:04:31.800
+The top region works well
+for content that benefits
+
+00:04:29.120 --> 00:04:31.800
+The top region works well
+for content that benefits
+
+00:04:32.020 --> 00:04:33.060
+from visibility at a distance.
+
+00:04:34.440 --> 00:04:37.560
+The same alert can move
+here to remain easy to find.
+
+00:04:34.440 --> 00:04:37.560
+The same alert can move
+here to remain easy to find.
+
+00:04:39.240 --> 00:04:42.100
+The bottom region works well
+for interactive controls.
+
+00:04:43.560 --> 00:04:46.300
+Tappable elements like media
+controls can move here,
+
+00:04:46.920 --> 00:04:48.840
+providing a more stable
+surface for touch.
+
+00:04:46.920 --> 00:04:48.840
+providing a more stable
+surface for touch.
+
+00:04:50.380 --> 00:04:51.920
+And when multiple
+regions are suitable,
+
+00:04:52.440 --> 00:04:54.080
+prioritize keeping things contextual.
+
+00:04:55.500 --> 00:04:57.520
+Like on iPhone,
+when search is focused,
+
+00:04:57.860 --> 00:04:59.100
+it's over the keyboard.
+
+00:04:59.520 --> 00:05:00.320
+When the device is open,
+
+00:04:59.520 --> 00:05:00.320
+When the device is open,
+
+00:05:00.700 --> 00:05:03.660
+the field takes advantage of
+the extra space it affords.
+
+00:05:04.840 --> 00:05:07.700
+As the device folds,
+its width and position adapt
+
+00:05:04.840 --> 00:05:07.700
+As the device folds,
+its width and position adapt
+
+00:05:07.960 --> 00:05:09.540
+to remain over the
+view it's searching.
+
+00:05:11.560 --> 00:05:13.320
+Once you've chosen where
+something should move,
+
+00:05:11.560 --> 00:05:13.320
+Once you've chosen where
+something should move,
+
+00:05:14.080 --> 00:05:15.720
+consider how it adapts
+to its new surroundings.
+
+00:05:16.800 --> 00:05:19.240
+Position and size are
+the most common changes,
+
+00:05:16.800 --> 00:05:19.240
+Position and size are
+the most common changes,
+
+00:05:19.730 --> 00:05:21.800
+but other visual
+properties can adapt too.
+
+00:05:23.000 --> 00:05:25.960
+Action sheets, alerts,
+menus, and popovers
+
+00:05:23.000 --> 00:05:25.960
+Action sheets, alerts,
+menus, and popovers
+
+00:05:26.540 --> 00:05:28.840
+are all lightweight
+contextual experiences
+
+00:05:29.030 --> 00:05:30.940
+that can appear over
+a reserved region.
+
+00:05:29.030 --> 00:05:30.940
+that can appear over
+a reserved region.
+
+00:05:31.430 --> 00:05:33.900
+So the main goal is to
+keep them fully visible.
+
+00:05:34.940 --> 00:05:37.520
+The system automatically
+repositions components
+
+00:05:34.940 --> 00:05:37.520
+The system automatically
+repositions components
+
+00:05:37.940 --> 00:05:39.000
+around the reserved region.
+
+00:05:40.320 --> 00:05:42.480
+In a split view app, like Reminders,
+
+00:05:40.320 --> 00:05:42.480
+In a split view app, like Reminders,
+
+00:05:42.530 --> 00:05:44.764
+the system keeps both columns visible
+
+00:05:44.814 --> 00:05:46.254
+by adjusting their width
+
+00:05:46.304 --> 00:05:49.060
+and positioning them
+into an even 50/50 split.
+
+00:05:46.304 --> 00:05:49.060
+and positioning them
+into an even 50/50 split.
+
+00:05:50.540 --> 00:05:51.850
+In this Fitness design,
+
+00:05:51.900 --> 00:05:53.317
+I want to keep every item
+
+00:05:53.367 --> 00:05:55.880
+in the grid interactive
+as the device folds.
+
+00:05:53.367 --> 00:05:55.880
+in the grid interactive
+as the device folds.
+
+00:05:56.920 --> 00:05:58.678
+I can preserve the outer margins
+
+00:05:58.728 --> 00:06:01.266
+while increasing the
+spacing around the hinge,
+
+00:05:58.728 --> 00:06:01.266
+while increasing the
+spacing around the hinge,
+
+00:06:01.316 --> 00:06:03.560
+keeping each container
+within its region.
+
+00:06:04.680 --> 00:06:07.512
+What's common across
+all of these examples is
+
+00:06:04.680 --> 00:06:07.512
+What's common across
+all of these examples is
+
+00:06:07.562 --> 00:06:08.680
+that we're moving,
+
+00:06:08.730 --> 00:06:11.660
+resizing, or reorganizing
+what's already there.
+
+00:06:12.680 --> 00:06:14.510
+Keep content, functionality,
+
+00:06:14.560 --> 00:06:16.962
+and layouts available
+so people can access the
+
+00:06:17.012 --> 00:06:20.100
+full experience regardless of
+how they're using iPhone Duo.
+
+00:06:17.012 --> 00:06:20.100
+full experience regardless of
+how they're using iPhone Duo.
+
+00:06:21.460 --> 00:06:24.260
+Now you know how to think about
+adapting to reserved regions.
+
+00:06:25.200 --> 00:06:28.400
+Harry, are there any new APIs that
+developers should be aware of?
+
+00:06:29.720 --> 00:06:30.980
+That's a great question, Maria.
+
+00:06:29.720 --> 00:06:30.980
+That's a great question, Maria.
+
+00:06:31.600 --> 00:06:33.420
+There's nothing I love
+more than a new API.
+
+00:06:33.820 --> 00:06:36.940
+And in fact, there are some new
+APIs I'd like to talk to you about.
+
+00:06:33.820 --> 00:06:36.940
+And in fact, there are some new
+APIs I'd like to talk to you about.
+
+00:06:38.520 --> 00:06:40.070
+In SwiftUI,
+
+00:06:40.120 --> 00:06:41.625
+you query reserved regions using
+
+00:06:41.675 --> 00:06:43.418
+a GeometryProxy from a GeometryReader
+
+00:06:41.675 --> 00:06:43.418
+a GeometryProxy from a GeometryReader
+
+00:06:43.468 --> 00:06:44.820
+or onGeometryChange modifier.
+
+00:06:46.380 --> 00:06:48.109
+Use the new reservedRegion method
+
+00:06:48.159 --> 00:06:50.260
+on the geometry proxy
+to get the regions
+
+00:06:48.159 --> 00:06:50.260
+on the geometry proxy
+to get the regions
+
+00:06:50.520 --> 00:06:51.320
+available in your view.
+
+00:06:52.380 --> 00:06:54.200
+There are multiple kinds
+of reserved regions.
+
+00:06:55.060 --> 00:06:56.110
+Here,
+
+00:06:56.160 --> 00:06:56.982
+the fold is backed
+
+00:06:57.032 --> 00:06:59.360
+by a division reserved
+region because it divides a
+
+00:06:59.520 --> 00:07:01.640
+larger area into
+multiple smaller areas.
+
+00:06:59.520 --> 00:07:01.640
+larger area into
+multiple smaller areas.
+
+00:07:03.140 --> 00:07:04.040
+In UIKit,
+
+00:07:04.090 --> 00:07:06.840
+you'll use the reservedRegion
+method available on UIView.
+
+00:07:04.090 --> 00:07:06.840
+you'll use the reservedRegion
+method available on UIView.
+
+00:07:07.790 --> 00:07:10.317
+You can query the frame
+property of a reserved region
+
+00:07:10.367 --> 00:07:12.220
+to incorporate it
+into your own layout.
+
+00:07:13.050 --> 00:07:15.520
+A region can be active or inactive.
+
+00:07:16.920 --> 00:07:19.564
+By default, only active
+ones will be returned,
+
+00:07:16.920 --> 00:07:19.564
+By default, only active
+ones will be returned,
+
+00:07:19.614 --> 00:07:22.200
+but you can query for
+inactive ones using the
+
+00:07:22.260 --> 00:07:25.460
+includeInactive query option
+on the reservedRegion method.
+
+00:07:22.260 --> 00:07:25.460
+includeInactive query option
+on the reservedRegion method.
+
+00:07:26.759 --> 00:07:28.019
+On iPhone Duo,
+
+00:07:28.069 --> 00:07:30.111
+the fold's division
+region is only active
+
+00:07:30.161 --> 00:07:31.900
+when someone has folded the device.
+
+00:07:30.161 --> 00:07:31.900
+when someone has folded the device.
+
+00:07:32.780 --> 00:07:35.780
+When flat, it's inactive
+and has a width of zero.
+
+00:07:36.930 --> 00:07:38.320
+You can use inactive regions
+
+00:07:38.430 --> 00:07:40.340
+to make high-level
+decisions about your app.
+
+00:07:41.140 --> 00:07:42.560
+For example, in grid-like layouts,
+
+00:07:41.140 --> 00:07:42.560
+For example, in grid-like layouts,
+
+00:07:42.950 --> 00:07:44.820
+you could prefer even
+numbers of columns
+
+00:07:45.420 --> 00:07:46.660
+when a division region is present
+
+00:07:47.140 --> 00:07:48.440
+regardless of its active state.
+
+00:07:49.980 --> 00:07:51.500
+There is another kind
+of reserved region
+
+00:07:51.740 --> 00:07:53.040
+called occlusion regions.
+
+00:07:54.800 --> 00:07:56.381
+These don't divide areas;
+
+00:07:56.431 --> 00:07:58.140
+instead, they occlude them.
+
+00:07:58.840 --> 00:08:00.940
+Think of them as smaller
+frames in your view's bounds.
+
+00:07:58.840 --> 00:08:00.940
+Think of them as smaller
+frames in your view's bounds.
+
+00:08:02.880 --> 00:08:03.780
+On iPhone Duo,
+
+00:08:03.830 --> 00:08:06.580
+the FaceTime camera is represented
+by an occlusion region.
+
+00:08:03.830 --> 00:08:06.580
+the FaceTime camera is represented
+by an occlusion region.
+
+00:08:07.120 --> 00:08:09.446
+You query them by passing
+the occlusion kind
+
+00:08:09.496 --> 00:08:11.020
+to the reservedRegion method.
+
+00:08:12.400 --> 00:08:14.480
+Just like with the
+fold's division region,
+
+00:08:12.400 --> 00:08:14.480
+Just like with the
+fold's division region,
+
+00:08:14.530 --> 00:08:16.860
+this region is active
+when the camera is active
+
+00:08:17.500 --> 00:08:19.740
+and inactive when the
+camera is inactive.
+
+00:08:17.500 --> 00:08:19.740
+and inactive when the
+camera is inactive.
+
+00:08:21.720 --> 00:08:22.600
+Thanks, Harry.
+
+00:08:22.880 --> 00:08:25.180
+You always seem to have
+the answer to my question.
+
+00:08:22.880 --> 00:08:25.180
+You always seem to have
+the answer to my question.
+
+00:08:26.820 --> 00:08:29.196
+I'm really excited about
+using reserved regions
+
+00:08:29.246 --> 00:08:30.140
+with custom views.
+
+00:08:31.020 --> 00:08:33.336
+But as a systems designer,
+I have to say,
+
+00:08:33.386 --> 00:08:35.760
+I'm even more excited
+about leveraging our
+
+00:08:35.960 --> 00:08:37.580
+own components that adapt to the fold.
+
+00:08:35.960 --> 00:08:37.580
+own components that adapt to the fold.
+
+00:08:38.680 --> 00:08:41.077
+You're probably familiar
+with many of them,
+
+00:08:41.127 --> 00:08:43.580
+like NavigationStacks,
+NavigationSplitViews,
+
+00:08:41.127 --> 00:08:43.580
+like NavigationStacks,
+NavigationSplitViews,
+
+00:08:44.219 --> 00:08:45.500
+and TabViews.
+
+00:08:46.120 --> 00:08:48.629
+These system containers
+let you use common patterns
+
+00:08:46.120 --> 00:08:48.629
+These system containers
+let you use common patterns
+
+00:08:48.679 --> 00:08:50.840
+for how people navigate
+throughout your app.
+
+00:08:52.060 --> 00:08:54.845
+Then there's views like
+List and ScrollView,
+
+00:08:52.060 --> 00:08:54.845
+Then there's views like
+List and ScrollView,
+
+00:08:54.895 --> 00:08:57.680
+which are containers
+that hold your content.
+
+00:08:58.680 --> 00:08:59.872
+Hey, Harry,
+
+00:08:59.922 --> 00:09:01.560
+I have a layout that's
+
+00:08:59.922 --> 00:09:01.560
+I have a layout that's
+
+00:09:01.610 --> 00:09:03.550
+kind of like a split view,
+
+00:09:03.600 --> 00:09:05.420
+but I don't really need
+
+00:09:05.880 --> 00:09:09.000
+all the expanding and collapsing
+behavior that it comes with.
+
+00:09:05.880 --> 00:09:09.000
+all the expanding and collapsing
+behavior that it comes with.
+
+00:09:09.640 --> 00:09:10.800
+Is there anything else I can use?
+
+00:09:12.040 --> 00:09:14.780
+Wow, Maria, another great question.
+
+00:09:12.040 --> 00:09:14.780
+Wow, Maria, another great question.
+
+00:09:15.480 --> 00:09:16.315
+Yes,
+
+00:09:16.365 --> 00:09:18.920
+there is yet another container
+I can talk to you about.
+
+00:09:16.365 --> 00:09:18.920
+there is yet another container
+I can talk to you about.
+
+00:09:20.130 --> 00:09:21.569
+A layout container sits
+
+00:09:21.619 --> 00:09:23.333
+in between these navigation
+
+00:09:23.383 --> 00:09:24.840
+and content containers.
+
+00:09:23.383 --> 00:09:24.840
+and content containers.
+
+00:09:25.920 --> 00:09:28.482
+These layout containers
+arrange two views according
+
+00:09:28.532 --> 00:09:29.420
+to a set of rules.
+
+00:09:30.600 --> 00:09:31.600
+They're called arrangements.
+
+00:09:32.680 --> 00:09:34.520
+Now what do I mean
+by arrange and rules?
+
+00:09:35.670 --> 00:09:37.880
+To explain, let's
+open the Podcast app.
+
+00:09:35.670 --> 00:09:37.880
+To explain, let's
+open the Podcast app.
+
+00:09:38.960 --> 00:09:41.106
+Here, I've started playing
+a podcast on my iPad,
+
+00:09:41.156 --> 00:09:42.940
+and I'm looking at
+the Now Playing view.
+
+00:09:41.156 --> 00:09:42.940
+and I'm looking at
+the Now Playing view.
+
+00:09:43.860 --> 00:09:46.340
+There's a button in the lower right
+that will show me its transcript.
+
+00:09:47.040 --> 00:09:47.971
+If I tap that button,
+
+00:09:48.021 --> 00:09:50.820
+the transcript view appears,
+now splitting the layout in half.
+
+00:09:48.021 --> 00:09:50.820
+the transcript view appears,
+now splitting the layout in half.
+
+00:09:52.100 --> 00:09:54.720
+If I show the same view on
+iPhone Duo, it's pretty similar.
+
+00:09:52.100 --> 00:09:54.720
+If I show the same view on
+iPhone Duo, it's pretty similar.
+
+00:09:55.760 --> 00:09:57.000
+after I fold the device.
+
+00:09:57.560 --> 00:10:00.620
+This split layout from iPad lends
+itself pretty well to iPhone Duo.
+
+00:09:57.560 --> 00:10:00.620
+This split layout from iPad lends
+itself pretty well to iPhone Duo.
+
+00:10:01.870 --> 00:10:04.800
+But notice what happens if I again
+toggle the transcript button.
+
+00:10:05.860 --> 00:10:06.805
+It disappears again,
+
+00:10:05.860 --> 00:10:06.805
+It disappears again,
+
+00:10:06.855 --> 00:10:09.740
+but the Now Playing view is not
+centered like it was on iPad.
+
+00:10:10.660 --> 00:10:13.840
+Instead, it stays constrained to
+the left region defined by the fold.
+
+00:10:10.660 --> 00:10:13.840
+Instead, it stays constrained to
+the left region defined by the fold.
+
+00:10:14.920 --> 00:10:15.900
+Like Maria said,
+
+00:10:15.950 --> 00:10:18.940
+this ensures that its controls are
+easily reachable and unobstructed.
+
+00:10:15.950 --> 00:10:18.940
+this ensures that its controls are
+easily reachable and unobstructed.
+
+00:10:20.010 --> 00:10:23.016
+If I rotate iPhone Duo to
+be taller than it is wide,
+
+00:10:23.066 --> 00:10:25.139
+the now playing and transcript views
+
+00:10:23.066 --> 00:10:25.139
+the now playing and transcript views
+
+00:10:25.160 --> 00:10:26.280
+don't use a split layout at all.
+
+00:10:27.190 --> 00:10:28.560
+Instead, the transcript view is shown
+
+00:10:28.760 --> 00:10:29.800
+with an inline representation.
+
+00:10:31.580 --> 00:10:33.220
+So to figure out the
+appropriate layout
+
+00:10:33.500 --> 00:10:34.360
+of the now playing view,
+
+00:10:35.190 --> 00:10:36.620
+I have multiple inputs to consider,
+
+00:10:37.440 --> 00:10:39.700
+like the horizontal and
+vertical size class of the view,
+
+00:10:40.360 --> 00:10:42.760
+the aspect ratio of the
+view's width over its height,
+
+00:10:40.360 --> 00:10:42.760
+the aspect ratio of the
+view's width over its height,
+
+00:10:43.560 --> 00:10:45.360
+and whether there are any
+active division regions.
+
+00:10:47.460 --> 00:10:48.500
+Based on these inputs,
+
+00:10:48.600 --> 00:10:50.520
+I can determine the
+outputs of the layout
+
+00:10:48.600 --> 00:10:50.520
+I can determine the
+outputs of the layout
+
+00:10:50.820 --> 00:10:51.640
+of the Now Playing view,
+
+00:10:52.080 --> 00:10:53.660
+like whether I should
+show the view at all,
+
+00:10:54.380 --> 00:10:56.500
+And if I do show the view,
+what's its frame?
+
+00:10:54.380 --> 00:10:56.500
+And if I do show the view,
+what's its frame?
+
+00:10:57.980 --> 00:11:00.040
+Together, this function
+of inputs to outputs
+
+00:11:00.800 --> 00:11:02.000
+is called an arrangement.
+
+00:11:02.380 --> 00:11:03.780
+And in iOS 27.1,
+
+00:11:04.430 --> 00:11:06.860
+you can use system-provided
+arrangements in your own apps.
+
+00:11:04.430 --> 00:11:06.860
+you can use system-provided
+arrangements in your own apps.
+
+00:11:08.260 --> 00:11:09.860
+Maria made a lot of
+great points earlier,
+
+00:11:10.460 --> 00:11:11.380
+and I should have been taking notes.
+
+00:11:12.460 --> 00:11:13.600
+By absolute coincidence,
+
+00:11:12.460 --> 00:11:13.600
+By absolute coincidence,
+
+00:11:14.140 --> 00:11:15.820
+I've been working on
+an audio note app.
+
+00:11:16.540 --> 00:11:18.960
+Let me show you how I can
+use these new APIs in my app.
+
+00:11:16.540 --> 00:11:18.960
+Let me show you how I can
+use these new APIs in my app.
+
+00:11:20.240 --> 00:11:21.760
+Here, I have my NavigationStack.
+
+00:11:22.520 --> 00:11:25.180
+I'll start by adding an
+ArrangementView inside of the stack.
+
+00:11:22.520 --> 00:11:25.180
+I'll start by adding an
+ArrangementView inside of the stack.
+
+00:11:25.860 --> 00:11:28.820
+An ArrangementView takes a
+primary and secondary view.
+
+00:11:29.660 --> 00:11:31.840
+So I'll provide my PlayerView
+to show information
+
+00:11:29.660 --> 00:11:31.840
+So I'll provide my PlayerView
+to show information
+
+00:11:32.230 --> 00:11:33.840
+about the currently
+playing audio note,
+
+00:11:34.120 --> 00:11:36.980
+and my UpNextView to show
+what notes are going to play
+
+00:11:34.120 --> 00:11:36.980
+and my UpNextView to show
+what notes are going to play
+
+00:11:37.500 --> 00:11:38.800
+after the current note has finished.
+
+00:11:39.900 --> 00:11:42.560
+In UIKit, I'll reach for the
+UIArrangementViewController
+
+00:11:42.780 --> 00:11:44.380
+to add as the root view controller
+
+00:11:44.450 --> 00:11:46.120
+of my UINavigationController.
+
+00:11:47.300 --> 00:11:50.079
+Then I'll configure my Player
+and UpNextView Controllers
+
+00:11:47.300 --> 00:11:50.079
+Then I'll configure my Player
+and UpNextView Controllers
+
+00:11:50.100 --> 00:11:52.120
+as the primary and
+secondary view controllers
+
+00:11:52.400 --> 00:11:53.760
+of my ArrangementViewController.
+
+00:11:55.220 --> 00:11:57.140
+You configure the
+preferred arrangement
+
+00:11:57.500 --> 00:11:59.400
+with the arrangementViewStyle
+modifier.
+
+00:12:00.460 --> 00:12:02.080
+The default style is called split,
+
+00:12:00.460 --> 00:12:02.080
+The default style is called split,
+
+00:12:02.860 --> 00:12:04.260
+which I'll manually specify here.
+
+00:12:05.800 --> 00:12:08.180
+As you can imagine,
+the split arrangement splits
+
+00:12:05.800 --> 00:12:08.180
+As you can imagine,
+the split arrangement splits
+
+00:12:08.760 --> 00:12:11.700
+its provided bounds amongst
+its primary and secondary view.
+
+00:12:13.080 --> 00:12:14.780
+By default, it splits horizontally
+
+00:12:14.840 --> 00:12:16.660
+when the view is
+wider than it is tall,
+
+00:12:17.180 --> 00:12:19.700
+like when used here on iPad
+with a wide aspect ratio,
+
+00:12:17.180 --> 00:12:19.700
+like when used here on iPad
+with a wide aspect ratio,
+
+00:12:20.820 --> 00:12:22.400
+or in a similar aspect
+ratio on iPhone,
+
+00:12:23.400 --> 00:12:25.160
+or similar aspect ratio on iPhone Duo.
+
+00:12:23.400 --> 00:12:25.160
+or similar aspect ratio on iPhone Duo.
+
+00:12:27.280 --> 00:12:28.100
+If I rotate the device,
+
+00:12:28.640 --> 00:12:30.120
+the split style will split vertically
+
+00:12:30.640 --> 00:12:32.660
+since the view's now
+taller than it is wide.
+
+00:12:30.640 --> 00:12:32.660
+since the view's now
+taller than it is wide.
+
+00:12:33.780 --> 00:12:34.700
+For my now playing view,
+
+00:12:35.340 --> 00:12:36.960
+I only ever want to
+split it horizontally.
+
+00:12:35.340 --> 00:12:36.960
+I only ever want to
+split it horizontally.
+
+00:12:38.040 --> 00:12:40.260
+So I'll specify the axes
+in which it should split
+
+00:12:41.040 --> 00:12:43.740
+using the axes method on
+the split ArrangementStyle.
+
+00:12:41.040 --> 00:12:43.740
+using the axes method on
+the split ArrangementStyle.
+
+00:12:44.800 --> 00:12:46.880
+If the split arrangement
+cannot split among an axis,
+
+00:12:47.580 --> 00:12:48.680
+and it's the primary axis,
+
+00:12:49.400 --> 00:12:51.940
+the arrangement view chooses
+to only show a single view.
+
+00:12:53.060 --> 00:12:55.140
+Here, it chooses to show
+only the PlayerView,
+
+00:12:53.060 --> 00:12:55.140
+Here, it chooses to show
+only the PlayerView,
+
+00:12:55.560 --> 00:12:57.980
+since the ArrangementView
+is taller than it is wide.
+
+00:12:58.640 --> 00:13:00.140
+So its primary axis is vertical,
+
+00:13:00.820 --> 00:13:02.300
+but it can only split horizontally.
+
+00:13:03.640 --> 00:13:06.340
+In UIKit, I'll reach for the
+update arrangement method
+
+00:13:06.620 --> 00:13:08.040
+on my UIArrangementViewController,
+
+00:13:06.620 --> 00:13:08.040
+on my UIArrangementViewController,
+
+00:13:08.820 --> 00:13:10.820
+and use the UISplitArrangement type
+
+00:13:11.500 --> 00:13:13.599
+configured with the
+same horizontal axis
+
+00:13:11.500 --> 00:13:13.599
+configured with the
+same horizontal axis
+
+00:13:13.620 --> 00:13:15.290
+configured in SwiftUI.
+
+00:13:15.340 --> 00:13:17.579
+Here is my player and up next view
+
+00:13:17.629 --> 00:13:20.400
+on iPhone Duo using
+the split arrangement.
+
+00:13:17.629 --> 00:13:20.400
+on iPhone Duo using
+the split arrangement.
+
+00:13:21.240 --> 00:13:23.306
+I'd like to explore
+another arrangement
+
+00:13:23.356 --> 00:13:24.672
+for positioning my views.
+
+00:13:24.722 --> 00:13:25.920
+It's called the overlay
+
+00:13:24.722 --> 00:13:25.920
+It's called the overlay
+
+00:13:26.100 --> 00:13:27.455
+arrangement.
+
+00:13:27.505 --> 00:13:28.509
+Unlike the split,
+
+00:13:28.559 --> 00:13:31.620
+which prefers to position
+content side by side, the overlay
+
+00:13:28.559 --> 00:13:31.620
+which prefers to position
+content side by side, the overlay
+
+00:13:31.880 --> 00:13:34.655
+arrangement prefers to
+position content above
+
+00:13:34.705 --> 00:13:35.924
+or below each other.
+
+00:13:35.974 --> 00:13:37.860
+Here I'll update my arrangement
+
+00:13:35.974 --> 00:13:37.860
+Here I'll update my arrangement
+
+00:13:37.920 --> 00:13:40.666
+view to use the overlay
+arrangement view style.
+
+00:13:40.716 --> 00:13:43.580
+I want to add a bit of
+polish before showing this
+
+00:13:40.716 --> 00:13:43.580
+I want to add a bit of
+polish before showing this
+
+00:13:43.600 --> 00:13:45.286
+Maria, so I'll switch my player
+
+00:13:45.336 --> 00:13:47.740
+and my UpNext view and
+add a collapse state.
+
+00:13:48.890 --> 00:13:50.400
+That came out alright.
+
+00:13:51.580 --> 00:13:52.677
+Now if I fold the device,
+
+00:13:52.727 --> 00:13:55.800
+the overlay arrangement prefers to
+position the primary and secondary
+
+00:13:52.727 --> 00:13:55.800
+the overlay arrangement prefers to
+position the primary and secondary
+
+00:13:56.040 --> 00:13:57.280
+views side by side.
+
+00:13:57.330 --> 00:14:00.028
+This gives my UpNext view
+a lot more breathing room,
+
+00:14:00.078 --> 00:14:01.100
+and I'd like to take
+
+00:14:00.078 --> 00:14:01.100
+and I'd like to take
+
+00:14:01.340 --> 00:14:02.635
+advantage of that.
+
+00:14:02.685 --> 00:14:04.496
+When using the overlay arrangement,
+
+00:14:04.546 --> 00:14:06.620
+I can query the
+overlayArrangementZIndex
+
+00:14:07.360 --> 00:14:08.885
+environment property.
+
+00:14:08.935 --> 00:14:10.222
+In the UpNext view,
+
+00:14:10.272 --> 00:14:11.226
+it will change
+
+00:14:11.276 --> 00:14:13.560
+as the user folds and unfolds the
+
+00:14:11.276 --> 00:14:13.560
+as the user folds and unfolds the
+
+00:14:13.580 --> 00:14:15.080
+device.
+
+00:14:15.130 --> 00:14:17.407
+I'll use this to switch
+between a collapsed
+
+00:14:17.457 --> 00:14:19.680
+and an expanded version
+of my UpNext view.
+
+00:14:17.457 --> 00:14:19.680
+and an expanded version
+of my UpNext view.
+
+00:14:21.030 --> 00:14:24.147
+In UIKit, I can query the
+Z index of the primary view
+
+00:14:24.197 --> 00:14:26.780
+by using the state for
+view placement method
+
+00:14:24.197 --> 00:14:26.780
+by using the state for
+view placement method
+
+00:14:26.930 --> 00:14:28.546
+on UIArrangementViewController,
+
+00:14:28.596 --> 00:14:31.640
+and then using the Z index
+property on the returned state.
+
+00:14:28.596 --> 00:14:31.640
+and then using the Z index
+property on the returned state.
+
+00:14:32.339 --> 00:14:35.377
+Harry, that is a lot of
+options, I have to ask.
+
+00:14:35.427 --> 00:14:37.117
+Have you thought about how
+
+00:14:35.427 --> 00:14:37.117
+Have you thought about how
+
+00:14:37.167 --> 00:14:38.660
+to choose between them?
+
+00:14:39.200 --> 00:14:40.400
+Of course I have.
+
+00:14:40.950 --> 00:14:43.700
+First, be sure to follow
+your existing app patterns.
+
+00:14:40.950 --> 00:14:43.700
+First, be sure to follow
+your existing app patterns.
+
+00:14:44.430 --> 00:14:46.500
+If you're already implementing
+a split-like layout
+
+00:14:46.570 --> 00:14:48.120
+in parts of your app using components
+
+00:14:48.480 --> 00:14:49.900
+like an HStack or VStack,
+
+00:14:48.480 --> 00:14:49.900
+like an HStack or VStack,
+
+00:14:50.540 --> 00:14:51.760
+consider using the split arrangement.
+
+00:14:52.660 --> 00:14:54.740
+If you're already implementing
+an overlay-like layout
+
+00:14:54.790 --> 00:14:57.120
+in parts of your app using
+components like a ZStack,
+
+00:14:54.790 --> 00:14:57.120
+in parts of your app using
+components like a ZStack,
+
+00:14:57.720 --> 00:14:59.360
+consider using the
+overlay arrangement.
+
+00:15:00.520 --> 00:15:02.060
+These components naturally translate
+
+00:15:00.520 --> 00:15:02.060
+These components naturally translate
+
+00:15:02.110 --> 00:15:03.200
+to the respective arrangements
+
+00:15:03.600 --> 00:15:05.220
+with built-in support for iPhone Duo.
+
+00:15:06.300 --> 00:15:08.200
+If you don't have an
+existing pattern to lean on,
+
+00:15:06.300 --> 00:15:08.200
+If you don't have an
+existing pattern to lean on,
+
+00:15:09.040 --> 00:15:10.180
+consider an overlay arrangement
+
+00:15:10.310 --> 00:15:11.800
+when there's a clear
+
+00:15:11.850 --> 00:15:13.180
+foreground/background relationship
+between your views.
+
+00:15:11.850 --> 00:15:13.180
+foreground/background relationship
+between your views.
+
+00:15:14.720 --> 00:15:16.680
+For example, here in
+Accessibility Reader,
+
+00:15:16.940 --> 00:15:18.260
+the controls are in the foreground
+
+00:15:18.930 --> 00:15:20.760
+and the readable content
+is in the background.
+
+00:15:22.020 --> 00:15:24.560
+Because you can scroll the
+readable content above the overlay,
+
+00:15:25.200 --> 00:15:27.540
+it's okay if it's partially
+obscured at times,
+
+00:15:28.020 --> 00:15:30.200
+so using an overlay
+arrangement is a great choice.
+
+00:15:31.620 --> 00:15:32.820
+Consider a split arrangement
+
+00:15:32.970 --> 00:15:35.580
+when there's more of a main-detail
+relationship between your content.
+
+00:15:36.550 --> 00:15:38.940
+Going back to Podcasts,
+the transcript view
+
+00:15:36.550 --> 00:15:38.940
+Going back to Podcasts,
+the transcript view
+
+00:15:39.030 --> 00:15:41.900
+is providing more details about
+the currently playing podcast.
+
+00:15:43.060 --> 00:15:45.180
+It's important that neither
+of them are ever obscured,
+
+00:15:45.610 --> 00:15:48.020
+so using a split arrangement
+is a great choice here.
+
+00:15:49.200 --> 00:15:51.000
+OK, Maria, let's see if
+you were paying attention.
+
+00:15:52.040 --> 00:15:54.300
+Which arrangement should I
+use for my audio note app?
+
+00:15:54.410 --> 00:15:55.660
+Hmm.
+
+00:15:54.410 --> 00:15:55.660
+Hmm.
+
+00:15:56.640 --> 00:15:58.940
+I'd say we should use a
+split ArrangementView,
+
+00:15:59.620 --> 00:16:02.639
+since the up next list
+is providing more detail
+
+00:15:59.620 --> 00:16:02.639
+since the up next list
+is providing more detail
+
+00:16:02.660 --> 00:16:05.230
+about the playing state rather than
+having a background relationship
+
+00:16:05.280 --> 00:16:06.120
+to the player.
+
+00:16:06.640 --> 00:16:07.800
+That's right.
+
+00:16:06.640 --> 00:16:07.800
+That's right.
+
+00:16:08.670 --> 00:16:10.900
+As important as choosing
+the right arrangement is,
+
+00:16:11.520 --> 00:16:14.060
+consider when an ArrangementView
+is not the right tool for the job.
+
+00:16:11.520 --> 00:16:14.060
+consider when an ArrangementView
+is not the right tool for the job.
+
+00:16:15.280 --> 00:16:16.220
+For example,
+
+00:16:16.270 --> 00:16:19.140
+ArrangementViews don't provide
+navigation infrastructure to your app.
+
+00:16:16.270 --> 00:16:19.140
+ArrangementViews don't provide
+navigation infrastructure to your app.
+
+00:16:19.650 --> 00:16:21.819
+So avoid putting navigation containers
+
+00:16:21.869 --> 00:16:25.020
+like NavigationSplitViews
+inside of an ArrangementView.
+
+00:16:21.869 --> 00:16:25.020
+like NavigationSplitViews
+inside of an ArrangementView.
+
+00:16:26.140 --> 00:16:28.620
+And due to the nature of views
+like List and ScrollView,
+
+00:16:29.340 --> 00:16:32.200
+avoid putting ArrangementViews inside
+of these scrollable containers.
+
+00:16:29.340 --> 00:16:32.200
+avoid putting ArrangementViews inside
+of these scrollable containers.
+
+00:16:33.540 --> 00:16:36.480
+iPhone Duo introduces many new
+configurations for your app.
+
+00:16:37.130 --> 00:16:39.400
+To make sure your app
+is ready for iPhone Duo,
+
+00:16:40.180 --> 00:16:42.040
+start by auditing your
+app's centered layouts.
+
+00:16:43.040 --> 00:16:45.020
+Consider whether you can
+make it a two-column layout,
+
+00:16:45.530 --> 00:16:48.040
+or what displacement pattern
+makes sense in that use case.
+
+00:16:49.080 --> 00:16:51.660
+If you're using standard system
+containers and presentations,
+
+00:16:52.420 --> 00:16:54.280
+you'll find you get a
+lot of behavior for free.
+
+00:16:56.040 --> 00:16:58.120
+And if you're using a more
+custom horizontal split
+
+00:16:58.420 --> 00:17:01.380
+or an overlay layout,
+consider using ArrangementView
+
+00:16:58.420 --> 00:17:01.380
+or an overlay layout,
+consider using ArrangementView
+
+00:17:01.490 --> 00:17:03.000
+to handle this layout for you
+
+00:17:03.240 --> 00:17:05.160
+across all of your
+app's supported devices.
+
+00:17:06.079 --> 00:17:08.860
+Finally, identify the highest priority
+
+00:17:06.079 --> 00:17:08.860
+Finally, identify the highest priority
+
+00:17:09.280 --> 00:17:10.860
+manually laid-out
+controls in your views
+
+00:17:11.480 --> 00:17:13.839
+and consider adopting
+the ReservedRegions API
+
+00:17:11.480 --> 00:17:13.839
+and consider adopting
+the ReservedRegions API
+
+00:17:14.050 --> 00:17:16.360
+to implement your own
+displacement where needed.
+
+00:17:17.439 --> 00:17:19.780
+So what about using the
+hinge for more than layout?
+
+00:17:17.439 --> 00:17:19.780
+So what about using the
+hinge for more than layout?
+
+00:17:20.140 --> 00:17:22.959
+I have a pretty cool interaction
+idea I want to try to build.
+
+00:17:23.920 --> 00:17:24.819
+That sounds fun.
+
+00:17:25.680 --> 00:17:26.756
+There is another API
+
+00:17:26.806 --> 00:17:29.480
+that lets you respond to
+the device's fold state.
+
+00:17:30.560 --> 00:17:32.226
+Check out "Leverage multiple displays
+
+00:17:30.560 --> 00:17:32.226
+Check out "Leverage multiple displays
+
+00:17:32.276 --> 00:17:34.080
+and scenes on iPhone
+Duo" to learn more.
+
+00:17:35.299 --> 00:17:36.760
+Adaptive layouts help your
+
+00:17:36.810 --> 00:17:38.500
+app feel thoughtfully designed
+
+00:17:36.810 --> 00:17:38.500
+app feel thoughtfully designed
+
+00:17:38.550 --> 00:17:39.600
+for every pose.
+
+00:17:40.360 --> 00:17:41.420
+Moving, resizing,
+
+00:17:41.470 --> 00:17:42.481
+and adapting only
+
+00:17:42.531 --> 00:17:44.700
+when it makes the experience better.
+
+00:17:42.531 --> 00:17:44.700
+when it makes the experience better.
+
+00:17:45.360 --> 00:17:48.520
+And with all these new possibilities,
+we can't wait to see what you build.

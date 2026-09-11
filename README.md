@@ -22,11 +22,30 @@ Apple Workflow Skills gives your AI agent a shared way to design, build, review,
 
 ## Install
 
-Paste this into your AI agent:
+Choose one option and paste its complete prompt into your AI agent. Installation makes the skill available for selection by description, but does not guarantee selection on every task. Choose the second option to make it the primary workflow for Apple development.
+
+### Option 1: Install only
+
+```text
+Install Apple Workflow Skills from the latest stable Release at https://github.com/o1xhack/apple-workflow-skills/releases/latest using its apple-workflow-skills.zip asset only; install the complete folder into your configured skills directory, preserve local customizations, and report the version. If the asset is unavailable, stop. Do not modify AGENTS.md or other global instruction files.
+```
+
+### Option 2: Install and set the global default workflow
 
 ```text
 Install Apple Workflow Skills from the latest stable Release at https://github.com/o1xhack/apple-workflow-skills/releases/latest using its apple-workflow-skills.zip asset only; install the complete folder into your configured skills directory, preserve local customizations, and report the version. If the asset is unavailable, stop.
+
+After successful installation, add the following rule to the user-level global AGENTS.md actually used by this agent. Read existing content first and preserve other rules; do not duplicate an equivalent rule. Once the global path is confirmed, create the file if it does not exist. If you cannot determine this agent's global instruction location, ask me instead of guessing a path or substituting a repository AGENTS.md. Report the installed version, the instruction file path changed, and the final rule.
+
+For Apple UI design, SwiftUI implementation or refactoring, adaptive layouts,
+Liquid Glass, UI performance or rendered validation, and Swift concurrency work,
+use $apple-workflow-skills as the primary workflow.
+Load only the modules relevant to the task; route non-UI concurrency work directly
+to its shared Swift concurrency guidance. Preserve project-specific rules and
+deployment targets.
 ```
+
+The second option sets the primary workflow for Apple projects that read those global instructions, while preserving project rules and deployment targets. To apply it to one project only, replace “user-level global AGENTS.md” in the prompt with that project's `AGENTS.md`.
 
 ## What it covers
 
@@ -37,6 +56,8 @@ Install Apple Workflow Skills from the latest stable Release at https://github.c
 - **UI quality** — accessibility, performance review, and Preview / Simulator validation.
 
 [Full coverage →](docs/coverage.md)
+
+The unreleased repository revision adds focused Duo guidance and [six full English timed transcripts](external-sources/apple/iphone-duo/2026-09-10/README.md), read on demand and excluded from the ZIP. Published v0.1.0 does not yet include these additions.
 
 ## Why use it?
 

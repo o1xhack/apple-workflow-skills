@@ -2,14 +2,58 @@
 
 This static check does not claim that Swift runtime behavior has been tested.
 """
+import hashlib
 import json
 from pathlib import Path
 import re
 import sys
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills/apple-workflow-skills"
 CHINESE = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff]")
+
+
+def allowed_reading_url(href):
+    url = urlsplit(href)
+    if url.scheme != "https" or url.username or url.password or url.query:
+        return False
+    if url.netloc == "developer.apple.com":
+        return url.path.startswith(("/documentation/", "/design/", "/videos/play/")) or url.path == "/iphone-duo/"
+    return url.netloc == "raw.githubusercontent.com" and bool(re.fullmatch(
+        r"/o1xhack/apple-workflow-skills/[0-9a-f]{40}/external-sources/apple/iphone-duo/2026-09-10/(?:11146[1-6]|README)\.md",
+        url.path,
+    ))
+
+
+def validate_archive(root):
+    errors = []
+    folder = root / "external-sources/apple/iphone-duo/2026-09-10"
+    manifest = folder / "manifest.json"
+    if not manifest.exists():
+        return ["Missing Duo external-source manifest."]
+    try:
+        records = json.loads(manifest.read_text())["videos"]
+        if len(records) != 6 or {v["id"] for v in records} != {str(n) for n in range(111461, 111467)}:
+            errors.append("Duo archive must contain all six unique sessions.")
+        expected = {"README.md", "manifest.json"}
+        for video in records:
+            for kind, suffix in (("vtt", ".en.vtt"), ("transcript", ".md")):
+                filename = video["id"] + suffix
+                if video[kind] != filename:
+                    errors.append("Invalid archive path: " + video[kind])
+                    continue
+                expected.add(filename)
+                path = folder / filename
+                if not path.is_file() or path.is_symlink():
+                    errors.append("Missing or indirect source: " + filename)
+                elif hashlib.sha256(path.read_bytes()).hexdigest() != video[kind + "_sha256"]:
+                    errors.append("Source checksum mismatch: " + filename)
+        if {p.name for p in folder.iterdir()} != expected:
+            errors.append("Duo archive must contain only its manifest, index, captions, and transcripts.")
+    except (ValueError, KeyError, TypeError) as error:
+        errors.append("Invalid Duo source manifest: " + str(error))
+    return errors
 
 
 def validate():
@@ -61,10 +105,15 @@ def validate():
         relative = str(path.relative_to(ROOT))
         if CHINESE.search(text):
             errors.append("Runtime guidance must be English: " + relative)
-        if re.search(r"https?://|/Users/|/home/|TODO|PLACEHOLDER", text):
+        catalog = path == SKILL / "workflows/apple-ui/swiftui/references/duo-sources.md"
+        if re.search(r"/Users/|/home/|TODO|PLACEHOLDER", text) or (not catalog and re.search(r"https?://", text)):
             errors.append("Runtime guidance contains a forbidden external value: " + relative)
         links = []
         for href in re.findall(r"\]\(([^)]+)\)", text):
+            if urlsplit(href).scheme or href.startswith("//"):
+                if not catalog or not allowed_reading_url(href):
+                    errors.append("Unapproved external reading URL: " + href)
+                continue
             target = (path.parent / href.split("#")[0]).resolve()
             if not target.is_relative_to(SKILL.resolve()):
                 errors.append("Runtime link escapes the installable skill: " + href)
@@ -104,6 +153,7 @@ def validate():
         if CHINESE.search(text):
             errors.append("Chinese text must be in an approved translated document: " + str(path.relative_to(ROOT)))
 
+    errors.extend(validate_archive(ROOT))
     return errors
 
 
