@@ -23,7 +23,7 @@ def main():
     output.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(SKILL.rglob("*")):
-            if path.is_file():
+            if path.is_file() and "__pycache__" not in path.parts and path.suffix != ".pyc" and path.name != ".DS_Store":
                 info = zipfile.ZipInfo(
                     str(path.relative_to(SKILL.parent)),
                     date_time=(2026, 9, 10, 0, 0, 0),

@@ -29,3 +29,11 @@
 - Archive the user-supplied English captions separately from the MIT package. Keep raw bytes plus reading copies with exact duplicate cues removed and hash verification. Do not upload video or frames. Keep the supplied Chinese captions outside this English repository archive.
 - Source review found no populated transcript sections on the six live video pages. The HIG was dated September 9, 2026; the hub still marked Xcode 27.1 beta as coming later in September. API names in the modules are video-described discovery terms, with SDK and hardware validation pending.
 - Mark this runtime revision 0.2.0-dev. Do not replace v0.1.0 tags/assets or update an installed copy from a branch; distribute later through a new stable Release.
+
+## 2026-09-10 — Version 0.2.0 and optional update notices
+
+- Graduate the reviewed repository revision from 0.2.0-dev to the 0.2.0 distribution; Duo SDK and hardware evidence boundaries remain unchanged.
+- Add a standard-library-only helper that reads this repository's stable Release metadata with a five-second timeout and bounded response. Accept only stable numeric versions and the expected uploaded ZIP asset; ignore remote release prose.
+- Store only version and check timestamps in the user's cache, outside projects and the installed skill. Rate-limit normal checks to seven days, including failures; notify once per newer tag. Explicit checks bypass the cache. Never install automatically or run a background service.
+- The source-catalog external-link rule applies to reading material. The update helper's fixed GitHub API endpoint and Release URLs are the narrowly scoped tooling exception; no credentials or project content are sent.
+- Older installations cannot discover this mechanism until manually updated once. Agent compliance and tool availability govern usage-time checks; do not promise guaranteed notifications.

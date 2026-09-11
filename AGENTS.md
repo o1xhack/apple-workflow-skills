@@ -5,6 +5,7 @@ This repository provides one installable Apple development skill. Runtime guidan
 - Read `docs/maintenance.md` and consult `upstream/manifest.json` before changing integrated material.
 - Keep runtime guidance and tooling in English. Chinese user documentation is limited to `README.zh-CN.md` and `docs/coverage.zh-CN.md`; keep each paired with its English version.
 - Keep runtime modules portable and conditionally loaded. External reading links belong only in the dedicated `duo-sources.md` catalog, limited to Apple documentation/videos and this repository's immutable transcript archive. Keep installation instructions, personal paths, upstream project promotion, and copied transcripts out of runtime modules.
+- The bundled update helper may use fixed GitHub endpoints for this repository only; it must not install updates, execute release content, or send credentials/project data.
 - Keep a combined MIT license in the installable skill. Full provenance belongs at repository root in `THIRD_PARTY_NOTICES.md` and `upstream/`. Apple caption archives belong in `external-sources/`, outside the ZIP and the repository's MIT license.
 - Maintain one authoritative location per topic. Verify technical facts against the target SDK and Apple documentation; preserve project-specific product and architecture decisions.
 - Track stable GitHub Releases only. Do not fall back to commit polling for repositories without releases.

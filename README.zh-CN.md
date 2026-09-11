@@ -47,6 +47,12 @@ deployment targets.
 
 第二种方式会为读取该全局指令的 Apple 项目设定优先工作流，同时保留项目自身的规则和部署目标。只想在某个项目生效时，可将 prompt 中的“用户级全局 AGENTS.md”改成该项目的 `AGENTS.md`。
 
+## 更新提醒
+
+从 v0.2.0 起，Agent 使用 Skill 时可运行内置检查器：最多每七天查询一次正式 Release，同一新版只提醒一次，不自动安装。需要可用的 Python 3 和网络权限；无新版或检查失败时不打扰当前任务。用户可以要求跳过，也可以明确要求立即检查。它不是后台通知服务，是否运行仍取决于 Agent 是否遵循入口指引。
+
+已安装的 v0.1.0 需要先使用上方安装 prompt 手动更新一次，才会获得检查器。之后更新仍使用正式 Release ZIP 并保留本地修改。
+
 ## 当前覆盖什么
 
 - **SwiftUI** — 原生界面设计、导航、Observation 状态管理与视图重构。
@@ -57,7 +63,7 @@ deployment targets.
 
 [完整覆盖范围 →](docs/coverage.zh-CN.md)
 
-当前仓库的未发布修订版增加了 Duo 核心指导与[六份完整英文字幕资料](external-sources/apple/iphone-duo/2026-09-10/README.md)，按需读取且不打入安装 ZIP。已发布的 v0.1.0 尚不包含这些新增内容。
+v0.2.0 增加了 Duo 核心指导与[六份完整英文字幕资料](external-sources/apple/iphone-duo/2026-09-10/README.md)，按需读取且不打入安装 ZIP。
 
 ## 为什么用这套 Skills
 

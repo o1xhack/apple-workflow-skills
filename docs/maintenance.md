@@ -69,3 +69,7 @@ Keep the six reviewed Duo English VTT originals and timed Markdown reading copie
 The runtime reading catalog pins transcript URLs to the archive commit. Publish that commit and verify remote content against local hashes before claiming the links work. Keep official HIG/video links alongside archived text so readers can inspect current guidance, visual transitions, and code not spoken in captions. A future archive revision gets a new reviewed snapshot and new pinned links.
 
 Record source review, SDK compilation, Simulator interaction, and hardware validation separately. New API names from a talk are lookup terms until checked against actual declarations. Do not claim complete API or device support from transcript coverage alone.
+
+## Installed-version update notices
+
+The optional bundled `scripts/check_update.py` reads only this repository's stable Release metadata. Its network endpoint is a tooling exception to the runtime reading-link policy. Keep it standard-library-only, bounded, cached outside the install directory, and advisory. Test cache throttling, repeat-notice suppression, version ordering, malformed metadata, missing assets, and network failures. Never couple upstream review polling to user installation or release publication.

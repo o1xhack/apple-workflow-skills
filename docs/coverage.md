@@ -2,7 +2,7 @@
 
 **English** · [Chinese](coverage.zh-CN.md) · [Back to README](../README.md)
 
-Applies to the **unreleased repository revision**; published v0.1.0 retains general Duo guidance only. Coverage means guidance, not SDK or device validation.
+Applies to **v0.2.0**; v0.1.0 retains general Duo guidance only. Coverage means guidance, not SDK or device validation.
 
 ## Devices and platforms
 

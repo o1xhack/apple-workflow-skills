@@ -47,6 +47,12 @@ deployment targets.
 
 The second option sets the primary workflow for Apple projects that read those global instructions, while preserving project rules and deployment targets. To apply it to one project only, replace “user-level global AGENTS.md” in the prompt with that project's `AGENTS.md`.
 
+## Update notices
+
+Starting in v0.2.0, an agent using the skill can run its bundled checker: at most one stable Release lookup every seven days, with one notice per new version and no automatic installation. It requires available Python 3 and permitted networking. No update or a failed check stays quiet during normal work. Users can opt out or explicitly request an immediate check. This is not a background notification service; execution depends on the agent following the entry-point guidance.
+
+Existing v0.1.0 installations need one manual update using the installation prompt above to obtain the checker. Subsequent updates still use stable Release ZIPs and preserve local customizations.
+
 ## What it covers
 
 - **SwiftUI** — native UI design, navigation, Observation, and view refactoring.
@@ -57,7 +63,7 @@ The second option sets the primary workflow for Apple projects that read those g
 
 [Full coverage →](docs/coverage.md)
 
-The unreleased repository revision adds focused Duo guidance and [six full English timed transcripts](external-sources/apple/iphone-duo/2026-09-10/README.md), read on demand and excluded from the ZIP. Published v0.1.0 does not yet include these additions.
+v0.2.0 adds focused Duo guidance and [six full English timed transcripts](external-sources/apple/iphone-duo/2026-09-10/README.md), read on demand and excluded from the ZIP.
 
 ## Why use it?
 
