@@ -19,7 +19,9 @@ def allowed_reading_url(href):
     if url.scheme != "https" or url.username or url.password or url.query:
         return False
     if url.netloc == "developer.apple.com":
-        return url.path.startswith(("/documentation/", "/design/", "/videos/play/")) or url.path == "/iphone-duo/"
+        return (url.path.startswith(("/documentation/", "/design/", "/videos/play/"))
+                or url.path in ("/iphone-duo/", "/iphone-duo/prepare/")
+                or bool(re.fullmatch(r"/forums/(?:thread|activities)/[0-9]+", url.path)))
     return url.netloc == "raw.githubusercontent.com" and bool(re.fullmatch(
         r"/o1xhack/apple-workflow-skills/[0-9a-f]{40}/external-sources/apple/iphone-duo/2026-09-10/(?:11146[1-6]|README)\.md",
         url.path,

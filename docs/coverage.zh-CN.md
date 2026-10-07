@@ -2,12 +2,12 @@
 
 [English](coverage.md) · **简体中文** · [返回 README](../README.zh-CN.md)
 
-对应 **v0.2.0**；v0.1.0 仍只有通用 Duo 指导。这里的覆盖指指导内容，不代表已通过 SDK 或设备验证。
+对应 **v0.3.0**，包含 2026 年 10 月 6 日的 Duo 更新。**v0.2.0** 仍对应 9 月 10 日审查，v0.1.0 只有通用 Duo 指导。这里的覆盖指指导内容，不代表已通过 SDK 或设备验证。
 
 ## 设备与平台
 
 - **iPhone 与 iPad：** 面向已有项目的 SwiftUI 指导，包括 Duo 之前的机型；具体 API 按项目支持的系统版本使用。
-- **iPhone Duo — Beta：** 已对照 Apple HIG 与六个视频补充布局、竖向工具栏、多场景和相机指导；专用 API 与设备行为仍待验证。
+- **iPhone Duo — Beta：** 已重新对照当前 Apple HIG、准备与相机文档、逐项 API 声明和部分官方工程师答疑，补充适配审计、布局、工具栏、双屏／相机与运动坐标指导；iOS 27.1 编译和设备行为仍待验证。
 - **Mac：** 已包含部分 SwiftUI 与桌面交互惯例。
 
 这些是指导适用的开发目标，目前还没有逐机型、逐系统版本的完整验证矩阵。
@@ -23,13 +23,13 @@
 | [Liquid Glass](../skills/apple-workflow-skills/workflows/apple-ui/liquid-glass/index.md) | 原生材质、分组与转场 |
 | [性能与验证](../skills/apple-workflow-skills/workflows/apple-ui/validation/index.md) | 界面诊断、Preview、模拟器与真机检查 |
 | [Swift 并发](../skills/apple-workflow-skills/shared/swift-concurrency/index.md) | 隔离、任务、取消与流 |
-| [iPhone Duo · Beta](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/foldable-layout.md) | 设计与折叠布局、工具栏、双屏／相机；完整字幕按需外链 |
+| [iPhone Duo · Beta](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/foldable-layout.md) | 适配审计、设计与折叠布局、工具栏、双屏／相机、运动坐标；最新来源及原有字幕按需读取 |
 
 ## Duo 资料与边界
 
-本地入口仅按任务加载布局、工具栏或双屏／相机模块。[资料索引](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/duo-sources.md)提供官方 HIG、六个视频及固定提交版本的完整英文字幕链接；[逐项覆盖审查（英文）](iphone-duo-review.md)记录取舍与验证缺口。字幕不进入安装 ZIP。
+本地入口仅按任务加载审计与验证、布局、工具栏或双屏／相机模块。[资料索引](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/duo-sources.md)提供当前官方文档和声明、Group Lab 与答疑，以及六份固定提交版本的原有英文字幕；[逐项覆盖审查（英文）](iphone-duo-review.md)记录取舍与验证缺口。字幕和导出的 Apple skills 不进入安装 ZIP。
 
-2026 年 9 月 10 日检查时，官网仍标注 Xcode 27.1 beta 将于当月稍后提供。新 API 名称用于查找资料，不代表已经编译验证；本次也没有进行模拟器或真机验证。
+2026 年 10 月 6 日检查时，官网已列出 Xcode 27.1 Release Candidate，准备文档也已上线。已核对当前 API 声明及逐项最低 iOS 版本。本机工具链为 Xcode 27.0，尚未进行 iOS 27.1 编译、Duo 模拟器交互或真机验证。Group Lab 链接与答疑索引属于资料目录，不表示已经完整审阅所有回放和帖子。
 
 ## 暂未包含
 

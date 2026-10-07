@@ -6,6 +6,30 @@ Read only when the task needs original examples, exact transcript wording, or de
 
 - [Get Ready for iPhone Duo](https://developer.apple.com/iphone-duo/): current tools, availability, and related resources.
 - [Designing for iPhone Duo HIG](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo): design rationale and illustrations.
+- [Three steps to make your app shine](https://developer.apple.com/iphone-duo/prepare/): build-SDK presentation differences, concrete audit patterns, resizability skill export, and testing tools.
+- [Preparing your app for iPhone Duo](https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo): current layout, bars, arrangements, and reserved-region guidance.
+- [Choosing a camera by the direction it faces](https://developer.apple.com/documentation/avkit/choosing-a-camera-by-the-direction-it-faces): virtual discovery, per-view direction, isolation, switching, mirroring, and rotation.
+- [Registering a camera capture accessory](https://developer.apple.com/documentation/avfoundation/registering-a-camera-capture-accessory-on-iphone-duo): interaction, registration lifetime, shared state, availability, and enablement.
+- [Device Hub interaction](https://developer.apple.com/documentation/xcode/interacting-with-your-app-in-device-hub): actual device controls and the camera/microphone restrictions during physical-device interaction.
+
+## Declarations and availability
+
+Use these for the exact SwiftUI/UIKit signatures and each platform's minimum version. Documentation review is not compilation; confirm them in the project's installed SDK.
+
+- Regions: [SwiftUI query](https://developer.apple.com/documentation/swiftui/geometryproxy/reservedregions%28kind:options:layoutdirectionbehavior:%29), [UIKit query](https://developer.apple.com/documentation/uikit/uiview/reservedregions%28kind:options:%29), [inactive regions](https://developer.apple.com/documentation/swiftui/reservedregion/queryoptions/includeinactive).
+- Arrangements: [SwiftUI](https://developer.apple.com/documentation/swiftui/arrangementview), [UIKit](https://developer.apple.com/documentation/uikit/uiarrangementviewcontroller).
+- Bars: [axis participation](https://developer.apple.com/documentation/swiftui/toolbarcontent/axisbehavior%28_:%29), [compression](https://developer.apple.com/documentation/swiftui/view/toolbarverticalcompressionbehavior%28_:%29), [priority](https://developer.apple.com/documentation/swiftui/toolbarcontent/visibilitypriority%28_:%29), [overflow](https://developer.apple.com/documentation/swiftui/toolbaroverflowmenu), [pinned action](https://developer.apple.com/documentation/swiftui/toolbaritemplacement/topbarpinnedtrailing), [sheet placement](https://developer.apple.com/documentation/swiftui/view/presentationplacement%28_:%29), [vertical policy](https://developer.apple.com/documentation/swiftui/view/toolbarverticalbehavior%28_:%29).
+- Hinge: [SwiftUI](https://developer.apple.com/documentation/swiftui/view/onhingechange%28isenabled:_:%29), [UIKit](https://developer.apple.com/documentation/uikit/uihingeinteraction).
+- Capture: [direction coordinator](https://developer.apple.com/documentation/avkit/avcapturedevicedirectioncoordinator), [descriptor](https://developer.apple.com/documentation/avkit/avcapturedevicedescriptor), [direction map](https://developer.apple.com/documentation/avkit/avcapturedevicedirectionmap), [camera accessory](https://developer.apple.com/documentation/swiftui/cameracaptureaccessory), [scene registration](https://developer.apple.com/documentation/swiftui/view/sceneaccessory%28content:%29).
+- Motion: [body-relative updates](https://developer.apple.com/documentation/coremotion/cmmotionmanager/devicemotionbody), [body identity](https://developer.apple.com/documentation/coremotion/cmbodyidentifiable).
+- Camera formats: [current dynamic aspect ratio](https://developer.apple.com/documentation/avfoundation/avcapturedevice/dynamicaspectratio), [supported ratios](https://developer.apple.com/documentation/avfoundation/avcapturedevice/format/supporteddynamicaspectratios).
+
+## Group Labs and engineer Q&A
+
+- Group Lab [Day 1](https://developer.apple.com/videos/play/meet-with-apple/285/) and [Day 2](https://developer.apple.com/videos/play/meet-with-apple/286/): recorded discussions. No new transcript archive is bundled or claimed here.
+- [Group Lab summary](https://developer.apple.com/forums/thread/847644): Apple staff answers. Resolve broad or inconsistent answers against the specific current declaration and preparation article.
+- Q&A indexes: [SwiftUI](https://developer.apple.com/forums/activities/1664080), [UIKit](https://developer.apple.com/forums/activities/1670080), [Photos & Camera](https://developer.apple.com/forums/activities/1659080). Index questions and user bug reports are not API guarantees; inspect the thread's staff replies and later corrections.
+- Focused answers: [navigation versus arrangements](https://developer.apple.com/forums/thread/847795), [pane-local safe-area bars](https://developer.apple.com/forums/thread/847790), [ARKit capture accessory clarification](https://developer.apple.com/forums/thread/847744), [overflow confirmation and unresolved SwiftUI anchoring](https://developer.apple.com/forums/thread/847865), [programmatic fold request without a staff solution at review](https://developer.apple.com/forums/thread/847883).
 
 ## Full timed transcripts
 
@@ -22,6 +46,8 @@ Each transcript is pinned to a repository commit. Search for the topic or API na
 
 ## Evidence boundary
 
-Reviewed September 10, 2026. The six live video pages had chapters and downloads but no populated transcript section. The official hub listed Xcode 27.1 beta and its preparation article as coming later that month. Captions cover the six talks structurally, but were not compared word-for-word to audio; on-screen implementation details still require the video. No Duo SDK compilation or hardware validation was performed for this guidance.
+Refreshed October 6, 2026. The hub lists Xcode 27.1 Release Candidate, live preparation documentation, two Group Lab recordings, and three Q&A indexes. The original six caption archives remain the September 10 snapshot, not transcripts of the new labs. They were not compared word-for-word to audio; on-screen details still require the video. Current declarations supersede transcript spellings and availability.
+
+The review host has Xcode/iOS SDK 27.0. The advertised resizability skill was absent from its exported skill inventory. Documentation for 27.1 was reviewed, but no 27.1 compilation, Duo Simulator interaction, or hardware validation was performed. Check current local tool availability rather than promising the hub's tools are installed.
 
 If an external URL cannot be read, use the local guidance and report the specific missing evidence. Do not invent API signatures or claim the archive was read. Prefer current Apple declarations over an older transcript when resolving availability or syntax.

@@ -3,7 +3,7 @@ name: apple-workflow-skills
 description: Route Apple application work to focused guidance for native UI design, SwiftUI implementation and refactoring, adaptive layouts, iPhone Duo adaptation, Liquid Glass, UI performance, rendered validation, or shared Swift concurrency. Use for these Apple development tasks while preserving the project's platform and toolchain.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Apple Workflow Skills
@@ -20,7 +20,7 @@ For `update_available`, briefly mention the installed/latest versions and return
 
 - For visual design, components, navigation, refactoring, adaptive layout, Liquid Glass, or UI performance, read [Apple UI Workflow](workflows/apple-ui/index.md).
 - For actors, `Sendable`, task cancellation, networking, files, databases, or background imports, read [Shared Swift Concurrency](shared/swift-concurrency/index.md) directly.
-- For iPhone Duo design, layout, hinge, scene, or camera adaptation, read [iPhone Duo](workflows/apple-ui/swiftui/references/foldable-layout.md), then only the relevant detail module.
+- For iPhone Duo design, resizability audits, layout, hinge, scene, or camera adaptation, read [iPhone Duo](workflows/apple-ui/swiftui/references/foldable-layout.md), then only the relevant detail module.
 - For mixed tasks, choose the primary path first and load the other module only for the concrete cross-cutting concern.
 - Dedicated SwiftData, Swift Testing, signing, release, widgets, and App Intents modules are not included yet. Follow project rules and consult current official documentation when those topics arise.
 

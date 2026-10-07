@@ -2,12 +2,12 @@
 
 **English** · [Chinese](coverage.zh-CN.md) · [Back to README](../README.md)
 
-Applies to **v0.2.0**; v0.1.0 retains general Duo guidance only. Coverage means guidance, not SDK or device validation.
+Applies to **v0.3.0**, including the October 6, 2026 Duo refresh. **v0.2.0** retains the September 10 review; v0.1.0 has general Duo guidance only. Coverage means guidance, not SDK or device validation.
 
 ## Devices and platforms
 
 - **iPhone & iPad:** SwiftUI guidance for existing projects, including models predating Duo. Apply APIs according to the project's supported OS versions.
-- **iPhone Duo — Beta:** reviewed against Apple HIG and six videos, with focused layout, vertical-bar, scene, and camera guidance. Dedicated APIs and device behavior still need validation.
+- **iPhone Duo — Beta:** refreshed against current Apple HIG, preparation and camera articles, individual API declarations, and selected staff Q&A. Includes readiness auditing, layout, bars, scenes/camera, and motion guidance. iOS 27.1 compilation and device behavior still need validation.
 - **Mac:** selected SwiftUI and desktop conventions are included.
 
 These are guidance targets. A tested model-by-model or OS-version compatibility matrix is not yet available.
@@ -23,13 +23,13 @@ These are guidance targets. A tested model-by-model or OS-version compatibility 
 | [Liquid Glass](../skills/apple-workflow-skills/workflows/apple-ui/liquid-glass/index.md) | Native materials, grouping and transitions |
 | [Performance & validation](../skills/apple-workflow-skills/workflows/apple-ui/validation/index.md) | UI diagnosis, Preview, Simulator and device checks |
 | [Swift concurrency](../skills/apple-workflow-skills/shared/swift-concurrency/index.md) | Isolation, tasks, cancellation and streams |
-| [iPhone Duo · Beta](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/foldable-layout.md) | Design, fold layout, bars, scenes/camera; optional full transcript links |
+| [iPhone Duo · Beta](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/foldable-layout.md) | Readiness audit, design, fold layout, bars, scenes/camera, motion; optional current source links and original transcripts |
 
 ## Duo references and limits
 
-The local entry point loads only the layout, bars, or scenes/camera module needed for the task. The [reading catalog](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/duo-sources.md) links to the official HIG, six videos, and full English transcripts pinned to a commit. The [coverage review](iphone-duo-review.md) records inclusion choices and evidence gaps. Transcripts stay outside the installable ZIP.
+The local entry point loads only the audit/validation, layout, bars, or scenes/camera module needed for the task. The [reading catalog](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/duo-sources.md) links to current official articles and declarations, Group Labs and Q&A, and the six original English transcripts pinned to a commit. The [coverage review](iphone-duo-review.md) records inclusion choices and evidence gaps. Transcripts and exported Apple skills stay outside the installable ZIP.
 
-On September 10, 2026, the hub still listed Xcode 27.1 beta as coming later that month. New API names are documentation lookup terms, not compiled examples. No Simulator or hardware validation was performed for this revision.
+On October 6, 2026, the hub listed Xcode 27.1 Release Candidate and live preparation documentation. Current API declarations and per-symbol iOS minimum versions were reviewed. The local toolchain is Xcode 27.0; no iOS 27.1 compilation, Duo Simulator interaction, or hardware validation was performed. Group Lab links and Q&A indexes are resource inventory, not a claim of exhaustive recording or thread review.
 
 ## Not included yet
 

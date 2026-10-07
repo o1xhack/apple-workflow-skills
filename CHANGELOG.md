@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 — 2026-10-06
+
+- Refresh Duo guidance against October 6 Apple preparation documentation, API declarations, camera articles, and selected engineer Q&A; replace the obsolete coming-later tool notice with the hub's Xcode 27.1 RC status.
+- Add a conditionally loaded readiness audit covering build-SDK presentation differences, container geometry, orientation/idiom assumptions, scene continuity, and proportionate validation.
+- Correct plural reserved-region queries, RTL geometry, arrangement nesting, vertical-bar compression names, and per-API iOS 27.0/27.1 availability.
+- Expand camera guidance for interactive accessories, availability versus enablement, ARKit eligibility, descriptor isolation, input switching, mirroring, and rotation; add body-relative motion guidance.
+- Extend the source catalog's narrow Apple allowlist to the preparation checklist and numeric engineer Q&A pages. Record documentation evidence separately from compilation, interaction, and hardware results; preserve the six original caption archives.
+
 ## 0.2.0 — 2026-09-10
 
 - Add an optional seven-day cached stable Release check with one notice per new version; no background process or automatic installation.

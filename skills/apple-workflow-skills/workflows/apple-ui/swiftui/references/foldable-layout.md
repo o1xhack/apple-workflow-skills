@@ -2,7 +2,7 @@
 
 Read for iPhone Duo design, fold adaptation, reserved regions, hinge interaction, or multiple displays. Apply [Adaptive Layout](adaptive-layout.md) first. Ordinary iPhone/iPad work does not need the Duo modules.
 
-Evidence reviewed September 10, 2026: Apple's Duo HIG and six Tech Talks. The hub still listed Xcode 27.1 beta and the preparation article as coming later that month. Design guidance is reviewed; new API spellings below are discovery terms from the talks, not SDK-verified declarations. Recheck current availability, installed SDK signatures, and deployment targets before implementation. Do not upgrade a project or claim device validation from these notes.
+Evidence refreshed October 6, 2026: Apple's HIG, preparation guides, API declarations, camera articles, and Apple staff Q&A. The hub now lists Xcode 27.1 Release Candidate. Distinguish the SDK used to build an app from its deployment target and the OS on which it runs. Dedicated Duo APIs generally require iOS 27.1, while several supporting APIs already exist in 27.0 or earlier; use the individual declarations in the detail modules. Documentation review does not establish compilation or device behavior. Preserve the project's supported targets and compatibility paths.
 
 ## Default decisions
 
@@ -17,6 +17,7 @@ Evidence reviewed September 10, 2026: Apple's Duo HIG and six Tech Talks. The hu
 
 | Task | Module |
 | --- | --- |
+| Prepare an existing app, audit resizing patterns, plan or run validation | [Duo Audit and Validation](duo-validation.md) |
 | Centered UI, fold avoidance, custom panels, size changes | [Duo Layout](duo-layout.md) |
 | Vertical toolbars, tabs, action ordering, overflow, sheets | [Duo Bars](duo-bars.md) |
 | Hinge effects, multiwindow, second display, camera switching | [Duo Scenes and Camera](duo-scenes-camera.md) |
@@ -24,6 +25,6 @@ Evidence reviewed September 10, 2026: Apple's Duo HIG and six Tech Talks. The hu
 
 ## Validation scope
 
-For a Duo adaptation, exercise outer portrait/landscape, inner portrait/landscape, partial fold, both sides of Split View, and vertical resizing from pinned Picture in Picture where supported. Add keyboard, large text, RTL, and overflow checks when controls are affected. Follow the original task's scope; a small unrelated edit does not require this whole matrix.
+For a Duo adaptation, use the relevant scenarios in [Duo Audit and Validation](duo-validation.md). Follow the original task's scope; a small unrelated edit does not require the whole matrix.
 
 Without an available SDK, supported Simulator, or physical device, report which checks could not run. A transcript, compilation, Simulator interaction, and physical fold/camera behavior are different evidence levels.

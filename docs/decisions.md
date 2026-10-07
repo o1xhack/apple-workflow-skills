@@ -1,5 +1,22 @@
 # Integration decisions
 
+## 2026-10-06 — Current Duo declarations and readiness workflow
+
+- Use current Apple preparation and camera documentation plus individual API declarations to update runtime decisions. Six September caption archives remain immutable historical sources; new Group Lab pages and Q&A indexes do not imply complete transcript or answer coverage.
+- Separate an app's build SDK from deployment target and runtime OS. Apple documents different presentation defaults for SDK 26 and earlier, 27.0, and 27.1. Supporting bar/scene/motion APIs are not uniformly 27.1-only; record minimum iOS versions per declaration in `upstream/apple-references.json`.
+- Replace singular transcript-derived region names with the documented plural queries. Check region active state explicitly, and account for SwiftUI's mirrored geometry in RTL. The region-query discussion broadly mentions inactive regions while the separate `includeInactive` option explicitly includes them; do not infer a default-result guarantee without SDK testing.
+- Resolve arrangement guidance in favor of the current preparation article and focused staff navigation answer: split containers own hierarchical navigation; arrangements do not sit inside a navigation split, list, or scroll container. A surrounding navigation stack is supported by the staff's pane-local safe-area example. Do not turn this into a ban on every outer navigation container.
+- Adopt the later Apple staff correction that ARKit capture qualifies for a camera accessory, preserving the distinction from a second full AR experience. Current accessory documentation establishes touch and separate availability/enablement. Earlier conflicting forum replies do not override the later clarification.
+- Keep overflow confirmation state on a persistent view, but leave the unanswered SwiftUI overflow-button anchor question unresolved. User reports of Simulator automation gaps do not establish a supported fold command.
+- Apply skill-creator's progressive disclosure: keep the top-level entry short, retain topic ownership in existing modules, and load the new audit/validation reference only for readiness work. Do not copy or install exported Apple skills. Xcode 27.0's exported inventory lacks the advertised resizability skill; this is a local tool-version observation.
+- Keep external reading in one catalog. Add only official preparation and numeric Developer Forums Q&A URLs to its allowlist; adopt staff answers, not user questions. Preserve the package's English, portability, source, and license boundaries.
+- The initial refresh was prepared without changing the distribution version or installed shared skill. Release preparation assigns its own version; previously published assets remain unchanged.
+
+## 2026-10-06 — Version 0.3.0
+
+- Publish the reviewed Duo refresh as a new stable 0.3.0 distribution, including the conditionally loaded readiness audit and corrected current API guidance. Keep the Duo Beta maturity designation and all 27.1 compilation, Simulator, and hardware evidence gaps explicit.
+- Preserve the 0.1.0 and 0.2.0 tags/assets and original caption archive. Installation and upgrades use the new version-specific stable ZIP; publishing does not automatically install or modify global instructions.
+
 ## 2026-09-10 — Initial release
 
 - The top-level entry point covers Apple development. Swift concurrency is shared infrastructure, not a child of UI.

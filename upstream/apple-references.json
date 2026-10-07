@@ -5,20 +5,20 @@
       "id": "iphone-duo-hub",
       "url": "https://developer.apple.com/iphone-duo/",
       "topic": "Official resource inventory and tool availability",
-      "review_date": "2026-09-10",
-      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
-      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
-      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+      "review_date": "2026-10-06",
+      "sdk": "Hub: Xcode 27.1 RC; review host: Xcode 27.0 / iOS 27.0 SDK",
+      "availability": "Preparation documentation and API references are live; individual APIs have distinct minimum versions",
+      "validation": "Current source review only; no Duo Simulator or hardware verification"
     },
     {
       "id": "iphone-duo-hig",
       "url": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo",
       "topic": "Design, dynamic layouts, reserved regions, vertical controls",
       "source_updated": "2026-09-09",
-      "review_date": "2026-09-10",
-      "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
-      "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
-      "validation": "Source review only; no compilation, Simulator, or hardware verification"
+      "review_date": "2026-10-06",
+      "sdk": "Hub: Xcode 27.1 RC; review host: Xcode 27.0 / iOS 27.0 SDK",
+      "availability": "Preparation documentation and API references are live; individual APIs have distinct minimum versions",
+      "validation": "Current source review only; no Duo Simulator or hardware verification"
     },
     {
       "id": "iphone-duo-111466",
@@ -85,7 +85,329 @@
       "sdk": "iOS 27.1 / Xcode 27.1 discussed; not SDK-verified",
       "availability": "Hub lists beta as coming later in September 2026; recheck current toolchain",
       "validation": "Source review only; no compilation, Simulator, or hardware verification"
+    },
+    {
+      "id": "iphone-duo-prepare-checklist",
+      "url": "https://developer.apple.com/iphone-duo/prepare/",
+      "topic": "Build SDK presentation, resizing audit, exported skill and test tools",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Build SDK 26 and earlier / 27.0 / 27.1; not deployment-target requirements",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-preparation",
+      "url": "https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo",
+      "topic": "Bars, arrangements, region queries, camera entrypoints",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Duo-specific layout APIs: iOS 27.1; supporting APIs have earlier availability",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-camera-direction",
+      "url": "https://developer.apple.com/documentation/avkit/choosing-a-camera-by-the-direction-it-faces",
+      "topic": "Virtual discovery, per-view direction, Sendable descriptors, camera replacement, mirroring, rotation",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Direction coordinator, descriptor and map: iOS 27.1",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-camera-accessory",
+      "url": "https://developer.apple.com/documentation/avfoundation/registering-a-camera-capture-accessory-on-iphone-duo",
+      "topic": "Touch, shared state, registration, availability versus enablement, scene configuration and hardware testing",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "CameraCaptureAccessory: iOS 27.1; generic scene-accessory infrastructure: iOS 27.0",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-device-hub-interaction",
+      "url": "https://developer.apple.com/documentation/xcode/interacting-with-your-app-in-device-hub",
+      "topic": "Device controls; physical-device interaction excludes camera and microphone access",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Tool behavior must be checked in installed Xcode",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-lab-summary",
+      "url": "https://developer.apple.com/forums/thread/847644",
+      "topic": "Apple staff answers on continuity, scenes, bars, reserved regions, hinge and accessibility",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Resolve broad answers against specific declarations and current articles",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-navigation-arrangements",
+      "url": "https://developer.apple.com/forums/thread/847795",
+      "topic": "Apple staff: split navigation for sidebars; navigation outside arrangements; avoid arrangement inside split/list/scroll",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Arrangement containers: iOS 27.1",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-pane-safe-area",
+      "url": "https://developer.apple.com/forums/thread/847790",
+      "topic": "Apple staff example of safe-area bars attached to each arrangement pane",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Arrangement containers: iOS 27.1",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-arkit-accessory",
+      "url": "https://developer.apple.com/forums/thread/847744",
+      "topic": "Later Apple staff correction: ARSession qualifies for accessory; supplemental outer content is not a second full AR experience",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "CameraCaptureAccessory: iOS 27.1",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-overflow-confirmation",
+      "url": "https://developer.apple.com/forums/thread/847865",
+      "topic": "Staff guidance for shared presentation state; later user question about exact SwiftUI overflow anchoring remains unanswered",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Do not infer a supported SwiftUI anchor from shared-state presentation",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-fold-automation",
+      "url": "https://developer.apple.com/forums/thread/847883",
+      "topic": "User request for programmatic Simulator unfolding; no staff solution in reviewed thread",
+      "review_date": "2026-10-06",
+      "sdk": "Documentation reviewed; installed iOS 27.0 SDK, no 27.1 compilation",
+      "availability": "Unresolved request, not evidence of a supported command",
+      "validation": "Source review; no app interaction or hardware verification"
+    },
+    {
+      "id": "iphone-duo-group-lab-day-1",
+      "url": "https://developer.apple.com/videos/play/meet-with-apple/285/",
+      "topic": "Additional official resource inventory",
+      "review_date": "2026-10-06",
+      "sdk": "No SDK verification implied",
+      "availability": "Live hub resource",
+      "validation": "Page identity/index reviewed; no complete recording transcription or exhaustive Q&A review claimed"
+    },
+    {
+      "id": "iphone-duo-group-lab-day-2",
+      "url": "https://developer.apple.com/videos/play/meet-with-apple/286/",
+      "topic": "Additional official resource inventory",
+      "review_date": "2026-10-06",
+      "sdk": "No SDK verification implied",
+      "availability": "Live hub resource",
+      "validation": "Page identity/index reviewed; no complete recording transcription or exhaustive Q&A review claimed"
+    },
+    {
+      "id": "iphone-duo-swiftui-qa",
+      "url": "https://developer.apple.com/forums/activities/1664080",
+      "topic": "Additional official resource inventory",
+      "review_date": "2026-10-06",
+      "sdk": "No SDK verification implied",
+      "availability": "Live hub resource",
+      "validation": "Page identity/index reviewed; no complete recording transcription or exhaustive Q&A review claimed"
+    },
+    {
+      "id": "iphone-duo-uikit-qa",
+      "url": "https://developer.apple.com/forums/activities/1670080",
+      "topic": "Additional official resource inventory",
+      "review_date": "2026-10-06",
+      "sdk": "No SDK verification implied",
+      "availability": "Live hub resource",
+      "validation": "Page identity/index reviewed; no complete recording transcription or exhaustive Q&A review claimed"
+    },
+    {
+      "id": "iphone-duo-camera-qa",
+      "url": "https://developer.apple.com/forums/activities/1659080",
+      "topic": "Additional official resource inventory",
+      "review_date": "2026-10-06",
+      "sdk": "No SDK verification implied",
+      "availability": "Live hub resource",
+      "validation": "Page identity/index reviewed; no complete recording transcription or exhaustive Q&A review claimed"
+    },
+    {
+      "id": "iphone-duo-declarations-2026-10-06",
+      "url": "https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo",
+      "topic": "Per-symbol iOS availability and current spellings",
+      "review_date": "2026-10-06",
+      "sdk": "Current official declarations; local Xcode 27.0 / iOS 27.0 SDK",
+      "availability": "See declarations; build SDK and runtime availability are separate",
+      "validation": "Documentation declarations reviewed; 27.1 compilation remains unverified",
+      "declarations": [
+        {
+          "symbol": "reservedRegions(kind:options:layoutDirectionBehavior:)",
+          "url": "https://developer.apple.com/documentation/swiftui/geometryproxy/reservedregions(kind:options:layoutdirectionbehavior:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "reservedRegions(kind:options:)",
+          "url": "https://developer.apple.com/documentation/uikit/uiview/reservedregions(kind:options:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "includeInactive",
+          "url": "https://developer.apple.com/documentation/swiftui/reservedregion/queryoptions/includeinactive",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "ArrangementView",
+          "url": "https://developer.apple.com/documentation/swiftui/arrangementview",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "UIArrangementViewController",
+          "url": "https://developer.apple.com/documentation/uikit/uiarrangementviewcontroller",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "toolbarVerticalEdge",
+          "url": "https://developer.apple.com/documentation/swiftui/environmentvalues/toolbarverticaledge",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "verticalBarEdge",
+          "url": "https://developer.apple.com/documentation/uikit/uitraitcollection/verticalbaredge",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "axisBehavior(_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/toolbarcontent/axisbehavior(_:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "ToolbarItemAxisBehavior",
+          "url": "https://developer.apple.com/documentation/swiftui/toolbaritemaxisbehavior",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "toolbarVerticalCompressionBehavior(_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/view/toolbarverticalcompressionbehavior(_:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "UIVerticalBarCompressionBehavior",
+          "url": "https://developer.apple.com/documentation/uikit/uiverticalbarcompressionbehavior",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "visibilityPriority(_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/toolbarcontent/visibilitypriority(_:)",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "visibilityPriority",
+          "url": "https://developer.apple.com/documentation/uikit/uibarbuttonitem/visibilitypriority",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "ToolbarOverflowMenu",
+          "url": "https://developer.apple.com/documentation/swiftui/toolbaroverflowmenu",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "additionalOverflowItems",
+          "url": "https://developer.apple.com/documentation/uikit/uinavigationitem/additionaloverflowitems",
+          "minimum_ios": "16.0"
+        },
+        {
+          "symbol": "topBarPinnedTrailing",
+          "url": "https://developer.apple.com/documentation/swiftui/toolbaritemplacement/topbarpinnedtrailing",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "pinnedTrailingGroup",
+          "url": "https://developer.apple.com/documentation/uikit/uinavigationitem/pinnedtrailinggroup",
+          "minimum_ios": "16.0"
+        },
+        {
+          "symbol": "presentationPlacement(_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/view/presentationplacement(_:)",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "preferredPlacement",
+          "url": "https://developer.apple.com/documentation/uikit/uisheetpresentationcontroller/preferredplacement",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "toolbarVerticalBehavior(_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/view/toolbarverticalbehavior(_:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "preferredVerticalBarBehavior",
+          "url": "https://developer.apple.com/documentation/uikit/uiviewcontroller/preferredverticalbarbehavior",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "onHingeChange(isEnabled:_:)",
+          "url": "https://developer.apple.com/documentation/swiftui/view/onhingechange(isenabled:_:)",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "UIHingeInteraction",
+          "url": "https://developer.apple.com/documentation/uikit/uihingeinteraction",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "CameraCaptureAccessory",
+          "url": "https://developer.apple.com/documentation/swiftui/cameracaptureaccessory",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "sceneAccessory(content:)",
+          "url": "https://developer.apple.com/documentation/swiftui/view/sceneaccessory(content:)",
+          "minimum_ios": "27.0"
+        },
+        {
+          "symbol": "AVCaptureDeviceDirectionCoordinator",
+          "url": "https://developer.apple.com/documentation/avkit/avcapturedevicedirectioncoordinator",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "AVCaptureDeviceDescriptor",
+          "url": "https://developer.apple.com/documentation/avkit/avcapturedevicedescriptor",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "AVCaptureDeviceDirectionMap",
+          "url": "https://developer.apple.com/documentation/avkit/avcapturedevicedirectionmap",
+          "minimum_ios": "27.1"
+        },
+        {
+          "symbol": "deviceMotionBody",
+          "url": "https://developer.apple.com/documentation/coremotion/cmmotionmanager/devicemotionbody",
+          "minimum_ios": "27.0",
+          "local_validation": "Passed isolated swiftc -typecheck, arm64-apple-ios27.0, Xcode 27.0 build 27A266a; no runtime evidence"
+        },
+        {
+          "symbol": "CMBodyIdentifiable",
+          "url": "https://developer.apple.com/documentation/coremotion/cmbodyidentifiable",
+          "minimum_ios": "27.0"
+        },
+        {
+          "symbol": "dynamicAspectRatio",
+          "url": "https://developer.apple.com/documentation/avfoundation/avcapturedevice/dynamicaspectratio",
+          "minimum_ios": "26.0"
+        },
+        {
+          "symbol": "supportedDynamicAspectRatios",
+          "url": "https://developer.apple.com/documentation/avfoundation/avcapturedevice/format/supporteddynamicaspectratios",
+          "minimum_ios": "26.0"
+        }
+      ]
     }
   ],
-  "note": "Announced behavior and API lookup terms are not SDK-validated implementation claims. External reading is optional; the installable package excludes transcripts."
+  "note": "September 10 transcript records remain historical. October 6 guidance uses current official declarations and selected staff answers; resource inventory does not imply full recording or Q&A coverage. Source review, SDK compilation, app interaction, and hardware validation are separate. The installable package excludes transcripts and exported Apple skills."
 }

@@ -65,6 +65,8 @@ deployment targets.
 
 v0.2.0 增加了 Duo 核心指导与[六份完整英文字幕资料](external-sources/apple/iphone-duo/2026-09-10/README.md)，按需读取且不打入安装 ZIP。
 
+v0.3.0 已对照 10 月 6 日的 Apple 准备文档、API 声明、相机文章及部分官方工程师答疑更新 Duo 指导，并增加适配审计模块。详见[当前覆盖与验证边界](docs/coverage.zh-CN.md)；已安装副本通过正式 Release ZIP 更新。
+
 ## 为什么用这套 Skills
 
 **一个入口。** 直接描述任务，Agent 按需选择规则，省去在多个重叠 Skills 之间挑选的步骤。

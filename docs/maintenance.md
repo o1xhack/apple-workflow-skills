@@ -15,7 +15,7 @@ Apple platform changes may drive updates without waiting for upstream releases. 
 - `CHANGELOG.md`: user-visible behavior changes.
 - `skills/apple-workflow-skills/`: the complete distributable package; it must not depend on `upstream/`.
 
-Runtime modules do not repeat upstream project links. A dedicated `duo-sources.md` reading catalog may link to official Apple resources and immutable transcript files in this repository. All other runtime modules link locally. Release ZIPs contain only the installable skill folder and its combined license; external captions and reading copies are excluded.
+Runtime modules do not repeat upstream project links. A dedicated `duo-sources.md` reading catalog may link to official Apple documentation, preparation pages, videos, numeric Developer Forums Q&A threads/activity indexes, and immutable transcript files in this repository. Adopt forum claims only after reading Apple staff replies and later corrections; user questions and bug reports are review leads, not verified guidance. All other runtime modules link locally. Release ZIPs contain only the installable skill folder and its combined license; external captions and reading copies are excluded.
 
 ## Initial imports
 

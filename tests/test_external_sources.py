@@ -43,9 +43,16 @@ class ExternalSourcesTest(unittest.TestCase):
         pinned = "https://raw.githubusercontent.com/o1xhack/apple-workflow-skills/" + "a" * 40 + "/external-sources/apple/iphone-duo/2026-09-10/111466.md"
         self.assertTrue(m.allowed_reading_url(pinned))
         self.assertTrue(m.allowed_reading_url("https://developer.apple.com/iphone-duo/"))
+        self.assertTrue(m.allowed_reading_url("https://developer.apple.com/iphone-duo/prepare/"))
+        self.assertTrue(m.allowed_reading_url("https://developer.apple.com/forums/thread/847644"))
+        self.assertTrue(m.allowed_reading_url("https://developer.apple.com/forums/activities/1664080"))
         for url in [pinned.replace("a" * 40, "main"), pinned.replace("o1xhack", "other"),
                     "http://developer.apple.com/iphone-duo/", "https://developer.apple.com.example.com/iphone-duo/",
-                    "https://developer.apple.com@evil.example/iphone-duo/", "file:///tmp/source.md"]:
+                    "https://developer.apple.com@evil.example/iphone-duo/", "file:///tmp/source.md",
+                    "https://developer.apple.com/iphone-duo/unreviewed/",
+                    "https://developer.apple.com/forums/thread/847644?redirect=evil",
+                    "https://developer.apple.com/forums/profile/some-user",
+                    "https://developer.apple.com/forums/thread/847644/other"]:
             self.assertFalse(m.allowed_reading_url(url), url)
 
 
