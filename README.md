@@ -20,6 +20,8 @@
 
 Apple Workflow Skills gives your AI agent a shared way to design, build, review, and verify native Apple interfaces. Install once; describe the result you want.
 
+The skill offers practical defaults and tradeoffs while leaving room for engineering judgment. Your product goal comes first: when the usual patterns do not fit, the agent should explore another approach and check the resulting behavior rather than reject the request for departing from a recommendation.
+
 ## Install
 
 Choose one option and paste its complete prompt into your AI agent. Installation makes the skill available for selection by description, but does not guarantee selection on every task. Choose the second option to make it the primary workflow for Apple development.
@@ -65,7 +67,7 @@ Existing v0.1.0 installations need one manual update using the installation prom
 
 v0.2.0 adds focused Duo guidance and [six full English timed transcripts](external-sources/apple/iphone-duo/2026-09-10/README.md), read on demand and excluded from the ZIP.
 
-v0.3.0 refreshes Duo against October 6 Apple preparation documentation, API declarations, camera articles, and selected engineer Q&A, and adds a focused readiness audit. See the [current coverage and validation limits](docs/coverage.md); update installed copies through the stable Release ZIP.
+v0.3.1 makes the guided approach explicit and refines arrangement composition advice. It also includes the v0.3.0 Duo refresh against October 6 Apple preparation documentation, API declarations, camera articles, and selected engineer Q&A, together with its focused readiness audit. See the [current coverage and validation limits](docs/coverage.md); update installed copies through the stable Release ZIP.
 
 ## Why use it?
 

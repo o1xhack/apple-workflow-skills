@@ -1,5 +1,13 @@
 # Integration decisions
 
+## 2026-10-10 — Guidance supports engineering judgment
+
+- Treat the user's intended product behavior as the starting point across the package. Native controls, familiar navigation, simple composition, and Apple recommendations remain useful defaults, not a compliance gate. When those defaults cannot express the experience, explore custom composition, framework bridging, or other approaches and validate the relevant behavior.
+- Distinguish design preferences from concrete SDK availability, state correctness, and scope or permission constraints. A design departure alone is neither a defect nor a reason to refuse implementation, require special approval, or impose an exhaustive validation matrix.
+- Refine the October 6 arrangement decision: the current HIG explicitly describes navigation split and tab containers around arrangements, while the preparation article advises avoiding an arrangement inside a navigation split view or scrolling container because content may become inaccessible. Preserve this source tension instead of converting one recommendation into a universal ban. A sidebar with an arrangement in its detail has a plausible product purpose; evaluate navigation ownership, bounds, secondary access, and continuity in the actual composition. This is not a claim of completed 27.1 compilation or device validation.
+- Audit the runtime modules for advice that could override a deliberate product choice. Reframe pose-specific features, custom bars, vertical-bar opt-outs, grid columns, and navigation nesting around their purposes and costs. Retain concrete technical facts and evidence boundaries.
+- Publish this revision as 0.3.1, separately from the pending upstream 2.0.0 review. Published assets and the shared installed skill are separate distribution steps.
+
 ## 2026-10-06 — Current Duo declarations and readiness workflow
 
 - Use current Apple preparation and camera documentation plus individual API declarations to update runtime decisions. Six September caption archives remain immutable historical sources; new Group Lab pages and Q&A indexes do not imply complete transcript or answer coverage.

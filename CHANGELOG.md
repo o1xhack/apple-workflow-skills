@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 — 2026-10-10
+
+- Make the workflow explicitly guided: start from the user's goal, offer defaults and tradeoffs, and explore alternatives when the recommended pattern does not fit. Preserve actual SDK, correctness, and scope constraints without treating unconventional implementations as defects.
+- Reframe Duo arrangement nesting, navigation composition, pose-specific experiences, custom bars, and glass iteration as contextual choices. Record conflicting Apple arrangement guidance and evaluate the resulting behavior instead of imposing a universal nesting prohibition.
+
 ## 0.3.0 — 2026-10-06
 
 - Refresh Duo guidance against October 6 Apple preparation documentation, API declarations, camera articles, and selected engineer Q&A; replace the obsolete coming-later tool notice with the hub's Xcode 27.1 RC status.

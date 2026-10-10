@@ -407,6 +407,19 @@
           "minimum_ios": "26.0"
         }
       ]
+    },
+    {
+      "id": "iphone-duo-arrangement-composition-2026-10-10",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo",
+      "topic": "HIG describes navigation split and tab containers around arrangements; preparation article advises avoiding arrangement inside navigation split or scrolling containers. Keep contextual guidance and evaluate product-driven composition rather than imposing a universal prohibition.",
+      "review_date": "2026-10-10",
+      "sdk": "Current official source review; installed Xcode 27.0 / iOS 27.0 SDK",
+      "availability": "ArrangementView requires iOS 27.1; source guidance does not establish nested-container runtime behavior",
+      "validation": "HIG and preparation article read; no 27.1 nested-arrangement compilation, Simulator interaction, or hardware validation",
+      "supporting_references": [
+        "https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo",
+        "https://developer.apple.com/videos/play/tech-talks/111463/"
+      ]
     }
   ],
   "note": "September 10 transcript records remain historical. October 6 guidance uses current official declarations and selected staff answers; resource inventory does not imply full recording or Q&A coverage. Source review, SDK compilation, app interaction, and hardware validation are separate. The installable package excludes transcripts and exported Apple skills."

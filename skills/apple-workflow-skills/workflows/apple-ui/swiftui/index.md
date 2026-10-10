@@ -17,6 +17,6 @@ Define state and ownership before arranging components, navigation, and presenta
 
 When supporting multiple OS versions, choose APIs available to the current target. Do not migrate an entire project merely to use a preferred property wrapper.
 
-In review, report concrete issues with location, trigger, and the smallest correction. Do not elevate formatting preferences into defects.
+In review, report concrete issues with location, trigger, and a suitable correction. Treat unfamiliar nesting, custom controls, and differing conventions as reasons to understand the implementation, not findings on their own. Offer modernization separately when it does not serve the requested change.
 
 For visible changes, use [UI Validation](../validation/index.md). For static-only review, state that runtime behavior remains unproven.

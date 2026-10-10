@@ -6,12 +6,12 @@ Evidence refreshed October 6, 2026: Apple's HIG, preparation guides, API declara
 
 ## Default decisions
 
-- Design one resizable experience with consistent hierarchy and available actions. Do not make features exclusive to an open, closed, or partially folded pose. Preserve editing, selection, navigation, and playback through transitions.
+- Start with one resizable experience that keeps core actions and state accessible across poses. Pose-specific features or richer layouts can serve deliberate product goals; provide a useful way to continue the task when that pose is unavailable. Preserve editing, selection, navigation, and playback through transitions where the product expects continuity.
 - Use size classes and local container geometry, not device-name checks, fixed screen dimensions, or interface orientation as a layout proxy. An open Duo remains an iPhone; do not equate regular width with iPad idiom.
 - Use the wider interior for meaningful columns or supporting content. A sidebar is useful for dense navigation, not mandatory for every app.
 - Prefer system navigation, presentations, and bars: they adapt to vertical controls and fold avoidance. Respect independent safe-area edges and layout margins; full-bleed backgrounds and inset interactive content can coexist.
-- Move obstructed controls or focused content only as needed. Continuous articles, feeds, lists, and documents generally keep scrolling across the fold; do not displace everything.
-- For layout, use available regions and system arrangements. Read hinge angle only for an intentional interaction or effect.
+- Favor targeted movement of obstructed controls or focused content. Continuous articles, feeds, lists, and documents generally keep scrolling across the fold; broader rearrangement may make sense for a specific experience if it remains understandable and usable.
+- Prefer available regions and system arrangements for ordinary layout. Hinge-driven effects or custom geometry can support a deliberate interaction; account for resizing and the absence of a hinge rather than treating angle as a general proxy for space.
 
 ## Load only the relevant detail
 

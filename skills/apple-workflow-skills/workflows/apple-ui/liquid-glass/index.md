@@ -3,7 +3,7 @@
 Read this module only when the request or design explicitly uses glass materials. Prefer native controls and system glass APIs, checking availability against the target platform and SDK.
 
 - Use native glass button styles. Adjust shape at the button-style boundary instead of stacking blur, stroke, and shadow on the label to imitate system glass.
-- Complete sizing, padding, and typography before applying a glass effect to a custom surface. Add interactive effects only to actionable surfaces.
+- Iterate on sizing, padding, typography, and material together when exploring a custom surface. Reserve interactive effects for elements that communicate an action or interaction.
 - Use `GlassEffectContainer` when neighboring glass elements need to merge or morph. Container spacing and content-layout spacing serve different purposes.
 - Give morphing elements stable identities and a namespace. Test appearance, removal, rapid repeated actions, and Reduce Motion.
 - System toolbars may already provide shared material. Avoid duplicate layers, and apply toolbar-background modifiers to the API level declared by the SDK.

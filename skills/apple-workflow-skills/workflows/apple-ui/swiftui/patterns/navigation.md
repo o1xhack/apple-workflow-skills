@@ -2,9 +2,9 @@
 
 - Organize shared dependencies, tabs, and per-tab navigation history near the app root. Avoid one global path that unintentionally links every tab's history.
 - Use semantic types for tab selection and enumerable routes. When domain objects can disappear, persist stable IDs and resolve them on entry.
-- Use `NavigationStack` for linear flows and `NavigationSplitView` for collection, selection, and detail. Preserve project architecture and avoid nested duplicate system bars.
+- Start with `NavigationStack` for linear flows and `NavigationSplitView` for collection, selection, and detail. Nested navigation or custom routing can serve more complex products; make path and presentation ownership clear, and check for unintended duplicate bars or broken back behavior.
 - Register `navigationDestination` at a stable visible level, not inside a lazy child that may not exist. Avoid ambiguous duplicate registrations for the same type.
-- Use item-based presentation for content-bearing sheets and booleans for simple toggles. Model mutually exclusive presentations with one enum instead of multiple booleans.
+- Prefer item-based presentation for content-bearing sheets and booleans for simple toggles. An enum can clarify mutually exclusive presentations; retain another state model when it represents the flow well.
 - Define save and cancel contracts. Dismiss after successful save; retain edits and present recovery when save fails. Parent callbacks are reasonable when the parent coordinates a transaction.
 - Attach `confirmationDialog` to the actual trigger and test popover anchoring on iPad and after layout changes.
 - Validate deep-link URLs and parameters, prepare required account or data state, then route. Invalid or unauthorized targets must not end on a blank screen.

@@ -2,7 +2,11 @@
 
 Refreshed October 6, 2026 for v0.3.0 against the [official hub](https://developer.apple.com/iphone-duo/), [preparation checklist](https://developer.apple.com/iphone-duo/prepare/), current HIG and preparation documentation, camera articles, individual declarations, and selected Apple staff Q&A. Version 0.2.0 retains the September 10 guidance; installed copies receive this revision through the v0.3.0 stable Release ZIP.
 
-## October refresh
+## October 10 follow-up in v0.3.1
+
+The [current HIG](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo) describes navigation split and tab containers around arrangements. The [preparation article](https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo) advises avoiding an arrangement inside a navigation split view or scrolling container because content can become inaccessible. This tension warrants contextual guidance rather than treating either statement as a universal composition rule. The runtime layout module now leaves room for product-driven nesting and evaluates its behavior. No 27.1 compilation or device validation of nested arrangements is claimed.
+
+## October 6 refresh in v0.3.0
 
 | Evidence | Change to runtime guidance | Review boundary |
 | --- | --- | --- |

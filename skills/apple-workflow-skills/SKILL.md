@@ -3,12 +3,20 @@ name: apple-workflow-skills
 description: Route Apple application work to focused guidance for native UI design, SwiftUI implementation and refactoring, adaptive layouts, iPhone Duo adaptation, Liquid Glass, UI performance, rendered validation, or shared Swift concurrency. Use for these Apple development tasks while preserving the project's platform and toolchain.
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Apple Workflow Skills
 
 Read the current project's rules, target platforms, minimum OS versions, Swift language mode, and actual request before choosing a path. Distinguish explanation, diagnosis, implementation, and validation. Do not expand the task merely because this skill covers multiple domains.
+
+## Use this as guidance
+
+Start from the user's intended result. These modules offer useful defaults and engineering tradeoffs, not an exhaustive design space or a compliance gate. Apple recommendations inform the approach; they do not settle every product or architecture decision.
+
+When a default does not fit, use engineering judgment to find another way: custom UI, framework bridging, more complex composition, or an approach outside this package. Continue toward the requested result rather than rejecting it for departing from a recommendation. Explain material tradeoffs briefly and validate the behavior that matters, proportionate to the change; a departure alone does not call for an extra approval step.
+
+Distinguish preferences from actual constraints such as SDK availability, state correctness, and the user's scope or permissions. In reviews, connect concerns to a concrete failure or likely cost; an unconventional implementation is not a defect by itself. Missing evidence helps choose the next check rather than ruling out the design in advance.
 
 ## Optional update notice
 

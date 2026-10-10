@@ -2,7 +2,9 @@
 
 **English** · [Chinese](coverage.zh-CN.md) · [Back to README](../README.md)
 
-Applies to **v0.3.0**, including the October 6, 2026 Duo refresh. **v0.2.0** retains the September 10 review; v0.1.0 has general Duo guidance only. Coverage means guidance, not SDK or device validation.
+Applies to **v0.3.1**, including the October 6, 2026 Duo refresh. **v0.2.0** retains the September 10 review; v0.1.0 has general Duo guidance only. Coverage means guidance, not SDK or device validation.
+
+The October 10 revision in v0.3.1 makes the guided approach explicit across the package: defaults help the agent begin, while the user's goal and engineering judgment guide alternatives. These modules do not exhaust the possible implementations or make every Apple recommendation mandatory. Actual API availability and demonstrated behavior remain relevant when choosing and validating an approach.
 
 ## Devices and platforms
 

@@ -2,6 +2,8 @@
 
 Confirm the screen's purpose, data semantics, and primary interaction. Load only the files relevant to the current problem.
 
+Use native patterns as a starting point. If they cannot express the requested experience, explore custom composition or framework bridging and check the resulting usability and behavior.
+
 | Task | Read |
 | --- | --- |
 | Visual hierarchy, spacing, information density, copy | [Design Principles](design/principles.md) |

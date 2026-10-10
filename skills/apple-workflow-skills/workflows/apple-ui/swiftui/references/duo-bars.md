@@ -4,7 +4,7 @@ Use after [Duo Overview](foldable-layout.md) for navigation, toolbars, tabs, and
 
 ## Let the container own adaptation
 
-- Use bars belonging to `NavigationStack`, `NavigationSplitView`, `TabView`, or UIKit navigation/tab controllers. Standalone custom `UIToolbar` / `UINavigationBar` / `UITabBar` instances do not automatically get the same coordinated behavior.
+- Prefer bars belonging to `NavigationStack`, `NavigationSplitView`, `TabView`, or UIKit navigation/tab controllers for their coordinated adaptation. Standalone custom `UIToolbar` / `UINavigationBar` / `UITabBar` instances can support a different product experience, but their adaptation needs to be handled by the app.
 - Most Duo poses use vertical bars; full inner portrait retains horizontal bars. In Split View, controls can move to the left outer edge. Test actual layout rather than assuming controls always sit on the right.
 - Keep controls with the content they affect. The talk limits vertical participation to the detail column of a split view; other columns retain local horizontal controls, and an expanded inspector does not gain its own vertical bar.
 - The bar follows hardware placement rather than mirroring with RTL text. Check RTL content around it.
@@ -15,16 +15,16 @@ Use after [Duo Overview](foldable-layout.md) for navigation, toolbars, tabs, and
 
 - Keep back/close first, followed by prominent completion actions, then grouped contextual actions. Preserve semantic grouping as the axis changes. Let the system supply back navigation where appropriate.
 - Supply both title and symbol, even for an icon-only appearance: overflow and expanded presentations need the title. Text-only items generally remain horizontal.
-- Text-only and custom-view items do not participate vertically by default. `axisBehavior(_:)` / `axisBehavior` can control participation, but opting a custom view in does not redesign it: provide a representation that fits the bar and remains legible with Reduce Transparency. Do not squeeze a horizontal segmented control into it unchanged.
-- Let item groups supply spacing; do not add fixed spacing to reproduce a device-specific arrangement. Keyboard accessory bars stay attached to the keyboard.
+- Text-only and custom-view items do not participate vertically by default. `axisBehavior(_:)` / `axisBehavior` can control participation, but opting a custom view in does not redesign it. Adapt the representation to the available space; a horizontal segmented control may need a different presentation in a vertical bar.
+- Let item groups supply spacing by default. Custom spacing can express a deliberate grouping; check it at changing sizes instead of relying on one device's geometry. Keyboard accessory bars stay attached to the keyboard.
 
 ## Overflow is part of the design
 
 - For navigation-focused screens, preserve tab destinations by compressing toolbar actions first. For task-focused screens, consider preserving frequently used toolbar actions instead.
 - Give common actions and status-bearing items higher visibility priority. Review groups first, then items within groups; test the menu with constrained height, keyboard, and Picture in Picture.
 - Merge an app's generic overflow actions into the system overflow menu. Reserve the ellipsis for overflow; domain-specific menus can remain separate with a distinct symbol.
-- Trigger an overflow action's confirmation through shared presentation state on a persistent view. Do not attach presentation to a transient menu item. State-driven presentation does not establish an exact SwiftUI overflow-button anchor; inspect the resulting dialog rather than promising a particular animation or inventing an anchor API.
-- Evaluate disabling vertical bars for genuinely bottom-heavy, single-page interfaces; do not disable them globally to avoid adapting one custom item.
+- For overflow confirmations, shared presentation state on a persistent view avoids depending on a disappearing menu item. State-driven presentation does not establish an exact SwiftUI overflow-button anchor; inspect the resulting dialog. A different presentation or UIKit bridge may better serve the requested interaction when supported by the actual APIs.
+- Consider disabling vertical bars when another presentation better serves the interface, such as a bottom-heavy single-page flow. Choose the scope intentionally and check its effect on content space and action access.
 
 ## Documented API map
 

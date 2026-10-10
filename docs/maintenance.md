@@ -6,6 +6,8 @@ This repository independently maintains its integrated guidance. Upstream projec
 
 Apple platform changes may drive updates without waiting for upstream releases. Verify new APIs against official documentation and the target SDK. Existing project architecture, platform support, and product decisions remain authoritative.
 
+Maintain the skill as guidance toward the user's result. Explain useful defaults, reasons, and tradeoffs rather than turning design recommendations into universal prohibitions. When an approach falls outside the package, encourage engineering judgment and proportionate validation. Preserve concrete SDK, correctness, and authorization constraints; distinguish them from preferences and incomplete evidence. A departure from a recommendation is not itself a reason to refuse a feature or add an approval step.
+
 ## Repository boundaries
 
 - `upstream/manifest.json`: source repositories, adopted commits, baseline Release IDs, and source-to-module mappings.

@@ -29,7 +29,7 @@ class UpdateNoticeTest(unittest.TestCase):
         self.assertEqual(m.check('0.9.0', {}, 100, lambda: release('v0.10.0'))[0]['status'], 'update_available')
         for tag in ['v0.1.0', 'v0.2.0']:
             self.assertEqual(m.check('0.2.0', {}, 100, lambda: release(tag))[0]['status'], 'up_to_date')
-        self.assertEqual(m.installed_version(), '0.3.0')
+        self.assertEqual(m.installed_version(), '0.3.1')
 
     def test_untrusted_metadata_is_not_a_notice(self):
         bad = [None, {}, release('v0.3.0-beta'), release('v0.3.0;echo unsafe')]
