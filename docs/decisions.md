@@ -1,5 +1,13 @@
 # Integration decisions
 
+## 2026-10-10 — Selective upstream 2.0.0 integration for 0.3.2
+
+- Review stable Release ID `407978148` in full and record a partial integration for Issue #2. Advance the reviewed SwiftUI source baseline to `f9800713b24580bc444931949aad4519128605e8` after considering every changed file; this does not indicate wholesale adoption.
+- Integrate localization, state and binding semantics, scoped modern API advice, item presentations, toolbar and reorder/swipe choices, and focused performance checks. Load the new deep-performance module only when its extra complexity serves a diagnosed issue or requested review.
+- Retain 0.3.1's engineering-judgment guidance. Do not import mandatory deployment/compiler upgrades, global actor annotations, arbitrary field-count thresholds, unconditional modernization findings, or blanket Arrangement nesting prohibitions.
+- Keep SDK declarations, runtime availability, compiler back-deployment, documentation-only evidence, and representative source probes distinct. State and environment diagnostics, toolbar availability, and resource initializer differences materially change which advice is useful.
+- Record the complete decision table and evidence limits in [the upstream review](../upstream/reviews/swiftui-pro-2.0.0.md). Publish 0.3.2 separately, leaving the already published 0.3.1 tag and asset unchanged.
+
 ## 2026-10-10 — Guidance supports engineering judgment
 
 - Treat the user's intended product behavior as the starting point across the package. Native controls, familiar navigation, simple composition, and Apple recommendations remain useful defaults, not a compliance gate. When those defaults cannot express the experience, explore custom composition, framework bridging, or other approaches and validate the relevant behavior.

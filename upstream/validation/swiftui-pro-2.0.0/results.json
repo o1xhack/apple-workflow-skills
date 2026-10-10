@@ -1,0 +1,161 @@
+{
+  "review_date": "2026-10-10",
+  "toolchain": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+  "command": "xcrun swiftc -typecheck -sdk <iphonesimulator-sdk> -target arm64-apple-ios<target>-simulator -module-cache-path <approved-build-scratch>/ModuleCache <source>",
+  "scope": "Compile-time declarations and diagnostics only; no UI or hardware behavior tested",
+  "cases": [
+    {
+      "case": "alerts_item_backdeploy",
+      "source": "alerts_item_backdeploy.swift",
+      "source_sha256": "af09e7665156385646f9843bec090e59c7722c6f309ae1a4c0274d68ea84179b",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "arrangement_guard_old_sdk",
+      "source": "arrangement_guard_old_sdk.swift",
+      "source_sha256": "74d81cac86b2a7a91cc4afe6f69e5adea223a098cced8d92fc4be7ae69c69973",
+      "target": "iOS 27.0 Simulator",
+      "expected": "unavailable",
+      "result": "expected_unavailable",
+      "warnings": 0
+    },
+    {
+      "case": "async_image",
+      "source": "async_image.swift",
+      "source_sha256": "1b5b386374debb5394c00996431de4bed693325f850f4f01888774e0e415fce5",
+      "target": "iOS 27.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "bundle_macro_backdeploy",
+      "source": "bundle_macro_backdeploy.swift",
+      "source_sha256": "9a94796e10ec8dc4ec3b0a7ca18c1a81d619446b4c30b8886c2b2e02a44ae055",
+      "target": "iOS 16.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "content_builder_backdeploy",
+      "source": "content_builder_backdeploy.swift",
+      "source_sha256": "efe7faf75716d9b3802d3a3f3439c717c160c7c7cd98791a4bc9deff2bad7e6c",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "dialog_item_backdeploy",
+      "source": "dialog_item_backdeploy.swift",
+      "source_sha256": "3771dacfcb3112741408d94de5ddb92e175f1daf9a22bc5203a072bbb484f9e7",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "entry_defaults",
+      "source": "entry_defaults.swift",
+      "source_sha256": "dccf2b1739433024c4aaed78343f1bf0c40cba09623dc5df9c75705c77549d8e",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 4
+    },
+    {
+      "case": "entry_state_backdeploy",
+      "source": "entry_state_backdeploy.swift",
+      "source_sha256": "5a4e2c3ce5726a497fba87c865dcae265e5f9770617bf80b2b63921e5ca5d5ea",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "foreach_toolbar_backdeploy",
+      "source": "foreach_toolbar_backdeploy.swift",
+      "source_sha256": "96a493ad544a30bd55cec73c99aa424befebe32f3a6c3e541baabb9c104559dd",
+      "target": "iOS 16.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "hidden_toolbar_ios",
+      "source": "hidden_toolbar_ios.swift",
+      "source_sha256": "bb89b5ca204daa698c54ce8f705453e83541103b123e1b361c58184d48dc745f",
+      "target": "iOS 27.0 Simulator",
+      "expected": "unavailable",
+      "result": "expected_unavailable",
+      "warnings": 0
+    },
+    {
+      "case": "new_toolbars",
+      "source": "new_toolbars.swift",
+      "source_sha256": "925f0d07918443102c75a1d454bdb986444239a3c19914bc0d498f51ff728c8d",
+      "target": "iOS 27.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "reorder_swipe",
+      "source": "reorder_swipe.swift",
+      "source_sha256": "31f742df466e79e5a8b75c166194d395d1008dba63dd8507c61a0a8f3807c46f",
+      "target": "iOS 27.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "resource_button_backdeploy",
+      "source": "resource_button_backdeploy.swift",
+      "source_sha256": "9deffd200905f45f2ab78a70d8da29cee860547678b4b7206b7a0f8907ab61a1",
+      "target": "iOS 16.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "resource_labeled_content_fallback",
+      "source": "resource_labeled_content_fallback.swift",
+      "source_sha256": "116df168c20a4b990eacfd947b8af4409409446be79295508a02f7109913e8ef",
+      "target": "iOS 16.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "resource_plain_textfield",
+      "source": "resource_plain_textfield.swift",
+      "source_sha256": "6f003f69b5af2babab3c2102dba3f1be76b3f625176aa8d10224d7753bdc4659",
+      "target": "iOS 16.0 Simulator",
+      "expected": "unavailable",
+      "result": "expected_unavailable",
+      "warnings": 0
+    },
+    {
+      "case": "resource_textfield_label_fallback",
+      "source": "resource_textfield_label_fallback.swift",
+      "source_sha256": "6c59563cbf0daadc07f05303e44e624deffb0e3fb450ef2700aae4e08984e6bd",
+      "target": "iOS 16.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    },
+    {
+      "case": "state_double_init",
+      "source": "state_double_init.swift",
+      "source_sha256": "2ff89da3dcbcaefad1daafa42bad2826517afba9deab8f70f7213f12c634743f",
+      "target": "iOS 15.0 Simulator",
+      "expected": "typecheck_pass",
+      "result": "typecheck_pass",
+      "warnings": 0
+    }
+  ]
+}

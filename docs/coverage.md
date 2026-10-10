@@ -2,9 +2,11 @@
 
 **English** · [Chinese](coverage.zh-CN.md) · [Back to README](../README.md)
 
-Applies to **v0.3.1**, including the October 6, 2026 Duo refresh. **v0.2.0** retains the September 10 review; v0.1.0 has general Duo guidance only. Coverage means guidance, not SDK or device validation.
+Applies to **v0.3.2**, including the October 6, 2026 Duo refresh. **v0.2.0** retains the September 10 review; v0.1.0 has general Duo guidance only. Coverage means guidance, not SDK or device validation.
 
 The October 10 revision in v0.3.1 makes the guided approach explicit across the package: defaults help the agent begin, while the user's goal and engineering judgment guide alternatives. These modules do not exhaust the possible implementations or make every Apple recommendation mandatory. Actual API availability and demonstrated behavior remain relevant when choosing and validating an approach.
+
+The selective upstream review in v0.3.2 adds localization, state/identity refinements, scoped API guidance, and deep-performance options. Seventeen representative Xcode 27.0 source probes compiled or failed as expected; this is not app or agent-behavior QA. See the [integration review](../upstream/reviews/swiftui-pro-2.0.0.md).
 
 ## Devices and platforms
 
@@ -19,6 +21,7 @@ These are guidance targets. A tested model-by-model or OS-version compatibility 
 | Area | What is covered |
 | --- | --- |
 | [Design principles](../skills/apple-workflow-skills/workflows/apple-ui/design/principles.md) | Hierarchy, typography and native controls |
+| [Localization](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/localization.md) | Resources, deferred text, bundles, translation context, and locale formatting |
 | [SwiftUI components](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/index.md) | Forms, navigation, state and refactoring |
 | [Adaptive layout](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/adaptive-layout.md) | Window sizes, safe areas and state continuity |
 | [Accessibility](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/accessibility.md) | Dynamic Type, VoiceOver and contrast |

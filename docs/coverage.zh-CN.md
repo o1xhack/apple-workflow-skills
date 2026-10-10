@@ -2,9 +2,11 @@
 
 [English](coverage.md) · **简体中文** · [返回 README](../README.zh-CN.md)
 
-对应 **v0.3.1**，包含 2026 年 10 月 6 日的 Duo 更新。**v0.2.0** 仍对应 9 月 10 日审查，v0.1.0 只有通用 Duo 指导。这里的覆盖指指导内容，不代表已通过 SDK 或设备验证。
+对应 **v0.3.2**，包含 2026 年 10 月 6 日的 Duo 更新。**v0.2.0** 仍对应 9 月 10 日审查，v0.1.0 只有通用 Duo 指导。这里的覆盖指指导内容，不代表已通过 SDK 或设备验证。
 
 v0.3.1 的 10 月 10 日修改进一步明确了整个包的引导风格：默认建议帮助 Agent 起步，用户目标和工程判断决定何时选择其他方案。这些模块不穷尽所有实现，也不要求每条 Apple 建议都必须照做。选择和验证方案时，仍需考虑实际 API 可用性和观察到的行为。
+
+v0.3.2 选择性整合上游更新，增加本地化、状态与身份细节、按范围使用的新 API 指导及深度性能选项。17 个代表性 Xcode 27.0 源码探针已编译通过或按预期失败；这不代表 App 或 Agent 行为验收。详见[整合审查（英文）](../upstream/reviews/swiftui-pro-2.0.0.md)。
 
 ## 设备与平台
 
@@ -19,6 +21,7 @@ v0.3.1 的 10 月 10 日修改进一步明确了整个包的引导风格：默�
 | 领域 | 覆盖内容 |
 | --- | --- |
 | [设计原则](../skills/apple-workflow-skills/workflows/apple-ui/design/principles.md) | 信息层级、排版与原生控件 |
+| [本地化](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/localization.md) | 资源、延迟解析的文本、Bundle、翻译上下文与地区格式 |
 | [SwiftUI 组件](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/index.md) | 表单、导航、状态与重构 |
 | [自适应布局](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/adaptive-layout.md) | 窗口尺寸、安全区域与状态连续性 |
 | [无障碍](../skills/apple-workflow-skills/workflows/apple-ui/swiftui/references/accessibility.md) | 动态字号、VoiceOver 与对比度 |

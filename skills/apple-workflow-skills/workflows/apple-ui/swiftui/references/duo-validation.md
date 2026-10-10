@@ -14,6 +14,8 @@ Distinguish build SDK, deployment target, runtime OS, and installed tools. Apple
 
 Rebuilding does not by itself verify app readiness. `UIRequiresFullScreen` can still restrict multitasking on Duo, but does not stop open/close resizing. Review its actual product purpose before removing it; supported orientations do not lock the inner display.
 
+For apps built with SDK 27+, the full-screen compatibility key changes scene resizing behavior rather than preventing all resizing; Apple's migration note describes discrete resizing. Check the launch-screen declaration for an iOS 27 submission: an existing storyboard, `UILaunchScreen`, or the corresponding generated build setting can provide it. Inspect actual target settings and the intended product behavior before changing either configuration.
+
 ## Audit resizing assumptions
 
 - Find `UIScreen.main.bounds`, cached screen dimensions, and fixed device-size comparisons. Size layout from the view, window, or SwiftUI container; observe changes throughout the session, not just at launch or `viewIsAppearing`. In UIKit, perform size-dependent layout in layout callbacks and coordinate transitions when needed.

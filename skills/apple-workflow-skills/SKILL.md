@@ -3,7 +3,7 @@ name: apple-workflow-skills
 description: Route Apple application work to focused guidance for native UI design, SwiftUI implementation and refactoring, adaptive layouts, iPhone Duo adaptation, Liquid Glass, UI performance, rendered validation, or shared Swift concurrency. Use for these Apple development tasks while preserving the project's platform and toolchain.
 license: MIT
 metadata:
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # Apple Workflow Skills

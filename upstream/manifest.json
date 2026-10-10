@@ -9,7 +9,7 @@
       "url": "https://github.com/twostraws/SwiftUI-Agent-Skill",
       "license": "MIT",
       "copyright": "Copyright (c) 2026 Paul Hudson",
-      "adopted_commit": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "adopted_commit": "f9800713b24580bc444931949aad4519128605e8",
       "latest_release_at_import": "1.1.0",
       "baseline_release_ids": [311058350, 295739596],
       "tracking": "stable_releases_only",

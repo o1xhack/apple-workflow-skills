@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 — 2026-10-10
+
+- Selectively integrate the reviewed SwiftUI Agent Skill 2.0.0 update while retaining the guided approach introduced in 0.3.1; resolve upstream review Issue #2 with documented per-topic decisions.
+- Add conditionally loaded localization guidance and deep-performance review. Preserve project resources, architecture, targets, and appropriate alternatives instead of imposing upstream defaults.
+- Clarify State initialization, stable environment values, Observation dependencies, binding/onChange semantics, collection identity, and per-stack navigation destinations.
+- Add scoped API modernization, compiler versus runtime availability, item alerts/dialogs, adaptive toolbar choices, source-driven reorder/swipe interactions, and AsyncImage caching guidance.
+- Record representative Xcode 27.0 typechecks, expected availability failures, and SDK 27 launch-screen/discrete-resizing guidance without claiming 27.1/27.2 or device validation.
+
 ## 0.3.1 — 2026-10-10
 
 - Make the workflow explicitly guided: start from the user's goal, offer defaults and tradeoffs, and explore alternatives when the recommended pattern does not fit. Preserve actual SDK, correctness, and scope constraints without treating unconventional implementations as defects.

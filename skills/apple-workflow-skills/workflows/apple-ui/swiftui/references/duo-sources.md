@@ -8,6 +8,7 @@ Read only when the task needs original examples, exact transcript wording, or de
 - [Designing for iPhone Duo HIG](https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo): design rationale and illustrations.
 - [Three steps to make your app shine](https://developer.apple.com/iphone-duo/prepare/): build-SDK presentation differences, concrete audit patterns, resizability skill export, and testing tools.
 - [Preparing your app for iPhone Duo](https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo): current layout, bars, arrangements, and reserved-region guidance.
+- [Migrating from UIRequiresFullScreen](https://developer.apple.com/documentation/technotes/tn3192-migrating-your-app-from-the-deprecated-uirequiresfullscreen-key): discrete resizing and launch-screen requirements when moving to SDK 27.
 - [Choosing a camera by the direction it faces](https://developer.apple.com/documentation/avkit/choosing-a-camera-by-the-direction-it-faces): virtual discovery, per-view direction, isolation, switching, mirroring, and rotation.
 - [Registering a camera capture accessory](https://developer.apple.com/documentation/avfoundation/registering-a-camera-capture-accessory-on-iphone-duo): interaction, registration lifetime, shared state, availability, and enablement.
 - [Device Hub interaction](https://developer.apple.com/documentation/xcode/interacting-with-your-app-in-device-hub): actual device controls and the camera/microphone restrictions during physical-device interaction.

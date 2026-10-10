@@ -1,4 +1,17 @@
 {
   "schema_version": 1,
-  "reviews": []
+  "reviews": [
+    {
+      "source_id": "swiftui-pro",
+      "release_id": 407978148,
+      "release_tag": "2.0.0",
+      "release_commit": "f9800713b24580bc444931949aad4519128605e8",
+      "previous_adopted_commit": "be297ff80dddec529af1f9b1f1f114aab6c9d11c",
+      "review_date": "2026-10-10",
+      "decision": "partial",
+      "local_version": "0.3.2",
+      "issue": "https://github.com/o1xhack/apple-workflow-skills/issues/2",
+      "review_document": "upstream/reviews/swiftui-pro-2.0.0.md"
+    }
+  ]
 }

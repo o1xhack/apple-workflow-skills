@@ -420,6 +420,114 @@
         "https://developer.apple.com/documentation/technologyoverviews/preparing-your-app-for-iphone-duo",
         "https://developer.apple.com/videos/play/tech-talks/111463/"
       ]
+    },
+    {
+      "id": "swiftui-state-contentbuilder-2026-10-10",
+      "url": "https://developer.apple.com/documentation/technotes/tn3211-resolving-swiftui-source-incompatibilities-for-state-and-contentbuilder",
+      "topic": "State macro initialization and unified builder source compatibility",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Compiler/SDK 27 feature; existing runtime support retained",
+      "validation": "State, Entry, and ContentBuilder typechecked at iOS 15; initialization behavior also source-reviewed"
+    },
+    {
+      "id": "swiftui-localization-2026-10-10",
+      "url": "https://developer.apple.com/documentation/xcode/using-generated-localizable-symbols-in-your-code",
+      "topic": "Generated symbols, deferred text, bundles, and resource overload availability",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "LocalizedStringResource iOS 16; plain TextField and title/value LabeledContent resource forms iOS 26",
+      "validation": "iOS 16 resource Button and label-closure fallbacks typechecked; plain resource TextField failed as expected"
+    },
+    {
+      "id": "foundation-bundle-macro-2026-10-10",
+      "url": "https://developer.apple.com/documentation/foundation/bundle()",
+      "topic": "Owning resource bundle macro",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Reviewed declaration iOS 15; available in the reviewed Xcode 27 compiler",
+      "validation": "Typechecked a SwiftUI Text bundle argument at iOS 16; no linked framework/package resource lookup tested"
+    },
+    {
+      "id": "swiftui-entry-defaults-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/entry()",
+      "topic": "Stable custom environment defaults and closure comparison",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Macro generation depends on compiler; runtime keys retain their own availability",
+      "validation": "Class defaults and custom closures produced SDK diagnostics; volatile value default behavior is reference evidence"
+    },
+    {
+      "id": "swiftui-observation-dependencies-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app",
+      "topic": "Stored-property dependency granularity, meaningful equality, and scoped model changes",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Observation iOS 17+; generated equality behavior tied to the reviewed compiler",
+      "validation": "Documentation and Apple-bundled dataflow/environment guidance reviewed; no measured app performance result"
+    },
+    {
+      "id": "swiftui-foreach-performance-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/foreach",
+      "topic": "Stable row identity, constant row shape, and slow-path diagnostic",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Enumerated RandomAccessCollection use iOS 26+; earlier targets retain array materialization",
+      "validation": "SDK and Apple-bundled ForEach guidance reviewed; no list scroll benchmark or launch-log capture"
+    },
+    {
+      "id": "swiftui-item-presentations-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/view/alert(_:item:actions:message:)",
+      "topic": "Item-based alerts and confirmation dialogs without Identifiable",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Reviewed Xcode 27 literal-title overloads back-deploy to iOS 15; resource titles iOS 16",
+      "validation": "Both literal-title forms typechecked at iOS 15; no dialog interaction or anchoring tested"
+    },
+    {
+      "id": "swiftui-toolbar-choices-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/view/toolbarminimizationbehavior(_:for:)",
+      "topic": "Priority, overflow, margins, pinned actions, minimization, and dynamic toolbar content",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "New APIs iOS 27; ForEach toolbar conformance back-deploys to iOS 16 with the reviewed SDK",
+      "validation": "New toolbar declarations typechecked at iOS 27; ForEach toolbar content at iOS 16; no bar rendering tested"
+    },
+    {
+      "id": "swiftui-toolbar-hidden-sdk-gap-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/toolbarcontent/hidden(_:)",
+      "topic": "Documentation versus installed SDK support",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Current documentation iOS 26.4; reviewed SDK 27.0 declares iOS unavailable",
+      "validation": "Minimal iOS toolbar probe failed as expected; no assertion of the first supporting Xcode release"
+    },
+    {
+      "id": "swiftui-reorder-swipe-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/view/reordercontainer(for:isenabled:move:)",
+      "topic": "Model-driven drag reordering and scroll-view swipe actions",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "iOS 27+; per-platform declarations apply, excluding tvOS",
+      "validation": "ReorderDifference handling and swipeActionsContainer typechecked at iOS 27; no gesture or persistence interaction tested"
+    },
+    {
+      "id": "swiftui-asyncimage-cache-2026-10-10",
+      "url": "https://developer.apple.com/documentation/swiftui/asyncimage",
+      "topic": "Transport-header caching and custom request/session policies",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "Default caching iOS 27 runtime; request/session API iOS 27+",
+      "validation": "Request/session declarations typechecked; no HTTP transport, eviction, or offline caching test"
+    },
+    {
+      "id": "sdk-27-fullscreen-launchscreen-2026-10-10",
+      "url": "https://developer.apple.com/documentation/technotes/tn3192-migrating-your-app-from-the-deprecated-uirequiresfullscreen-key",
+      "topic": "Discrete scene resizing and launch-screen readiness",
+      "review_date": "2026-10-10",
+      "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
+      "availability": "SDK 27 and aligned runtimes; actual key combinations and target settings affect behavior",
+      "validation": "Current technote source review only; no project-setting mutation or App Store upload"
     }
   ],
   "note": "September 10 transcript records remain historical. October 6 guidance uses current official declarations and selected staff answers; resource inventory does not imply full recording or Q&A coverage. Source review, SDK compilation, app interaction, and hardware validation are separate. The installable package excludes transcripts and exported Apple skills."

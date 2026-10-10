@@ -40,3 +40,5 @@ Use after [Duo Overview](foldable-layout.md) for navigation, toolbars, tabs, and
 | Vertical-bar policy | `toolbarVerticalBehavior(_:)` | override `UIViewController.preferredVerticalBarBehavior` | 27.1 |
 
 Use `.prefersTabBar` to preserve destinations or `.prefersToolbarItems` to preserve task actions when setting SwiftUI compression behavior. UIKit and other platforms have their own declarations and availability; do not copy a SwiftUI spelling or iOS minimum into them. Build SDK changes can enable new default presentation without changing the app's deployment target.
+
+On iOS 27+, a requested wide iPhone sidebar can combine `.tabViewStyle(.sidebarAdaptable)` with `.defaultTabBarPlacement(.sidebar)`. This is an intentional tab presentation choice, not an automatic consequence of regular width. Generic toolbar decisions live in [Controls and Content](../patterns/controls.md).

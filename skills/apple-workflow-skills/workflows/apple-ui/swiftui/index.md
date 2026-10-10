@@ -4,7 +4,8 @@ Inspect existing components, dependency injection, deployment targets, and routi
 
 ## Load as needed
 
-- [API and Code Quality](references/api.md): modern APIs, availability, localization, and identity.
+- [API and Code Quality](references/api.md): modern APIs, availability, and code quality.
+- [Localization](references/localization.md): text resources, bundles, generated symbols, and locale-aware presentation.
 - [State Ownership](references/state.md): value state, Observation, bindings, and side effects.
 - [Navigation and Presentation](patterns/navigation.md): tabs, stacks, split views, sheets, and deep links.
 - [Controls and Content](patterns/controls.md): forms, lists, search, toolbars, and input.
