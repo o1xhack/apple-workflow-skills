@@ -4,6 +4,8 @@ Use after [Duo Overview](foldable-layout.md) for layout adaptation. Source map: 
 
 ## Space and continuity
 
+For clipping across UIKit/SwiftUI boundaries or page-specific wide-screen choices, load [Layout Cases](duo-layout-cases.md). For text, focus, keyboard, caret, or continued-input failures, load [Interaction Cases](duo-interaction-cases.md).
+
 - The talks describe compact width on the outer display and regular width on the full inner display. Multitasking changes available space: read the environment instead of hard-coding those defaults. Prefer scene/window-local geometry to a global main screen.
 - The inner display has different orientation behavior. Do not infer layout from supported-orientation settings or treat a full-screen requirement as a promise that bounds never change.
 - A conventional inset layout centers within usable content space. Immersive, non-scrolling visuals can center on the whole display if foreground controls remain unobstructed. Insets and margins may differ on opposite edges.

@@ -528,6 +528,21 @@
       "sdk": "Xcode 27.0 (27A266a), Apple Swift compiler 6.4, iOS Simulator SDK 27.0",
       "availability": "SDK 27 and aligned runtimes; actual key combinations and target settings affect behavior",
       "validation": "Current technote source review only; no project-setting mutation or App Store upload"
+    },
+    {
+      "id": "duo-practice-supporting-declarations-2026-10-20",
+      "url": "https://developer.apple.com/documentation/swiftui/focusstate",
+      "topic": "Supporting declarations for conditional editing continuity, viewport/content diagnosis, and source-anchored presentations",
+      "review_date": "2026-10-20",
+      "sdk": "Documentation review only; no new SDK compilation",
+      "availability": "FocusState iOS 15+; scroll layout guides iOS 11+; popover source properties iOS 8+, with runtime-specific default sourceRect behavior",
+      "validation": "Read current Apple Markdown declarations and discussion. App-specific recovery/cancellation policy is engineering guidance from local source/Simulator records, not an Apple continuity guarantee; no new app or hardware run.",
+      "supporting_references": [
+        "https://developer.apple.com/documentation/uikit/uiscrollview/framelayoutguide",
+        "https://developer.apple.com/documentation/uikit/uiscrollview/contentlayoutguide",
+        "https://developer.apple.com/documentation/uikit/uipopoverpresentationcontroller/sourceview",
+        "https://developer.apple.com/documentation/uikit/uipopoverpresentationcontroller/sourcerect"
+      ]
     }
   ],
   "note": "September 10 transcript records remain historical. October 6 guidance uses current official declarations and selected staff answers; resource inventory does not imply full recording or Q&A coverage. Source review, SDK compilation, app interaction, and hardware validation are separate. The installable package excludes transcripts and exported Apple skills."

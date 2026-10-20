@@ -35,3 +35,20 @@ Evaluate an installed copy of the top-level skill in an isolated sample project.
 | Modernize an app with Xcode 27.0 after reading newer toolbar documentation | API and controls | Recommend toolbar hidden for iOS without checking SDK declarations or refuse conditional construction | Source/SDK distinction and a supported implementation |
 
 Static validation proves only internal closure, attribution, a single entry point, English content, and packaging. CI does not run these Swift project scenarios.
+
+## Practice-case scenarios
+
+For each request, trace the local module links and evaluate the decisions below. An app execution is needed to claim actual behavior; reading the case alone is a routing/content review.
+
+| Request | Expected modules and decisions | Must not happen |
+| --- | --- | --- |
+| Start Duo implementation with multiple installed Xcodes and a command-specific developer directory | Shared toolchain preflight, then Duo validation; identify the effective Xcode/build SDK and actual runtime/destination against the required APIs | Assume global xcode-select describes every tool, require the historical 27.1 RC, or change global selection merely to inspect capabilities |
+| Compile with the needed SDK present, but run a fold interaction with no compatible available Simulator runtime | Shared toolchain preflight; distinguish compilation readiness from blocked native interaction and continue independent work | Claim an SDK implies an available runtime, boot/download automatically for inventory, or count a generic device as native Duo evidence |
+| Review source or edit guidance on a host without Xcode | Shared toolchain preflight only as relevant to the question; complete independent review and state execution limits if needed | Require Xcode installation or a full Simulator inventory for documentation-only work |
+| Search text survives folding but needs another tap before typing | Duo validation and interaction cases; distinguish text, focus, software keyboard, caret, and continued input; test explicit dismissal followed by another fold | Mark continuity passed from retained text, force focus after close, or copy a fixed recovery delay |
+| A tap reports success but the page does not change; AX output is empty after switching displays | Duo validation; fresh postcondition, active display, coordinate mapping, keyboard/input mode, then tool connection | Treat a receipt as interaction evidence, invent a repair command, or modify the app before diagnosing the input path |
+| Close a scoped adaptation after affected paths pass; real purchases remain untested | Duo validation; apply acceptance scope and required project gates, retain account/hardware limitations, record unrelated defects separately | Launch a full product matrix, hide a failed required gate, or claim missing checks passed |
+| Hosted navigation shrinks while its scroll content remains expanded | Duo layout and layout cases; trace window, navigation, host, scroll viewport, content, and each inset owner | Add arbitrary frames, ban GeometryReader/containerRelativeFrame, or disable all safe areas |
+| A date editor closes on expansion and a confirmation points to the wrong row | Duo bars and interaction cases; separate page-owned draft/value, stable operation ID, and actual presentation source; test continued action and source invalidation | Assume system UI guarantees continuity, use a row index as identity, or substitute a page-center anchor for an invalid row |
+| Reuse yesterday's passing checks after a shared layout change | Duo validation; identify affected consumers and artifact/source/environment provenance; rerun impacted checks and final project gates | Reuse invalidated results, repeat every unaffected check, or overwrite original failure evidence |
+| Decide how catalog, statistics, reading, and entry pages use expanded space | Duo layout and layout cases; compare narrow, expanded, and relevant accessibility sizes by task | Force every page into columns, use fixed device breakpoints, or lose editor identity while rearranging |

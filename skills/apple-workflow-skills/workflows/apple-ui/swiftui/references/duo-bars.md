@@ -4,6 +4,8 @@ Use after [Duo Overview](foldable-layout.md) for navigation, toolbars, tabs, and
 
 ## Let the container own adaptation
 
+For date editors that close during resizing or row/menu confirmations with incorrect sources, load [Interaction Cases](duo-interaction-cases.md). It separates persistent values, operation identity, and presentation-source lifetime.
+
 - Prefer bars belonging to `NavigationStack`, `NavigationSplitView`, `TabView`, or UIKit navigation/tab controllers for their coordinated adaptation. Standalone custom `UIToolbar` / `UINavigationBar` / `UITabBar` instances can support a different product experience, but their adaptation needs to be handled by the app.
 - Most Duo poses use vertical bars; full inner portrait retains horizontal bars. In Split View, controls can move to the left outer edge. Test actual layout rather than assuming controls always sit on the right.
 - Keep controls with the content they affect. The talk limits vertical participation to the detail column of a split view; other columns retain local horizontal controls, and an expanded inspector does not gain its own vertical bar.

@@ -3,7 +3,7 @@ name: apple-workflow-skills
 description: Route Apple application work to focused guidance for native UI design, SwiftUI implementation and refactoring, adaptive layouts, iPhone Duo adaptation, Liquid Glass, UI performance, rendered validation, or shared Swift concurrency. Use for these Apple development tasks while preserving the project's platform and toolchain.
 license: MIT
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
 ---
 
 # Apple Workflow Skills
@@ -37,6 +37,8 @@ Internal modules are not separate installation dependencies and do not authorize
 ## Shared boundaries
 
 Project architecture, supported platforms, and user requirements outrank examples. Check new APIs against the actual SDK and deployment target; do not upgrade the toolchain or replace architecture merely to apply a preference.
+
+Before SDK-dependent implementation, building, or runtime validation, use [Toolchain Preflight](shared/toolchain-preflight.md) to confirm the effective Xcode, SDK, and required execution environment. Historical version records are not current minimum requirements.
 
 Discover available tools at runtime. Installing this skill does not imply access to Xcode, a Simulator, or a physical device.
 

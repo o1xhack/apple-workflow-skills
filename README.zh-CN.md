@@ -67,7 +67,7 @@ deployment targets.
 
 v0.2.0 增加了 Duo 核心指导与[六份完整英文字幕资料](external-sources/apple/iphone-duo/2026-09-10/README.md)，按需读取且不打入安装 ZIP。
 
-v0.3.2 选择性整合已审查的上游更新，增加本地化、状态与身份细节、按范围使用的新 API 指导及深度性能选项，保留 v0.3.1 的引导风格与 Arrangement 组合建议，同时包含 v0.3.0 的 Duo 更新与适配审计模块；该更新已对照 10 月 6 日的 Apple 准备文档、API 声明、相机文章及部分官方工程师答疑。详见[当前覆盖与验证边界](docs/coverage.zh-CN.md)；已安装副本通过正式 Release ZIP 更新。
+v0.3.3 增加按任务检查 Xcode／SDK／运行时的开工指导、按需读取的 Duo 布局与交互案例、自动化诊断、验证优先级和停止条件，以及证据复用规则。历史工具版本仅作为当时记录，不作为最低要求；同时保留 v0.3.2 的选择性上游整合、引导风格和已核对来源的 Duo 模块。详见[当前覆盖与验证边界](docs/coverage.zh-CN.md)；已安装副本通过正式 Release ZIP 更新。
 
 ## 为什么用这套 Skills
 

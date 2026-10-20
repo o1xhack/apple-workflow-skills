@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.3 — 2026-10-20
+
+- Add task-specific toolchain preflight for effective Xcode selection, build SDKs, and available runtimes/destinations. Mark dated RC/beta and validation versions as historical evidence rather than current minimum requirements.
+- Add scoped Duo validation priorities, stop conditions, automation-failure diagnosis, and a compact evidence/reuse record while preserving project-required final gates.
+- Add conditionally loaded cases for editing intent, focus/keyboard/caret/typing checks, date and confirmation lifetimes, mixed UIKit/SwiftUI width propagation, and page-specific expanded layouts.
+- Generalize CoffeeIt implementation and Simulator records as conditional engineering examples; do not promote project fixes to universal rules or claim new SDK/device validation.
+
 ## 0.3.2 — 2026-10-10
 
 - Selectively integrate the reviewed SwiftUI Agent Skill 2.0.0 update while retaining the guided approach introduced in 0.3.1; resolve upstream review Issue #2 with documented per-topic decisions.

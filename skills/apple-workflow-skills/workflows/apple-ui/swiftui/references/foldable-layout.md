@@ -2,7 +2,7 @@
 
 Read for iPhone Duo design, fold adaptation, reserved regions, hinge interaction, or multiple displays. Apply [Adaptive Layout](adaptive-layout.md) first. Ordinary iPhone/iPad work does not need the Duo modules.
 
-Evidence refreshed October 6, 2026: Apple's HIG, preparation guides, API declarations, camera articles, and Apple staff Q&A. The hub now lists Xcode 27.1 Release Candidate. Distinguish the SDK used to build an app from its deployment target and the OS on which it runs. Dedicated Duo APIs generally require iOS 27.1, while several supporting APIs already exist in 27.0 or earlier; use the individual declarations in the detail modules. Documentation review does not establish compilation or device behavior. Preserve the project's supported targets and compatibility paths.
+Evidence refreshed October 6, 2026: Apple's HIG, preparation guides, API declarations, camera articles, and Apple staff Q&A. At that review, the hub listed Xcode 27.1 Release Candidate; this is a historical snapshot, not today's toolchain requirement. Distinguish the SDK used to build an app from its deployment target and the OS on which it runs. Dedicated Duo APIs generally require iOS 27.1, while several supporting APIs already exist in 27.0 or earlier; use the individual declarations in the detail modules. Documentation review does not establish compilation or device behavior. Preserve the project's supported targets and compatibility paths.
 
 ## Default decisions
 

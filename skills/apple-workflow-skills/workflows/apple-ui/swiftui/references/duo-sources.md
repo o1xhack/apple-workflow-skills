@@ -25,6 +25,14 @@ Use these for the exact SwiftUI/UIKit signatures and each platform's minimum ver
 - Motion: [body-relative updates](https://developer.apple.com/documentation/coremotion/cmmotionmanager/devicemotionbody), [body identity](https://developer.apple.com/documentation/coremotion/cmbodyidentifiable).
 - Camera formats: [current dynamic aspect ratio](https://developer.apple.com/documentation/avfoundation/avcapturedevice/dynamicaspectratio), [supported ratios](https://developer.apple.com/documentation/avfoundation/avcapturedevice/format/supporteddynamicaspectratios).
 
+## Practice-case framework references
+
+Reviewed October 20, 2026 for the conditional layout and interaction cases. These supporting APIs predate Duo; their documentation does not guarantee continuity or anchoring in a particular app.
+
+- [FocusState](https://developer.apple.com/documentation/swiftui/focusstate): scene focus bindings and ambiguity; iOS 15+.
+- Scroll viewport versus content: [frameLayoutGuide](https://developer.apple.com/documentation/uikit/uiscrollview/framelayoutguide) and [contentLayoutGuide](https://developer.apple.com/documentation/uikit/uiscrollview/contentlayoutguide); iOS 11+.
+- Popover anchor: [sourceView](https://developer.apple.com/documentation/uikit/uipopoverpresentationcontroller/sourceview) and [sourceRect](https://developer.apple.com/documentation/uikit/uipopoverpresentationcontroller/sourcerect); iOS 8+. The rectangle uses source-view coordinates. Check documented default-value differences by runtime and the alternative bar-item anchor.
+
 ## Group Labs and engineer Q&A
 
 - Group Lab [Day 1](https://developer.apple.com/videos/play/meet-with-apple/285/) and [Day 2](https://developer.apple.com/videos/play/meet-with-apple/286/): recorded discussions. No new transcript archive is bundled or claimed here.
@@ -47,8 +55,8 @@ Each transcript is pinned to a repository commit. Search for the topic or API na
 
 ## Evidence boundary
 
-Refreshed October 6, 2026. The hub lists Xcode 27.1 Release Candidate, live preparation documentation, two Group Lab recordings, and three Q&A indexes. The original six caption archives remain the September 10 snapshot, not transcripts of the new labs. They were not compared word-for-word to audio; on-screen details still require the video. Current declarations supersede transcript spellings and availability.
+Refreshed October 6, 2026. At that review, the hub listed Xcode 27.1 Release Candidate, live preparation documentation, two Group Lab recordings, and three Q&A indexes. These tool versions are historical observations, not current requirements. The original six caption archives remain the September 10 snapshot, not transcripts of the new labs. They were not compared word-for-word to audio; on-screen details still require the video. Current declarations supersede transcript spellings and availability.
 
-The review host has Xcode/iOS SDK 27.0. The advertised resizability skill was absent from its exported skill inventory. Documentation for 27.1 was reviewed, but no 27.1 compilation, Duo Simulator interaction, or hardware validation was performed. Check current local tool availability rather than promising the hub's tools are installed.
+At that review, the host had Xcode/iOS SDK 27.0. The advertised resizability skill was absent from its exported skill inventory. Documentation for 27.1 was reviewed, but no 27.1 compilation, Duo Simulator interaction, or hardware validation was performed. Check current local tool availability rather than promising the hub's tools are installed.
 
 If an external URL cannot be read, use the local guidance and report the specific missing evidence. Do not invent API signatures or claim the archive was read. Prefer current Apple declarations over an older transcript when resolving availability or syntax.

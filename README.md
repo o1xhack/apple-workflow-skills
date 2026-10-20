@@ -67,7 +67,7 @@ Existing v0.1.0 installations need one manual update using the installation prom
 
 v0.2.0 adds focused Duo guidance and [six full English timed transcripts](external-sources/apple/iphone-duo/2026-09-10/README.md), read on demand and excluded from the ZIP.
 
-v0.3.2 selectively integrates the reviewed upstream update with localization, state/identity refinements, scoped API guidance, and deep-performance options. It retains v0.3.1’s guided approach and contextual arrangement advice. It also includes the v0.3.0 Duo refresh against October 6 Apple preparation documentation, API declarations, camera articles, and selected engineer Q&A, together with its focused readiness audit. See the [current coverage and validation limits](docs/coverage.md); update installed copies through the stable Release ZIP.
+v0.3.3 adds task-specific Xcode/SDK/runtime preflight, focused Duo layout and interaction cases, automation diagnosis, validation priorities and stop conditions, and reusable evidence. Historical tool versions remain evidence snapshots rather than minimum requirements. It retains v0.3.2's selective upstream integration, guided approach, and current-source Duo modules. See the [current coverage and validation limits](docs/coverage.md); update installed copies through the stable Release ZIP.
 
 ## Why use it?
 

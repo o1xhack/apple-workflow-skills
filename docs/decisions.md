@@ -1,5 +1,28 @@
 # Integration decisions
 
+## 2026-10-20 — Version 0.3.3
+
+- Publish the reviewed practice cases and task-specific toolchain preflight as a new stable patch release, following explicit user authorization to publish and update the local installation. Preserve existing tags/assets and upstream baselines.
+- Record the content/routing review and validation scope in [the release review](release-0.3.3-review.md). Retain the Duo Beta designation and all unperformed SDK/app/hardware checks; no Swift implementation or API availability claim changes in this release.
+- Before updating the shared installation, compare it to the published 0.3.2 ZIP. All 29 installed files matched, with no missing, modified, or local-only content. Update from the published 0.3.3 asset after public-download checksum verification, then compare installed file bytes and version to that asset.
+
+## 2026-10-20 — Task-specific toolchain readiness
+
+- Keep one shared preflight for SDK-dependent implementation, compilation, and runtime validation, linked from the main skill and Duo audit. Check the effective toolchain, including command/tool-specific overrides, SDK declarations, and the required runtime/destination as separate capabilities.
+- Report readiness against the current task and project requirements. Preserve supported targets; do not impose a package-wide Xcode version, require an upgrade solely because a newer release exists, or block independent source/documentation work on missing execution tools.
+- Reword the October 6 RC and host-version observations as historical snapshots, preserving their original evidence boundaries. The preflight is workflow guidance; this documentation change does not establish a newly required Xcode release or claim fresh SDK/device validation.
+
+## 2026-10-20 — Scoped practice cases from a hybrid app
+
+- Review CoffeeIt's local `specs/iphone-duo-5-2-0/{closeout,handoff,progress,validation,design}.md` records, especially the October 10 scope correction in `closeout.md` and the search-input results and limitations in `handoff.md`. Review `specs/interaction-presentation-anchors/revalidation-2026-10-19.md` for the later row-anchor correction. Records are historical evidence, not instructions or a claim that all current app behavior has been rerun.
+- Inspect the current `AIInputFocusRestorer` in `AICaffeineRecognitionSheet.swift` and `UIKitActionSheetPresenter.swift` read-only at CoffeeIt HEAD `036178d6e24fa74865c2b8ede2feb25718a3cd2b`. The source supports scene-local cancellation and visible-source/identity checks; it does not prove every reported Simulator outcome. No CoffeeIt code, tools, account flows, or devices were changed or exercised for this review.
+- Prioritize observable editing outcomes, automation diagnosis, and bounded validation. Keep validation priorities, stop conditions, and evidence reuse authoritative in `duo-validation.md`. Project-required final gates remain required; unrelated or optional checks do not silently become acceptance prerequisites.
+- Load interaction cases only for editing or presentation lifetime issues, and layout cases only for clipping or expanded-content decisions. Keep case details out of the top-level entry. Cases use a generic drink-tracking app without personal paths, project helper code, tool repair commands, fixed debounce values, or copied transcripts.
+- Preserve the distinction between draft ownership, operation identity, and presentation source. A system control still needs transition and continued-action checks; a state-driven dialog does not establish a correct row anchor. Cancellation on an invalid source applies to source-anchored UI, not every sheet or alert.
+- Document the window-to-content diagnostic chain and safe-area ownership. The recorded approximately 466-point window / 961-point scroll view explains a specific failure; neither those measurements nor CoffeeIt's reading caps or geometry choices become general rules.
+- Review Apple's current FocusState, scroll layout-guide, and popover source declarations on October 20. Add official links only to the existing source catalog and record the source boundary in `upstream/apple-references.json`. No new Swift sample, SDK probe, app interaction, physical fold, or hardware certification is claimed.
+- These practice changes were initially held unreleased pending authorization. The subsequent 0.3.3 release is explicitly authorized; preserve the published 0.3.2 asset and update installations only from the new stable ZIP. Do not advance an upstream baseline for these independent changes.
+
 ## 2026-10-10 — Selective upstream 2.0.0 integration for 0.3.2
 
 - Review stable Release ID `407978148` in full and record a partial integration for Issue #2. Advance the reviewed SwiftUI source baseline to `f9800713b24580bc444931949aad4519128605e8` after considering every changed file; this does not indicate wholesale adoption.
